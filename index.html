@@ -168,7 +168,7 @@ box-shadow:
 0 0 20px rgba(0,208,255,0.5);
 
 animation:
-loadBar 5s forwards;
+loadBar 30s ease-in-out forwards;
 
 }
 
@@ -10524,6 +10524,7 @@ const loaderMessages = [
 "SCANNING MODULES...",
 "ENTERING SOUNAK.DE...",
 "PLEASE WAIT..."
+
 ];
 
 const loaderText =
@@ -10533,8 +10534,6 @@ let loaderMsgIndex = 0;
 let loaderCharIndex = 0;
 
 function typeLoader(){
-
-if(loaderMsgIndex < loaderMessages.length){
 
 if(loaderCharIndex <
 loaderMessages[loaderMsgIndex].length){
@@ -10551,14 +10550,37 @@ setTimeout(typeLoader,45);
 
 else{
 
-loaderText.innerHTML += "<br>";
-
-loaderMsgIndex++;
-loaderCharIndex = 0;
-
-setTimeout(typeLoader,700);
+setTimeout(eraseLoader,1200);
 
 }
+
+}
+
+function eraseLoader(){
+
+if(loaderCharIndex > 0){
+
+loaderText.innerHTML =
+loaderMessages[loaderMsgIndex]
+.substring(0,loaderCharIndex-1);
+
+loaderCharIndex--;
+
+setTimeout(eraseLoader,20);
+
+}
+
+else{
+
+loaderMsgIndex++;
+
+if(loaderMsgIndex >= loaderMessages.length){
+
+loaderMsgIndex = 0;
+
+}
+
+setTimeout(typeLoader,250);
 
 }
 
