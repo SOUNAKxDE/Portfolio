@@ -3515,7 +3515,38 @@ border-radius:24px;
 
 max-height:82vh;
 
+position:relative;
+
 overflow-y:auto;
+
+overflow-x:hidden;
+
+}
+
+.popup-box:hover{
+
+transform:none !important;
+
+box-shadow:none !important;
+
+background:
+rgba(255,255,255,0.06) !important;
+
+}
+
+.popup-box:hover img{
+
+transform:none !important;
+
+filter:none !important;
+
+}
+
+.popup-box:hover h1{
+
+letter-spacing:normal !important;
+
+text-shadow:none !important;
 
 }
 
@@ -3534,22 +3565,6 @@ background:#111;
 padding:6px;
 
 border-radius:18px;
-
-}
-
-.popup-close{
-
-z-index:9999;
-
-position:absolute;
-
-}
-
-.popup-box,
-.popup-box *,
-.popup-close{
-
-transition:none !important;
 
 }
 
