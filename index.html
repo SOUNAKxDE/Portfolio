@@ -3905,6 +3905,8 @@ color:#00d0ff;
 
 </div>
 
+<br>
+
 <section class="hero" id="home">
 
 <div class="hero-container">
@@ -3924,7 +3926,7 @@ Welcome to my creative universe.<br><br>
 I’m Sounak De — a designer, programmer, storyteller, photographer, and cinematic creator obsessed with fusion of technology, creativity and atmosphere.</p>
 <div class="buttons">
 <button class="btn primary"
-onclick="document.getElementById('works').scrollIntoView({behavior:'smooth'});">
+onclick="document.getElementById('works-preview').scrollIntoView({behavior:'smooth'});">
 
 Explore Work
 
@@ -4349,164 +4351,89 @@ Click on the respective types to view the writings
 
 </section>
 
-<section>
+<section id="photography-preview">
+
+<h1 class="section-title reveal">
+SELECTED <span class="gradient">PHOTOGRAPHS</span>
+</h1>
+
+<div class="featured-work-grid reveal">
+
+    <div class="featured-poster glass">
+        <img src="https://SOUNAKxDE.github.io/Portfolio/1.png">
+    </div>
+
+    <div class="featured-poster glass">
+        <img src="https://SOUNAKxDE.github.io/Portfolio/2.png">
+    </div>
+
+    <div class="featured-poster glass">
+        <img src="https://SOUNAKxDE.github.io/Portfolio/10.png">
+    </div>
+
+    <div class="featured-poster glass">
+        <img src="https://SOUNAKxDE.github.io/Portfolio/20.jpg">
+    </div>
+
+</div>
+
+<div class="view-more-panel glass reveal"
+onclick="document.getElementById('photography-showcase').scrollIntoView({behavior:'smooth'})">
+
+    <span>VIEW MORE PHOTOGRAPHS</span>
+
+</div>
+
+</section>
+
+<section id="photography-showcase">
 
 <h1 class="section-title reveal">
 PHOTOGRAPHY <span class="gradient">SHOWCASE</span>
 </h1>
 
-<div class="gallery reveal">
+<p class="works-note reveal">
+Click on the respective types to view the photographs
+</p>
 
-    <div class="gallery-item glass">
-        <img src="https://SOUNAKxDE.github.io/Portfolio/1.png">
+<div class="design-grid">
+
+    <!-- WILDLIFE -->
+
+    <div class="glass design-card reveal"
+    onclick="openPhotoPopup('wildlife-popup')">
+
+        <div class="design-overlay"></div>
+
+        <div class="design-hover-text">
+            VIEW PHOTOS
+        </div>
+
+        <h2>WILDLIFE PHOTOGRAPHY</h2>
+
+        <p>
+            Wildlife moments, natural environments and cinematic nature captures.
+        </p>
+
     </div>
 
-    <div class="gallery-item glass">
-        <img src="https://SOUNAKxDE.github.io/Portfolio/2.png">
-    </div>
+    <!-- STREET -->
 
-    <div class="gallery-item glass">
-        <img src="https://SOUNAKxDE.github.io/Portfolio/3.png">
-    </div>
+    <div class="glass design-card reveal"
+    onclick="openPhotoPopup('street-popup')">
 
-    <div class="gallery-item glass">
-        <img src="https://SOUNAKxDE.github.io/Portfolio/4.png">
-    </div>
+        <div class="design-overlay"></div>
 
-    <div class="gallery-item glass">
-        <img src="https://SOUNAKxDE.github.io/Portfolio/5.jpg">
-    </div>
+        <div class="design-hover-text">
+            VIEW PHOTOS
+        </div>
 
-    <div class="gallery-item glass">
-        <img src="https://SOUNAKxDE.github.io/Portfolio/6.jpg">
-    </div>
+        <h2>STREET PHOTOGRAPHY</h2>
 
-    <div class="gallery-item glass">
-        <img src="https://SOUNAKxDE.github.io/Portfolio/7.jpg">
-    </div>
+        <p>
+            Urban atmospheres, raw human moments and cinematic street visuals.
+        </p>
 
-    <div class="gallery-item glass">
-        <img src="https://SOUNAKxDE.github.io/Portfolio/8.png">
-    </div>
-
-    <div class="gallery-item glass">
-        <img src="https://SOUNAKxDE.github.io/Portfolio/9.png">
-    </div>
-
-    <div class="gallery-item glass">
-        <img src="https://SOUNAKxDE.github.io/Portfolio/10.png">
-    </div>
-
-    <div class="gallery-item glass">
-        <img src="https://SOUNAKxDE.github.io/Portfolio/11.jpg">
-    </div>
-
-    <div class="gallery-item glass">
-        <img src="https://SOUNAKxDE.github.io/Portfolio/12.png">
-    </div>
-
-    <div class="gallery-item glass">
-        <img src="https://SOUNAKxDE.github.io/Portfolio/13.png">
-    </div>
-
-    <div class="gallery-item glass">
-        <img src="https://SOUNAKxDE.github.io/Portfolio/14.png">
-    </div>
-
-    <div class="gallery-item glass">
-        <img src="https://SOUNAKxDE.github.io/Portfolio/15.png">
-    </div>
-
-    <div class="gallery-item glass">
-        <img src="https://SOUNAKxDE.github.io/Portfolio/16.png">
-    </div>
-
-    <div class="gallery-item glass">
-        <img src="https://SOUNAKxDE.github.io/Portfolio/17.jpg">
-    </div>
-
-    <div class="gallery-item glass">
-        <img src="https://SOUNAKxDE.github.io/Portfolio/18.png">
-    </div>
-
-    <div class="gallery-item glass">
-        <img src="https://SOUNAKxDE.github.io/Portfolio/19.png">
-    </div>
-
-    <div class="gallery-item glass">
-        <img src="https://SOUNAKxDE.github.io/Portfolio/20.jpg">
-    </div>
-
-    <div class="gallery-item glass">
-        <img src="https://SOUNAKxDE.github.io/Portfolio/21.png">
-    </div>
-
-    <div class="gallery-item glass">
-        <img src="https://SOUNAKxDE.github.io/Portfolio/22.JPG">
-    </div>
-
-    <div class="gallery-item glass">
-        <img src="https://SOUNAKxDE.github.io/Portfolio/23.png">
-    </div>
-
-    <div class="gallery-item glass">
-        <img src="https://SOUNAKxDE.github.io/Portfolio/24.jpg">
-    </div>
-
-    <div class="gallery-item glass">
-        <img src="https://SOUNAKxDE.github.io/Portfolio/25.jpg">
-    </div>
-
-    <div class="gallery-item glass">
-        <img src="https://SOUNAKxDE.github.io/Portfolio/26.png">
-    </div>
-
-    <div class="gallery-item glass">
-        <img src="https://SOUNAKxDE.github.io/Portfolio/27.jpg">
-    </div>
-
-    <div class="gallery-item glass">
-        <img src="https://SOUNAKxDE.github.io/Portfolio/28.png">
-    </div>
-
-    <div class="gallery-item glass">
-        <img src="https://SOUNAKxDE.github.io/Portfolio/29.png">
-    </div>
-
-    <div class="gallery-item glass">
-        <img src="https://SOUNAKxDE.github.io/Portfolio/30.png">
-    </div>
-
-    <div class="gallery-item glass">
-        <img src="https://SOUNAKxDE.github.io/Portfolio/31.png">
-    </div>
-
-    <div class="gallery-item glass">
-        <img src="https://SOUNAKxDE.github.io/Portfolio/32.png">
-    </div>
-
-    <div class="gallery-item glass">
-        <img src="https://SOUNAKxDE.github.io/Portfolio/34.png">
-    </div>
-
-    <div class="gallery-item glass">
-        <img src="https://SOUNAKxDE.github.io/Portfolio/35.png">
-    </div>
-
-    <div class="gallery-item glass">
-        <img src="https://SOUNAKxDE.github.io/Portfolio/36.png">
-    </div>
-
-    <div class="gallery-item glass">
-        <img src="https://SOUNAKxDE.github.io/Portfolio/37.jpg">
-    </div>
-
-    <div class="gallery-item glass">
-        <img src="https://SOUNAKxDE.github.io/Portfolio/38.png">
-    </div>
-
-    <div class="gallery-item glass">
-        <img src="https://SOUNAKxDE.github.io/Portfolio/39.jpg">
     </div>
 
 </div>
@@ -4893,10 +4820,12 @@ Graphic Designer
 <div class="skill-tags">
 
 <span>Graphic Design</span>
-<span>Design</span>
-<span>Critical Thinking</span>
-<span>Time Management</span>
-<span>Attention to Detail</span>
+<span>Poster Design</span>
+<span>Branding</span>
+<span>Adobe Photoshop</span>
+<span>Adobe Illustrator</span>
+<span>Typography</span>
+<span>Creative Direction</span>
 
 </div>
 
@@ -5394,6 +5323,212 @@ EVENT <span class="gradient">POSTERS</span>
 
         <img src="https://SOUNAKxDE.github.io/Portfolio/ep13.png">
 
+    </div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ========================= -->
+<!-- WILDLIFE POPUP -->
+<!-- ========================= -->
+
+<div class="design-popup" id="wildlife-popup">
+
+<div class="design-popup-content glass">
+
+<div class="design-close"
+onclick="closePhotoPopup('wildlife-popup')">
+
+<span>×</span>
+
+</div>
+
+<h1 class="section-title">
+WILDLIFE <span class="gradient">PHOTOGRAPHY</span>
+</h1>
+
+<div class="poster-grid">
+
+    <div class="gallery-item glass">
+        <img src="https://SOUNAKxDE.github.io/Portfolio/1.png">
+    </div>
+
+    <div class="gallery-item glass">
+        <img src="https://SOUNAKxDE.github.io/Portfolio/2.png">
+    </div>
+
+    <div class="gallery-item glass">
+        <img src="https://SOUNAKxDE.github.io/Portfolio/8.png">
+    </div>
+
+    <div class="gallery-item glass">
+        <img src="https://SOUNAKxDE.github.io/Portfolio/9.png">
+    </div>
+
+
+
+    <div class="gallery-item glass">
+        <img src="https://SOUNAKxDE.github.io/Portfolio/11.jpg">
+    </div>
+
+    <div class="gallery-item glass">
+        <img src="https://SOUNAKxDE.github.io/Portfolio/13.png">
+    </div>
+
+    <div class="gallery-item glass">
+        <img src="https://SOUNAKxDE.github.io/Portfolio/14.png">
+    </div>
+
+
+    <div class="gallery-item glass">
+        <img src="https://SOUNAKxDE.github.io/Portfolio/16.png">
+    </div>
+
+    <div class="gallery-item glass">
+        <img src="https://SOUNAKxDE.github.io/Portfolio/21.png">
+    </div>
+
+    <div class="gallery-item glass">
+        <img src="https://SOUNAKxDE.github.io/Portfolio/23.png">
+    </div>
+
+    <div class="gallery-item glass">
+        <img src="https://SOUNAKxDE.github.io/Portfolio/27.jpg">
+    </div>
+
+    <div class="gallery-item glass">
+        <img src="https://SOUNAKxDE.github.io/Portfolio/32.png">
+    </div>
+
+    <div class="gallery-item glass">
+        <img src="https://SOUNAKxDE.github.io/Portfolio/35.png">
+    </div>
+
+    <div class="gallery-item glass">
+        <img src="https://SOUNAKxDE.github.io/Portfolio/36.png">
+    </div>
+
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="design-popup" id="street-popup">
+
+<div class="design-popup-content glass">
+
+<div class="design-close"
+onclick="closePhotoPopup('street-popup')">
+
+<span>×</span>
+
+</div>
+
+<h1 class="section-title">
+STREET <span class="gradient">PHOTOGRAPHY</span>
+</h1>
+
+<div class="poster-grid">
+
+<div class="gallery-item glass">
+        <img src="https://SOUNAKxDE.github.io/Portfolio/3.png">
+    </div>
+
+    <div class="gallery-item glass">
+        <img src="https://SOUNAKxDE.github.io/Portfolio/4.png">
+    </div>
+
+    <div class="gallery-item glass">
+        <img src="https://SOUNAKxDE.github.io/Portfolio/5.jpg">
+    </div>
+
+    <div class="gallery-item glass">
+        <img src="https://SOUNAKxDE.github.io/Portfolio/6.jpg">
+    </div>
+
+    <div class="gallery-item glass">
+        <img src="https://SOUNAKxDE.github.io/Portfolio/7.jpg">
+    </div>
+
+    <div class="gallery-item glass">
+        <img src="https://SOUNAKxDE.github.io/Portfolio/10.png">
+    </div>
+    <div class="gallery-item glass">
+        <img src="https://SOUNAKxDE.github.io/Portfolio/12.png">
+    </div>
+
+    <div class="gallery-item glass">
+        <img src="https://SOUNAKxDE.github.io/Portfolio/15.png">
+    </div>
+    <div class="gallery-item glass">
+        <img src="https://SOUNAKxDE.github.io/Portfolio/17.jpg">
+    </div>
+
+    <div class="gallery-item glass">
+        <img src="https://SOUNAKxDE.github.io/Portfolio/18.png">
+    </div>
+
+
+    <div class="gallery-item glass">
+        <img src="https://SOUNAKxDE.github.io/Portfolio/19.png">
+    </div>
+
+    <div class="gallery-item glass">
+        <img src="https://SOUNAKxDE.github.io/Portfolio/20.jpg">
+    </div>
+
+    <div class="gallery-item glass">
+        <img src="https://SOUNAKxDE.github.io/Portfolio/22.JPG">
+    </div>
+
+    <div class="gallery-item glass">
+        <img src="https://SOUNAKxDE.github.io/Portfolio/24.jpg">
+    </div>
+
+    <div class="gallery-item glass">
+        <img src="https://SOUNAKxDE.github.io/Portfolio/25.jpg">
+    </div>
+
+    <div class="gallery-item glass">
+        <img src="https://SOUNAKxDE.github.io/Portfolio/26.png">
+    </div>
+
+    <div class="gallery-item glass">
+        <img src="https://SOUNAKxDE.github.io/Portfolio/28.png">
+    </div>
+
+    <div class="gallery-item glass">
+        <img src="https://SOUNAKxDE.github.io/Portfolio/29.png">
+    </div>
+
+    <div class="gallery-item glass">
+        <img src="https://SOUNAKxDE.github.io/Portfolio/30.png">
+    </div>
+
+    <div class="gallery-item glass">
+        <img src="https://SOUNAKxDE.github.io/Portfolio/31.png">
+    </div>
+
+    <div class="gallery-item glass">
+        <img src="https://SOUNAKxDE.github.io/Portfolio/37.jpg">
+    </div>
+
+    <div class="gallery-item glass">
+        <img src="https://SOUNAKxDE.github.io/Portfolio/38.png">
+    </div>
+
+    <div class="gallery-item glass">
+        <img src="https://SOUNAKxDE.github.io/Portfolio/39.jpg">
+    </div>
+
+    <div class="gallery-item glass">
+        <img src="https://SOUNAKxDE.github.io/Portfolio/34.png">
     </div>
 
 </div>
@@ -10387,8 +10522,8 @@ const loaderMessages = [
 
 "INITIALIZING CREATIVE SYSTEM...",
 "SCANNING MODULES...",
-"ENTERING SOUNAK.DE"
-
+"ENTERING SOUNAK.DE...",
+"PLEASE WAIT..."
 ];
 
 const loaderText =
@@ -10787,6 +10922,22 @@ updateCounter();
 
 });
 
+
+function openPhotoPopup(id){
+
+document.getElementById(id).style.display="flex";
+
+document.body.style.overflow="hidden";
+
+}
+
+function closePhotoPopup(id){
+
+document.getElementById(id).style.display="none";
+
+document.body.style.overflow="auto";
+
+}
 
 </script>
 
