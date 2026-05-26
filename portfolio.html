@@ -1,0 +1,11089 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sounak De | Cyber Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700;800&family=Bebas+Neue&family=Bangers&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+/* ========================= */
+/* CINEMATIC LOADER */
+/* ========================= */
+
+#loader{
+
+position:fixed;
+
+inset:0;
+
+background:
+radial-gradient(circle at center,
+#0f172a,
+#020617);
+
+display:flex;
+
+justify-content:center;
+align-items:center;
+
+z-index:999999;
+
+overflow:hidden;
+
+animation:
+loaderFlicker 5s infinite;
+
+}
+
+/* NOISE */
+
+.loader-noise{
+
+position:absolute;
+
+inset:0;
+
+background-image:
+url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
+
+opacity:0.08;
+
+mix-blend-mode:overlay;
+
+pointer-events:none;
+
+}
+
+/* CONTENT */
+
+.loader-content{
+
+position:relative;
+
+width:700px;
+
+max-width:90%;
+
+text-align:center;
+
+}
+
+/* TITLE */
+
+.loader-title{
+
+font-size:7rem;
+
+font-family:'Bebas Neue',sans-serif;
+
+letter-spacing:8px;
+
+margin-bottom:50px;
+
+background:
+linear-gradient(
+to right,
+#00d0ff,
+#8f5cff
+);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+
+text-shadow:
+0 0 20px rgba(0,208,255,0.3);
+
+animation:
+glitch 2s infinite;
+
+}
+
+/* TERMINAL TEXT */
+
+.loader-lines{
+
+height:80px;
+
+display:flex;
+
+justify-content:center;
+align-items:center;
+
+font-size:1.1rem;
+
+letter-spacing:2px;
+
+color:#d8d8d8;
+
+font-family:monospace;
+
+margin-bottom:40px;
+
+}
+
+/* LOADING BAR */
+
+.loader-bar-wrap{
+
+width:100%;
+
+height:10px;
+
+border-radius:30px;
+
+overflow:hidden;
+
+background:
+rgba(255,255,255,0.08);
+
+border:
+1px solid rgba(255,255,255,0.08);
+
+backdrop-filter:blur(20px);
+
+}
+
+.loader-bar{
+
+width:0%;
+
+height:100%;
+
+border-radius:30px;
+
+background:
+linear-gradient(
+90deg,
+#00d0ff,
+#8f5cff
+);
+
+box-shadow:
+0 0 20px rgba(0,208,255,0.5);
+
+animation:
+loadBar 5s forwards;
+
+}
+
+/* GLITCH */
+
+@keyframes glitch{
+
+0%,100%{
+transform:translate(0);
+}
+
+20%{
+transform:translate(-2px,2px);
+}
+
+40%{
+transform:translate(2px,-2px);
+}
+
+60%{
+transform:translate(-1px,1px);
+}
+
+80%{
+transform:translate(1px,-1px);
+}
+
+}
+
+/* SCREEN FLICKER */
+
+@keyframes loaderFlicker{
+
+0%,100%{
+opacity:1;
+}
+
+92%{
+opacity:0.96;
+}
+
+94%{
+opacity:0.88;
+}
+
+96%{
+opacity:1;
+}
+
+98%{
+opacity:0.92;
+}
+
+}
+
+/* BAR ANIMATION */
+
+@keyframes loadBar{
+
+0%{
+width:0%;
+}
+
+100%{
+width:100%;
+}
+
+}
+
+body{
+font-family:'Outfit',sans-serif;
+background:#050816;
+color:white;
+overflow-x:hidden;
+}
+
+/* BACKGROUND */
+
+.bg{
+position:fixed;
+inset:0;
+z-index:-3;
+background:
+radial-gradient(circle at top left,#6f00ff44,transparent 30%),
+radial-gradient(circle at bottom right,#00d0ff44,transparent 30%),
+#050816;
+}
+
+.grid{
+position:fixed;
+inset:0;
+background-image:
+linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+background-size:40px 40px;
+z-index:-2;
+}
+
+.glow{
+position:fixed;
+width:500px;
+height:500px;
+background:radial-gradient(circle,#00d0ff33,transparent 70%);
+pointer-events:none;
+border-radius:50%;
+filter:blur(30px);
+z-index:-1;
+transform:translate(-50%,-50%);
+}
+
+/* NAVBAR */
+
+nav{
+position:fixed;
+top:20px;
+left:50%;
+transform:translateX(-50%);
+width:92%;
+padding:18px 40px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(255,255,255,0.06);
+backdrop-filter:blur(20px);
+border:1px solid rgba(255,255,255,0.1);
+border-radius:25px;
+z-index:999;
+}
+
+.logo{
+font-size:2rem;
+font-family:'Bebas Neue',sans-serif;
+letter-spacing:3px;
+color:#00d0ff;
+}
+
+nav ul{
+display:flex;
+gap:30px;
+list-style:none;
+}
+
+nav ul li a{
+
+text-decoration:none;
+
+color:white;
+
+font-weight:500;
+
+position:relative;
+
+transition:
+color .3s ease;
+
+padding-bottom:8px;
+
+}
+
+nav ul li a::after{
+
+content:'';
+
+position:absolute;
+
+
+bottom:0;
+left:50%;
+transform:translateX(-50%);
+width:0%;
+
+
+height:2px;
+
+border-radius:20px;
+
+background:
+linear-gradient(
+to right,
+#00d0ff,
+#8f5cff
+);
+
+transition:
+width .35s ease,
+box-shadow .35s ease;
+
+box-shadow:
+0 0 10px rgba(0,208,255,0.3);
+
+}
+
+nav ul li a:hover::after{
+
+width:100%;
+
+box-shadow:
+0 0 10px rgba(0,208,255,0.5),
+0 0 20px rgba(111,0,255,0.4);
+
+}
+
+nav ul li a:hover{
+
+color:#00d0ff;
+
+}
+
+
+nav ul li a:hover{
+color:#00d0ff;
+}
+
+/* HERO */
+
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:120px 8%;
+}
+
+.hero-container{
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:70px;
+width:100%;
+}
+
+.left{
+flex:1;
+}
+
+.left h1{
+font-size:6rem;
+line-height:0.95;
+font-family:'Bebas Neue',sans-serif;
+letter-spacing:3px;
+}
+
+.gradient{
+background:linear-gradient(to right,#00d0ff,#8f5cff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.typing{
+margin-top:20px;
+font-size:1.5rem;
+color:#00d0ff;
+height:40px;
+}
+
+.left p{
+margin-top:25px;
+color:#c9c9c9;
+line-height:1.8;
+max-width:600px;
+}
+
+.buttons{
+margin-top:35px;
+display:flex;
+gap:20px;
+}
+
+.btn{
+padding:15px 30px;
+border:none;
+border-radius:15px;
+cursor:pointer;
+font-weight:600;
+transition:.4s;
+}
+
+.primary{
+background:linear-gradient(135deg,#00d0ff,#8f5cff);
+color:white;
+}
+
+.primary:hover{
+transform:translateY(-5px);
+box-shadow:0 0 25px #00d0ff88;
+}
+
+.secondary{
+background:rgba(255,255,255,0.08);
+color:white;
+border:1px solid rgba(255,255,255,0.1);
+}
+
+.secondary:hover{
+background:rgba(255,255,255,0.15);
+}
+
+/* RIGHT */
+
+.right{
+flex:1;
+display:flex;
+justify-content:center;
+position:relative;
+}
+
+.profile{
+
+width:400px;
+height:520px;
+
+padding:0;
+
+overflow:hidden;
+
+border-radius:35px;
+
+position:relative;
+
+cursor:pointer;
+
+transition:.5s;
+
+background:transparent;
+
+}
+
+.profile img{
+
+width:100%;
+height:100%;
+
+object-fit:cover;
+
+object-position:center top;
+
+display:block;
+
+transition:.6s ease;
+
+}
+
+.profile:hover{
+
+transform:
+translateY(-10px)
+scale(1.02);
+
+border-color:#00d0ff;
+
+background:
+rgba(255,255,255,0.09);
+
+box-shadow:
+0 0 20px rgba(0,208,255,0.15),
+0 0 40px rgba(0,208,255,0.12),
+0 0 80px rgba(111,0,255,0.08);
+
+}
+
+
+.profile:hover img{
+
+transform:scale(1.03);
+
+}
+.profile-wrapper{
+
+display:flex;
+flex-direction:column;
+align-items:center;
+gap:20px;
+
+}
+
+.glass-click{
+
+width:260px;
+
+padding:20px;
+
+text-align:center;
+
+cursor:pointer;
+
+transition:.4s;
+
+box-shadow:
+0 0 20px rgba(0,0,0,0.3);
+
+}
+
+.glass-click:hover{
+
+transform:
+translateY(-10px)
+scale(1.02);
+
+border-color:#00d0ff;
+
+background:
+rgba(255,255,255,0.09);
+
+box-shadow:
+0 0 20px rgba(0,208,255,0.15),
+0 0 40px rgba(0,208,255,0.12),
+0 0 80px rgba(111,0,255,0.08);
+
+}
+
+.glass-click h2{
+
+font-family:'Bebas Neue',sans-serif;
+
+font-size:2rem;
+
+letter-spacing:3px;
+
+background:linear-gradient(to right,#00d0ff,#8f5cff);
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+}
+
+.glass-click p{
+
+margin-top:8px;
+
+font-size:0.9rem;
+
+color:#c9c9c9;
+
+letter-spacing:1px;
+
+}
+
+/* SECTION */
+
+section{
+padding:120px 8%;
+}
+
+.section-title{
+font-size:4rem;
+font-family:'Bebas Neue',sans-serif;
+letter-spacing:3px;
+margin-bottom:60px;
+}
+
+/* GLASS */
+
+.glass{
+background:rgba(255,255,255,0.06);
+backdrop-filter:blur(20px);
+border:1px solid rgba(255,255,255,0.1);
+border-radius:30px;
+}
+
+/* ABOUT */
+
+.about-grid{
+
+display:block;
+
+}
+
+.about-card{
+
+padding:60px;
+
+width:100%;
+
+min-height:320px;
+
+transition:.5s;
+
+cursor:pointer;
+
+}
+
+/* HOVER */
+
+.about-card:hover{
+
+transform:
+translateY(-10px)
+scale(1.02) !important;
+
+border-color:#00d0ff;
+
+background:
+rgba(255,255,255,0.09);
+
+box-shadow:
+0 0 20px rgba(0,208,255,0.15),
+0 0 40px rgba(0,208,255,0.12),
+0 0 80px rgba(111,0,255,0.08);
+
+}
+
+/* SKILLS */
+
+.skills-wrap{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+align-items:center;
+}
+
+.radar{
+width:100%;
+height:500px;
+position:relative;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.radar-circle{
+position:absolute;
+border:1px solid rgba(255,255,255,0.12);
+border-radius:50%;
+}
+
+.r1{width:120px;height:120px;}
+.r2{width:220px;height:220px;}
+.r3{width:320px;height:320px;}
+.r4{width:420px;height:420px;}
+
+/* SKILL BARS */
+
+.skill-bars{
+
+display:flex;
+flex-direction:column;
+gap:25px;
+
+}
+
+/* EACH BAR CONTAINER */
+
+.bar{
+
+padding:14px 18px;
+
+border-radius:20px;
+
+transition:
+background .4s ease,
+transform .4s ease,
+box-shadow .4s ease;
+
+cursor:pointer;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+/* BAR HOVER PANEL EFFECT */
+
+.bar:hover{
+
+background:
+rgba(255,255,255,0.05);
+
+backdrop-filter:blur(14px);
+
+transform:
+translateY(-4px);
+
+box-shadow:
+0 0 20px rgba(0,208,255,0.08),
+0 0 40px rgba(111,0,255,0.05);
+
+}
+
+/* LABEL */
+
+.bar label{
+
+display:block;
+
+margin-bottom:12px;
+
+font-size:0.95rem;
+
+font-weight:600;
+
+letter-spacing:0.5px;
+
+transition:
+color .4s ease,
+letter-spacing .4s ease,
+text-shadow .4s ease;
+
+}
+
+/* LABEL HOVER */
+
+.bar:hover label{
+
+color:#00d0ff;
+
+letter-spacing:1px;
+
+text-shadow:
+0 0 10px rgba(0,208,255,0.45);
+
+}
+
+/* PROGRESS TRACK */
+
+.progress{
+
+height:14px;
+
+background:
+rgba(255,255,255,0.08);
+
+border-radius:30px;
+
+overflow:hidden;
+
+position:relative;
+
+border:
+1px solid rgba(255,255,255,0.05);
+
+}
+
+/* FILL */
+
+.fill{
+
+height:100%;
+
+background:
+linear-gradient(
+90deg,
+#00d0ff,
+#8f5cff
+);
+
+border-radius:30px;
+
+position:relative;
+
+overflow:hidden;
+
+transition:
+transform .45s ease,
+box-shadow .45s ease,
+filter .45s ease;
+
+box-shadow:
+0 0 10px rgba(0,208,255,0.25);
+
+}
+
+/* SHIMMER EFFECT */
+
+.fill::before{
+
+content:'';
+
+position:absolute;
+
+top:0;
+left:-100%;
+
+width:100%;
+height:100%;
+
+background:
+linear-gradient(
+90deg,
+transparent,
+rgba(255,255,255,0.4),
+transparent
+);
+
+animation:skillShimmer 3s linear infinite;
+
+}
+
+/* SHIMMER ANIMATION */
+
+@keyframes skillShimmer{
+
+0%{
+left:-100%;
+}
+
+100%{
+left:100%;
+}
+
+}
+
+/* BAR HOVER EFFECT */
+
+.bar:hover .fill{
+
+transform:
+scaleY(1.2);
+
+filter:
+brightness(1.08);
+
+box-shadow:
+0 0 15px rgba(0,208,255,0.45),
+0 0 30px rgba(111,0,255,0.28),
+0 0 50px rgba(0,208,255,0.18);
+
+}
+
+/* DOMAINS */
+
+.domains{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+}
+
+.domain{
+padding:40px;
+min-height:220px;
+position:relative;
+overflow:hidden;
+transition:.5s;
+cursor:pointer;
+}
+
+.domain:hover{
+
+transform:
+translateY(-10px)
+scale(1.02) !important;
+
+border-color:#00d0ff;
+
+background:
+rgba(255,255,255,0.09);
+
+box-shadow:
+0 0 20px rgba(0,208,255,0.15),
+0 0 40px rgba(0,208,255,0.12),
+0 0 80px rgba(111,0,255,0.08);
+
+}
+
+.domain h2{
+font-size:2rem;
+margin-bottom:20px;
+}
+
+/* EXPERIENCE */
+
+.timeline{
+position:relative;
+padding-left:50px;
+}
+
+.timeline::before{
+content:'';
+position:absolute;
+left:10px;
+top:0;
+width:3px;
+height:100%;
+background:#00d0ff;
+}
+
+.timeline-item{
+position:relative;
+margin-bottom:40px;
+padding:30px;
+}
+
+.timeline-item::before{
+content:'';
+position:absolute;
+left:-48px;
+top:40px;
+width:20px;
+height:20px;
+background:#00d0ff;
+border-radius:50%;
+box-shadow:0 0 20px #00d0ff;
+}
+
+/* ========================= */
+/* PHOTOGRAPHY SHOWCASE */
+/* ========================= */
+
+.gallery{
+
+column-count:3;
+
+column-gap:25px;
+
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1000px){
+
+.gallery{
+
+column-count:2;
+
+}
+
+}
+
+@media(max-width:700px){
+
+.gallery{
+
+column-count:1;
+
+}
+
+}
+
+/* IMAGE PANEL */
+
+.gallery-item{
+
+position:relative;
+
+margin-bottom:25px;
+
+overflow:hidden;
+
+border-radius:28px;
+
+cursor:pointer;
+
+break-inside:avoid;
+
+transition:.45s ease;
+
+}
+
+/* IMAGES */
+
+.gallery-item img{
+
+width:100%;
+
+height:auto;
+
+display:block;
+
+border-radius:28px;
+
+transition:
+transform .6s ease,
+filter .6s ease;
+
+}
+
+/* HOVER */
+
+.gallery-item:hover{
+
+transform:
+translateY(-10px)
+scale(1.015);
+
+box-shadow:
+0 0 20px rgba(0,208,255,0.15),
+0 0 45px rgba(111,0,255,0.12);
+
+}
+
+/* IMAGE ZOOM */
+
+.gallery-item:hover img{
+
+transform:scale(1.06);
+
+filter:
+brightness(1.08)
+contrast(1.05);
+
+}
+
+/* TERMINAL */
+
+.terminal{
+
+padding:40px;
+
+font-family:monospace;
+
+font-size:1.1rem;
+
+line-height:2;
+
+min-height:320px;
+
+overflow:hidden;
+
+position:relative;
+
+transition:.5s;
+
+}
+
+/* LIVE TERMINAL */
+
+#live-terminal{
+
+font-family:monospace;
+
+font-size:1.05rem;
+
+line-height:2;
+
+color:#d8d8d8;
+
+min-height:260px;
+
+white-space:pre-line;
+
+}
+
+/* CURSOR */
+
+#live-terminal::after{
+
+content:"_";
+
+margin-left:6px;
+
+color:#00d0ff;
+
+animation:terminalBlink 1s infinite;
+
+}
+
+/* BLINK */
+
+@keyframes terminalBlink{
+
+0%,50%{
+opacity:1;
+}
+
+51%,100%{
+opacity:0;
+}
+
+}
+
+.terminal::before{
+
+content:'';
+
+position:absolute;
+
+top:0;
+left:-100%;
+
+width:100%;
+height:2px;
+
+background:
+linear-gradient(
+90deg,
+transparent,
+#00d0ff,
+transparent
+);
+
+animation:scan 4s linear infinite;
+
+}
+
+@keyframes scan{
+
+0%{
+left:-100%;
+}
+
+100%{
+left:100%;
+}
+
+}
+
+.green{
+color:#00ff88;
+}
+
+/* CONTACT */
+
+.contact-box{
+max-width:700px;
+margin:auto;
+padding:50px;
+}
+
+input,textarea{
+width:100%;
+padding:18px;
+margin-bottom:20px;
+border:none;
+outline:none;
+background:rgba(255,255,255,0.06);
+border:1px solid rgba(255,255,255,0.1);
+border-radius:15px;
+color:white;
+}
+
+textarea{
+height:160px;
+resize:none;
+}
+
+footer{
+padding:50px;
+text-align:center;
+color:#999;
+}
+
+/* POPUP */
+
+.popup{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,0.8);
+display:flex;
+align-items:center;
+justify-content:center;
+opacity:0;
+pointer-events:none;
+transition:.4s;
+z-index:2000;
+}
+
+.popup.active{
+opacity:1;
+pointer-events:auto;
+}
+
+.popup-box{
+width:900px;
+max-width:90%;
+display:flex;
+gap:30px;
+padding:40px;
+position:relative;
+}
+
+.popup-box img{
+width:350px;
+border-radius:20px;
+object-fit:cover;
+}
+
+.close{
+
+position:absolute;
+top:20px;
+right:20px;
+
+width:55px;
+height:55px;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+font-size:2rem;
+
+cursor:pointer;
+
+border-radius:50%;
+
+background:
+rgba(255,255,255,0.06);
+
+border:
+1px solid rgba(255,255,255,0.1);
+
+backdrop-filter:blur(15px);
+
+transition:
+transform .4s ease,
+box-shadow .4s ease,
+background .4s ease,
+border-color .4s ease,
+rotate .4s ease;
+
+overflow:hidden;
+
+}
+
+.close:hover{
+
+transform:
+scale(1.12);
+
+rotate:90deg;
+
+border-color:#00d0ff;
+
+background:
+rgba(255,255,255,0.12);
+
+box-shadow:
+0 0 15px rgba(0,208,255,0.4),
+0 0 35px rgba(111,0,255,0.25);
+
+}
+
+.close::before{
+
+content:'';
+
+position:absolute;
+
+width:0;
+height:0;
+
+border-radius:50%;
+
+background:
+rgba(0,208,255,0.15);
+
+transition:.5s;
+
+z-index:-1;
+
+}
+
+.close:hover::before{
+
+width:120px;
+height:120px;
+
+}
+.close:active{
+
+transform:
+scale(0.9);
+
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1000px){
+
+.hero-container,
+.about-grid,
+.skills-wrap{
+grid-template-columns:1fr;
+display:grid;
+}
+
+.left h1{
+font-size:4rem;
+}
+
+.profile{
+width:100%;
+max-width:380px;
+}
+
+.popup-box{
+flex-direction:column;
+}
+
+.popup-box img{
+width:100%;
+height:300px;
+}
+
+}
+
+.about-card{
+
+transition:.5s;
+
+}
+
+.about-card:hover{
+
+transform:
+translateY(-10px)
+scale(1.02);
+
+border-color:#00d0ff;
+
+background:
+rgba(255,255,255,0.09);
+
+box-shadow:
+0 0 20px rgba(0,208,255,0.15),
+0 0 40px rgba(0,208,255,0.12),
+0 0 80px rgba(111,0,255,0.08);
+
+}
+
+.radar{
+
+transition:.5s;
+
+}
+
+.radar:hover{
+
+transform:
+translateY(-10px)
+scale(1.02) !important;
+
+border-color:#00d0ff;
+
+background:
+rgba(255,255,255,0.09);
+
+box-shadow:
+0 0 20px rgba(0,208,255,0.15),
+0 0 40px rgba(0,208,255,0.12),
+0 0 80px rgba(111,0,255,0.08);
+
+}
+
+.timeline-item{
+
+transition:.5s;
+
+}
+
+.timeline-item:hover{
+
+transform:
+translateY(-10px)
+scale(1.02) !important;
+
+border-color:#00d0ff;
+
+background:
+rgba(255,255,255,0.09);
+
+box-shadow:
+0 0 20px rgba(0,208,255,0.15),
+0 0 40px rgba(0,208,255,0.12),
+0 0 80px rgba(111,0,255,0.08);
+
+}
+
+.terminal{
+
+transition:.5s;
+
+}
+
+.terminal:hover{
+
+transform:
+translateY(-10px)
+scale(1.02) !important;
+
+border-color:#00d0ff;
+
+background:
+rgba(255,255,255,0.09);
+
+box-shadow:
+0 0 20px rgba(0,208,255,0.15),
+0 0 40px rgba(0,208,255,0.12),
+0 0 80px rgba(111,0,255,0.08);
+
+}
+
+.contact-box{
+
+transition:.5s;
+
+}
+
+.contact-box:hover{
+
+transform:
+translateY(-10px)
+scale(1.02) !important;
+
+border-color:#00d0ff;
+
+background:
+rgba(255,255,255,0.09);
+
+box-shadow:
+0 0 20px rgba(0,208,255,0.15),
+0 0 40px rgba(0,208,255,0.12),
+0 0 80px rgba(111,0,255,0.08);
+
+}
+
+.popup-box{
+
+transition:
+transform .5s ease,
+box-shadow .5s ease,
+border-color .5s ease,
+background .5s ease;
+
+}
+.popup-box:hover{
+
+transform:
+translateY(-10px)
+scale(1.02) !important;
+
+border-color:#00d0ff;
+
+background:
+rgba(255,255,255,0.09);
+
+box-shadow:
+0 0 25px rgba(0,208,255,0.18),
+0 0 50px rgba(0,208,255,0.12),
+0 0 90px rgba(111,0,255,0.10);
+
+}
+.popup-box img{
+
+transition:
+transform .6s ease,
+filter .6s ease;
+
+}
+.popup-box:hover img{
+
+transform:scale(1.03);
+
+filter:
+brightness(1.05)
+contrast(1.05);
+
+}
+.popup-box h1{
+
+transition:
+letter-spacing .4s ease,
+text-shadow .4s ease;
+
+}
+.popup-box:hover h1{
+
+letter-spacing:4px;
+
+text-shadow:
+0 0 10px rgba(0,208,255,0.5),
+0 0 25px rgba(111,0,255,0.4);
+
+}
+
+.cursor{
+
+display:inline-block;
+
+width:10px;
+
+background:#00ff88;
+
+margin-left:5px;
+
+animation:blink 1s infinite;
+
+}
+
+@keyframes blink{
+
+0%,50%{
+opacity:1;
+}
+
+51%,100%{
+opacity:0;
+}
+
+}
+
+.radar-center{
+
+position:absolute;
+
+width:140px;
+height:140px;
+
+border-radius:50%;
+
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+
+font-size:1.2rem;
+font-weight:700;
+
+background:
+rgba(255,255,255,0.08);
+
+border:
+1px solid rgba(255,255,255,0.1);
+
+backdrop-filter:blur(20px);
+
+box-shadow:
+0 0 25px rgba(0,208,255,0.15);
+
+z-index:5;
+
+letter-spacing:2px;
+
+}
+
+.radar-node{
+
+position:absolute;
+
+width:95px;
+height:95px;
+
+border-radius:50%;
+
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+
+background:
+rgba(255,255,255,0.07);
+
+border:
+1px solid rgba(255,255,255,0.1);
+
+backdrop-filter:blur(20px);
+
+transition:.5s;
+
+cursor:pointer;
+
+z-index:10;
+
+}
+
+.radar-node:hover{
+
+transform:
+scale(1.12);
+
+border-color:#00d0ff;
+
+box-shadow:
+0 0 20px rgba(0,208,255,0.4),
+0 0 40px rgba(111,0,255,0.2);
+
+}
+
+.radar-node span{
+
+font-size:0.9rem;
+font-weight:700;
+letter-spacing:1px;
+
+}
+
+.radar-node small{
+
+margin-top:6px;
+
+color:#00d0ff;
+
+font-size:0.8rem;
+
+}
+
+.poster-card video{
+width:100%;
+height:auto;
+display:block;
+object-fit:contain;
+border-radius:28px;
+}
+
+/* NODE POSITIONS */
+
+.node1{
+top:50px;
+left:50%;
+transform:translateX(-50%);
+}
+
+.node2{
+left:40px;
+top:50%;
+transform:translateY(-50%);
+}
+
+.node3{
+right:40px;
+top:50%;
+transform:translateY(-50%);
+}
+
+.node4{
+bottom:20px;
+left:24%;
+}
+
+.node5{
+bottom:20px;
+right:24%;
+}
+
+.radar-circle{
+
+animation:rotateRadar 20s linear infinite;
+
+}
+
+.r2{
+animation-duration:30s;
+}
+
+.r3{
+animation-duration:40s;
+}
+
+.r4{
+animation-duration:50s;
+}
+
+@keyframes rotateRadar{
+
+from{
+transform:rotate(0deg);
+}
+
+to{
+transform:rotate(360deg);
+}
+
+}
+
+.profile{
+
+border:none !important;
+
+}
+/* DESIGN SHOWCASE */
+
+.design-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(280px,1fr));
+
+gap:30px;
+
+}
+
+.design-card{
+
+position:relative;
+
+padding:40px;
+
+min-height:240px;
+
+overflow:hidden;
+
+cursor:pointer;
+
+transition:.5s ease;
+
+}
+
+.design-card:hover{
+
+transform:
+translateY(-10px)
+scale(1.02) !important;
+
+border-color:#00d0ff;
+
+background:
+rgba(255,255,255,0.09);
+
+box-shadow:
+0 0 20px rgba(0,208,255,0.15),
+0 0 40px rgba(0,208,255,0.12),
+0 0 80px rgba(111,0,255,0.08);
+
+}
+
+.design-overlay{
+
+position:absolute;
+
+inset:0;
+
+background:
+linear-gradient(
+135deg,
+rgba(0,208,255,0.08),
+rgba(111,0,255,0.05)
+);
+
+opacity:0;
+
+transition:.5s ease;
+
+}
+
+.design-card:hover .design-overlay{
+
+opacity:1;
+
+}
+
+.design-card h2{
+
+position:relative;
+
+font-size:1.7rem;
+
+margin-bottom:20px;
+
+font-family:'Bebas Neue',sans-serif;
+
+letter-spacing:2px;
+
+z-index:2;
+
+}
+
+.design-card p{
+
+position:relative;
+
+line-height:1.8;
+
+color:#c9c9c9;
+
+z-index:2;
+
+}
+/* DESIGN POPUPS */
+
+.design-popup{
+
+position:fixed;
+
+inset:0;
+
+background:
+rgba(0,0,0,0.8);
+
+display:none;
+
+justify-content:center;
+align-items:center;
+
+padding:40px;
+
+backdrop-filter:blur(15px);
+
+z-index:5000;
+
+}
+
+.design-popup-content{
+
+width:95%;
+max-width:1400px;
+
+max-height:90vh;
+
+overflow-y:auto;
+
+padding:40px;
+
+border-radius:35px;
+
+background:
+rgba(10,10,20,0.82);
+
+border:
+1px solid rgba(255,255,255,0.08);
+
+backdrop-filter:blur(30px);
+
+position:relative;
+
+}
+
+.design-popup-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(280px,1fr));
+
+gap:30px;
+
+}
+
+.design-popup-grid img{
+
+width:100%;
+
+height:auto;
+
+display:block;
+
+border-radius:20px;
+
+transition:.5s ease;
+
+cursor:pointer;
+
+}
+
+/* ORIGINAL RATIO */
+
+.design-popup-grid img:hover{
+
+transform:
+translateY(-10px)
+scale(1.02);
+
+box-shadow:
+0 0 20px rgba(0,208,255,0.18),
+0 0 40px rgba(111,0,255,0.12);
+
+}
+
+/* UNIVERSAL POPUP CLOSE BUTTON */
+
+.design-close{
+
+position:absolute;
+
+top:20px;
+right:20px;
+
+width:55px;
+height:55px;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+font-size:2rem;
+
+cursor:pointer;
+
+border-radius:50%;
+
+background:
+rgba(255,255,255,0.06);
+
+border:
+1px solid rgba(255,255,255,0.1);
+
+backdrop-filter:blur(15px);
+
+transition:
+transform .4s ease,
+box-shadow .4s ease,
+background .4s ease,
+border-color .4s ease;
+
+overflow:hidden;
+
+/* IMPORTANT */
+
+isolation:isolate;
+
+z-index:10;
+
+}
+
+/* HOVER */
+
+.design-close:hover{
+
+transform:
+scale(1.12);
+
+border-color:#00d0ff;
+
+background:
+rgba(255,255,255,0.12);
+
+box-shadow:
+0 0 15px rgba(0,208,255,0.4),
+0 0 35px rgba(111,0,255,0.25);
+
+}
+
+/* GLOW EXPANSION */
+
+.design-close::before{
+
+content:'';
+
+position:absolute;
+
+inset:0;
+
+border-radius:50%;
+
+background:
+radial-gradient(
+circle,
+rgba(0,208,255,0.25),
+transparent 70%
+);
+
+opacity:0;
+
+transition:.45s ease;
+
+z-index:-1;
+
+pointer-events:none;
+
+}
+
+/* HOVER EFFECT */
+
+.design-close:hover::before{
+
+opacity:1;
+
+transform:scale(1.4);
+
+}
+
+/* X ROTATION */
+
+.design-close span{
+
+display:inline-block;
+
+transition:.4s ease;
+
+}
+
+.design-close:hover span{
+
+transform:rotate(90deg);
+
+}
+
+/* CLICK EFFECT */
+
+.design-close:active{
+
+transform:scale(0.92);
+
+}/* DURATION POPUP */
+
+.timeline-item{
+
+position:relative;
+
+overflow:visible;
+
+}
+
+/* FLOATING DATE */
+
+.timeline-item::after{
+
+content:attr(data-duration);
+
+position:absolute;
+
+top:-18px;
+right:20px;
+
+padding:10px 18px;
+
+border-radius:30px;
+
+font-size:0.8rem;
+
+font-weight:600;
+
+letter-spacing:1px;
+
+color:#00d0ff;
+
+background:
+rgba(10,15,30,0.85);
+
+border:
+1px solid rgba(0,208,255,0.2);
+
+backdrop-filter:blur(18px);
+
+box-shadow:
+0 0 15px rgba(0,208,255,0.18);
+
+opacity:0;
+
+transform:
+translateY(20px)
+scale(0.9);
+
+transition:
+opacity .4s ease,
+transform .4s ease,
+box-shadow .4s ease;
+
+pointer-events:none;
+
+}
+
+/* SHOW ON HOVER */
+
+.timeline-item:hover::after{
+
+opacity:1;
+
+transform:
+translateY(0px)
+scale(1);
+
+box-shadow:
+0 0 15px rgba(0,208,255,0.35),
+0 0 35px rgba(111,0,255,0.15);
+
+}
+
+.contact-box button{
+
+margin-top:10px;
+
+align-self:center;
+
+}
+.contact-title{
+
+text-align:center;
+
+}
+
+.contact-box button{
+
+display:block;
+
+margin:
+20px auto 0 auto;
+
+}
+
+/* CONTACT STRIP */
+
+.contact-strip-section{
+
+padding:
+20px 8%
+80px 8%;
+
+}
+
+.contact-strip{
+
+width:100%;
+
+min-height:90px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+gap:20px;
+
+padding:
+20px 40px;
+
+border-radius:25px;
+
+overflow:hidden;
+
+position:relative;
+
+}
+
+/* CONTACT ITEMS */
+
+.contact-item{
+
+flex:1;
+
+text-align:center;
+
+position:relative;
+
+transition:.4s ease;
+
+cursor:pointer;
+
+padding:10px;
+
+}
+
+/* DIVIDER */
+
+.contact-item:not(:last-child)::after{
+
+content:'';
+
+position:absolute;
+
+right:0;
+top:50%;
+
+transform:translateY(-50%);
+
+width:1px;
+height:45px;
+
+background:
+rgba(255,255,255,0.08);
+
+}
+
+/* TITLES */
+
+.contact-item h3{
+
+font-size:0.8rem;
+
+letter-spacing:2px;
+
+margin-bottom:8px;
+
+color:#00d0ff;
+
+font-family:'Orbitron',sans-serif;
+
+transition:.4s ease;
+
+}
+
+/* TEXT */
+
+.contact-item p{
+
+font-size:0.95rem;
+
+color:#d0d0d0;
+
+transition:.4s ease;
+
+word-break:break-word;
+
+}
+
+/* HOVER */
+
+.contact-item:hover{
+
+transform:
+translateY(-4px);
+
+}
+
+.contact-item:hover h3{
+
+text-shadow:
+0 0 10px rgba(0,208,255,0.5);
+
+}
+
+.contact-item:hover p{
+
+color:white;
+
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+.contact-strip{
+
+flex-direction:column;
+
+padding:30px;
+
+}
+
+.contact-item{
+
+width:100%;
+
+}
+
+.contact-item:not(:last-child)::after{
+
+display:none;
+
+}
+
+}
+/* HOVER TEXT */
+
+.design-hover-text{
+
+position:absolute;
+
+top:50%;
+left:50%;
+
+transform:
+translate(-50%,-50%)
+scale(0.8);
+
+padding:
+18px 30px;
+
+border-radius:20px;
+
+border:
+1px solid rgba(255,255,255,0.12);
+
+background:
+rgba(8,12,25,0.78);
+
+backdrop-filter:
+blur(45px);
+
+-webkit-backdrop-filter:
+blur(45px);
+
+font-size:1rem;
+
+font-weight:700;
+
+letter-spacing:2px;
+
+color:white;
+
+opacity:0;
+
+transition:
+opacity .45s ease,
+transform .45s ease,
+box-shadow .45s ease;
+
+z-index:5;
+
+box-shadow:
+0 0 20px rgba(0,208,255,0.18),
+0 0 45px rgba(111,0,255,0.10),
+0 0 80px rgba(255,255,255,0.04);
+
+}
+
+.design-card:hover .design-hover-text{
+
+opacity:1;
+
+transform:
+translate(-50%,-50%)
+scale(1);
+
+box-shadow:
+0 0 20px rgba(0,208,255,0.25),
+0 0 40px rgba(111,0,255,0.12);
+
+}
+
+.design-card:hover h2,
+.design-card:hover p{
+
+filter:
+blur(10px);
+
+opacity:0.08;
+
+transform:
+scale(1.05);
+
+transition:.45s ease;
+
+}
+
+/* WRITING SHOWCASE */
+
+.writing-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(320px,1fr));
+
+gap:30px;
+
+}
+
+/* WRITING TOPICS */
+
+.writing-topic-list{
+
+display:flex;
+flex-direction:column;
+
+gap:25px;
+
+}
+
+.writing-topic{
+
+display:flex;
+
+align-items:center;
+
+gap:30px;
+
+padding:30px;
+
+cursor:pointer;
+
+transition:.45s ease;
+
+}
+
+.writing-topic:hover{
+
+transform:
+translateX(10px);
+
+border-color:#00d0ff;
+
+background:
+rgba(255,255,255,0.09);
+
+box-shadow:
+0 0 20px rgba(0,208,255,0.12);
+
+}
+
+.writing-number{
+
+font-size:2rem;
+
+font-family:'Bebas Neue',sans-serif;
+
+color:#00d0ff;
+
+letter-spacing:3px;
+
+min-width:70px;
+
+}
+
+/* CONTENT POPUP */
+
+.writing-content-popup{
+
+width:92%;
+max-width:1200px;
+
+max-height:90vh;
+
+overflow:hidden;
+
+padding:50px;
+
+border-radius:35px;
+
+position:relative;
+
+background:
+rgba(10,10,20,0.88);
+
+backdrop-filter:blur(35px);
+
+}
+
+/* SCROLLABLE WRITING */
+
+.writing-scroll{
+
+max-height:65vh;
+
+overflow-y:auto;
+
+padding-right:20px;
+
+line-height:2.2;
+
+font-size:1.05rem;
+
+color:#d8d8d8;
+
+}
+
+/* SCROLLBAR */
+
+.writing-scroll::-webkit-scrollbar{
+
+width:8px;
+
+}
+
+.writing-scroll::-webkit-scrollbar-thumb{
+
+background:
+linear-gradient(
+#00d0ff,
+#8f5cff
+);
+
+border-radius:20px;
+
+}
+
+/* HUD CLOCK */
+
+.hud-panel{
+
+position:fixed;
+
+top:105px;
+right:30px;
+
+padding:
+12px 18px;
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+z-index:999;
+
+border-radius:18px;
+
+background:
+rgba(255,255,255,0.06);
+
+backdrop-filter:blur(20px);
+
+box-shadow:
+0 0 20px rgba(0,208,255,0.08);
+
+transition:.4s ease;
+
+}
+
+.hud-panel:hover{
+
+transform:
+translateY(-5px)
+scale(1.02) !important;
+
+box-shadow:
+0 0 25px rgba(0,208,255,0.18);
+
+}
+
+.hud-dot{
+
+width:8px;
+height:8px;
+
+border-radius:50%;
+
+background:#00ff88;
+
+box-shadow:
+0 0 12px #00ff88;
+
+animation:pulseDot 2s infinite;
+
+}
+
+@keyframes pulseDot{
+
+0%,100%{
+transform:scale(1);
+opacity:1;
+}
+
+50%{
+transform:scale(1.4);
+opacity:.5;
+}
+
+}
+
+.hud-info h3{
+
+font-size:.62rem;
+
+letter-spacing:1.5px;
+
+margin-bottom:5px;
+
+color:#00d0ff;
+
+}
+
+#live-clock{
+
+font-size:.82rem;
+
+font-family:monospace;
+
+letter-spacing:1px;
+
+}
+
+/* SCROLL REVEAL */
+
+/* SCROLL REVEAL */
+
+.reveal{
+
+opacity:0;
+
+transform:
+translateY(60px)
+scale(.97);
+
+filter:blur(8px);
+
+transition:
+opacity .7s cubic-bezier(.22,1,.36,1),
+transform .7s cubic-bezier(.22,1,.36,1),
+filter .7s ease;
+
+will-change:
+transform,opacity;
+
+}
+
+.reveal.active{
+
+opacity:1;
+
+transform:
+translateY(0)
+scale(1);
+
+filter:blur(0px);
+
+}
+
+/* LEFT REVEAL */
+
+.reveal-left{
+
+opacity:0;
+
+transform:
+translateX(-70px);
+
+transition:
+opacity .7s cubic-bezier(.22,1,.36,1),
+transform .7s cubic-bezier(.22,1,.36,1);
+
+}
+
+.reveal-left.active{
+
+opacity:1;
+
+transform:
+translateX(0);
+
+}
+
+/* RIGHT REVEAL */
+
+.reveal-right{
+
+opacity:0;
+
+transform:
+translateX(70px);
+
+transition:
+opacity .7s cubic-bezier(.22,1,.36,1),
+transform .7s cubic-bezier(.22,1,.36,1);
+
+}
+
+.reveal-right.active{
+
+opacity:1;
+
+transform:
+translateX(0);
+
+}
+
+/* PARALLAX */
+
+.parallax{
+
+transition:
+transform .15s linear;
+
+}
+
+/* ACHIEVEMENTS */
+
+.achievement-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(250px,1fr));
+
+gap:30px;
+
+}
+
+.achievement-card{
+
+padding:60px 40px;
+
+text-align:center;
+
+position:relative;
+
+overflow:hidden;
+
+cursor:pointer;
+
+transition:.5s ease;
+
+transform-style:preserve-3d;
+
+}
+
+/* HOLOGRAPHIC EFFECT */
+
+.achievement-card::before{
+
+content:'';
+
+position:absolute;
+
+inset:-50%;
+
+background:
+linear-gradient(
+135deg,
+transparent,
+rgba(255,255,255,0.08),
+transparent
+);
+
+transform:
+rotate(25deg);
+
+transition:.7s ease;
+
+opacity:0;
+
+}
+
+.achievement-card:hover::before{
+
+opacity:1;
+
+animation:holoMove 2s linear infinite;
+
+}
+
+@keyframes holoMove{
+
+0%{
+transform:
+translateX(-100%)
+rotate(25deg);
+}
+
+100%{
+transform:
+translateX(100%)
+rotate(25deg);
+}
+
+}
+
+/* HOVER */
+
+.achievement-card:hover{
+
+transform:
+rotateX(8deg)
+rotateY(-8deg)
+translateY(-12px)
+scale(1.03);
+
+background:
+rgba(255,255,255,0.12);
+
+backdrop-filter:
+blur(30px);
+
+box-shadow:
+0 0 25px rgba(0,208,255,0.18),
+0 0 50px rgba(111,0,255,0.12);
+
+}
+
+/* TITLES */
+
+.achievement-card h2{
+
+font-size:4rem;
+
+font-family:'Bebas Neue',sans-serif;
+
+letter-spacing:4px;
+
+margin-bottom:15px;
+
+background:
+linear-gradient(
+to right,
+#00d0ff,
+#8f5cff
+);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+
+}
+
+/* TEXT */
+
+.achievement-card p{
+
+letter-spacing:2px;
+
+color:#d0d0d0;
+
+font-size:.9rem;
+
+}
+
+/* ========================= */
+/* POSTER GRID */
+/* ========================= */
+
+.poster-grid{
+
+column-count:3;
+
+column-gap:30px;
+
+margin-top:40px;
+
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1000px){
+
+.poster-grid{
+
+column-count:2;
+
+}
+
+}
+
+@media(max-width:700px){
+
+.poster-grid{
+
+column-count:1;
+
+}
+
+}
+
+/* ========================= */
+/* POSTER CARD */
+/* ========================= */
+
+.poster-card{
+
+position:relative;
+
+overflow:hidden;
+
+border-radius:28px;
+
+cursor:pointer;
+
+transition:.45s ease;
+
+background:
+rgba(255,255,255,0.05);
+
+backdrop-filter:blur(20px);
+
+-webkit-backdrop-filter:blur(20px);
+
+break-inside:avoid;
+
+margin-bottom:30px;
+
+border:
+1px solid rgba(255,255,255,0.06);
+
+}
+
+/* ========================= */
+/* IMAGE + VIDEO */
+/* ========================= */
+
+.poster-card img,
+.poster-card video{
+
+width:100%;
+
+height:auto;
+
+display:block;
+
+object-fit:contain;
+
+transition:
+transform .7s ease,
+filter .7s ease;
+
+}
+
+/* ========================= */
+/* HOVER */
+/* ========================= */
+
+.poster-card:hover{
+
+transform:
+translateY(-10px)
+scale(1.015);
+
+background:
+rgba(255,255,255,0.10);
+
+border-color:
+rgba(0,208,255,0.25);
+
+box-shadow:
+0 0 20px rgba(0,208,255,0.15),
+0 0 45px rgba(111,0,255,0.12),
+0 0 80px rgba(0,208,255,0.08);
+
+}
+
+/* ========================= */
+/* MEDIA ZOOM */
+/* ========================= */
+
+.poster-card:hover img,
+.poster-card:hover video{
+
+transform:scale(1.04);
+
+filter:
+brightness(1.05)
+contrast(1.05);
+
+}
+
+/* ========================= */
+/* OPTIONAL CINEMATIC OVERLAY */
+/* ========================= */
+
+.poster-card::after{
+
+content:'';
+
+position:absolute;
+
+inset:0;
+
+background:
+linear-gradient(
+to top,
+rgba(0,0,0,0.25),
+transparent 40%
+);
+
+opacity:0;
+
+transition:.45s ease;
+
+pointer-events:none;
+
+}
+
+.poster-card:hover::after{
+
+opacity:1;
+
+}
+
+/* ========================= */
+/* EXPERIENCE SKILL POPUP */
+/* ========================= */
+
+.timeline-item{
+
+position:relative;
+
+overflow:visible;
+
+}
+
+/* SKILL TOOLTIP */
+
+.exp-skills{
+
+position:absolute;
+
+left:50%;
+
+bottom:120%;
+
+transform:
+translateX(-50%)
+translateY(20px);
+
+min-width:260px;
+
+padding:20px;
+
+border-radius:22px;
+
+background:
+rgba(8,12,25,0.88);
+
+backdrop-filter:blur(30px);
+
+border:
+1px solid rgba(255,255,255,0.08);
+
+box-shadow:
+0 0 20px rgba(0,208,255,0.15),
+0 0 45px rgba(111,0,255,0.10);
+
+opacity:0;
+
+pointer-events:none;
+
+transition:
+opacity .4s ease,
+transform .4s ease;
+
+z-index:100;
+
+}
+
+/* SHOW ON HOVER */
+
+.timeline-item:hover .exp-skills{
+
+opacity:1;
+
+transform:
+translateX(-50%)
+translateY(0px);
+
+}
+
+/* TITLE */
+
+.exp-skills h3{
+
+font-size:.9rem;
+
+letter-spacing:2px;
+
+margin-bottom:15px;
+
+color:#00d0ff;
+
+font-family:'Bebas Neue',sans-serif;
+
+}
+
+/* TAGS */
+
+.skill-tags{
+
+display:flex;
+
+flex-wrap:wrap;
+
+gap:10px;
+
+}
+
+.skill-tags span{
+
+padding:
+8px 14px;
+
+border-radius:30px;
+
+font-size:.78rem;
+
+letter-spacing:1px;
+
+background:
+rgba(255,255,255,0.06);
+
+border:
+1px solid rgba(255,255,255,0.08);
+
+color:#d8d8d8;
+
+transition:.35s ease;
+
+}
+
+.skill-tags span:hover{
+
+background:
+rgba(0,208,255,0.12);
+
+border-color:#00d0ff;
+
+color:white;
+
+transform:translateY(-2px);
+
+}
+
+/* ========================= */
+/* EDUCATION */
+/* ========================= */
+
+.education-timeline{
+
+position:relative;
+
+display:flex;
+
+flex-direction:column;
+
+gap:50px;
+
+margin-top:80px;
+
+}
+
+/* CENTER LINE */
+
+.education-timeline::before{
+
+content:"";
+
+position:absolute;
+
+left:50%;
+
+top:0;
+
+width:2px;
+
+height:100%;
+
+transform:translateX(-50%);
+
+background:
+linear-gradient(
+to bottom,
+transparent,
+rgba(0,208,255,.6),
+rgba(111,0,255,.6),
+transparent
+);
+
+}
+
+/* CARD */
+
+.education-card{
+
+position:relative;
+
+width:46%;
+
+padding:35px;
+
+border-radius:30px;
+
+overflow:hidden;
+
+transition:.5s ease;
+
+background:
+rgba(255,255,255,0.04);
+
+backdrop-filter:blur(20px);
+
+border:
+1px solid rgba(255,255,255,0.08);
+
+}
+
+/* LEFT */
+
+.education-card:nth-child(odd){
+
+align-self:flex-start;
+
+}
+
+/* RIGHT */
+
+.education-card:nth-child(even){
+
+align-self:flex-end;
+
+}
+
+/* HOVER */
+
+.education-card:hover{
+
+transform:
+translateY(-10px)
+scale(1.02);
+
+box-shadow:
+0 0 30px rgba(0,208,255,.15),
+0 0 60px rgba(111,0,255,.12);
+
+}
+
+/* GLOW */
+
+.edu-glow{
+
+position:absolute;
+
+inset:0;
+
+background:
+radial-gradient(
+circle at top right,
+rgba(0,208,255,.15),
+transparent 60%
+);
+
+pointer-events:none;
+
+}
+
+/* YEAR */
+
+.edu-year{
+
+display:inline-block;
+
+margin-bottom:18px;
+
+padding:
+8px 18px;
+
+border-radius:30px;
+
+font-size:.8rem;
+
+letter-spacing:2px;
+
+background:
+rgba(0,208,255,.1);
+
+border:
+1px solid rgba(0,208,255,.25);
+
+color:#00d0ff;
+
+}
+
+/* TITLES */
+
+.education-card h2{
+
+font-size:1.8rem;
+
+line-height:1.2;
+
+margin-bottom:18px;
+
+}
+
+.education-card h3{
+
+font-size:1rem;
+
+margin-bottom:18px;
+
+color:#00d0ff;
+
+font-weight:500;
+
+letter-spacing:1px;
+
+}
+
+.education-card p{
+
+opacity:.82;
+
+line-height:1.8;
+
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.education-timeline::before{
+
+left:20px;
+
+}
+
+.education-card{
+
+width:100%;
+
+padding:30px;
+
+}
+
+.education-card:nth-child(even),
+.education-card:nth-child(odd){
+
+align-self:flex-end;
+
+}
+
+}
+
+/* ========================= */
+/* RESPONSIVE OPTIMIZATION */
+/* ========================= */
+
+/* TABLET */
+
+@media(max-width:900px){
+
+/* NAVBAR */
+
+nav{
+
+padding:15px 20px;
+
+flex-direction:column;
+
+gap:15px;
+
+}
+
+nav ul{
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+gap:15px;
+
+}
+
+.logo{
+
+font-size:1.6rem;
+
+}
+
+/* CONTACT */
+
+.contact-strip{
+
+flex-direction:column;
+
+padding:30px;
+
+}
+
+.contact-item{
+
+width:100%;
+
+}
+
+.contact-item:not(:last-child)::after{
+
+display:none;
+
+}
+
+/* HUD */
+
+.hud-panel{
+
+top:auto;
+
+bottom:20px;
+
+right:20px;
+
+transform:scale(.9);
+
+}
+
+/* EDUCATION */
+
+.education-timeline::before{
+
+left:20px;
+
+}
+
+.education-card{
+
+width:100%;
+
+padding:30px;
+
+}
+
+.education-card:nth-child(even),
+.education-card:nth-child(odd){
+
+align-self:flex-end;
+
+}
+
+/* EXPERIENCE SKILLS */
+
+.exp-skills{
+
+position:relative;
+
+opacity:1;
+
+pointer-events:auto;
+
+transform:none;
+
+left:auto;
+
+bottom:auto;
+
+margin-top:20px;
+
+width:100%;
+
+}
+
+.timeline-item:hover .exp-skills{
+
+transform:none;
+
+}
+
+}
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+/* HERO */
+
+.left h1{
+
+font-size:3rem;
+
+line-height:1.05;
+
+}
+
+.typing{
+
+font-size:1.05rem;
+
+}
+
+.left p{
+
+font-size:.95rem;
+
+}
+
+/* BUTTONS */
+
+.buttons{
+
+flex-direction:column;
+
+width:100%;
+
+}
+
+.btn{
+
+width:100%;
+
+}
+
+/* RADAR */
+
+.radar{
+
+height:380px;
+
+transform:scale(.78);
+
+}
+
+.radar-node{
+
+width:75px;
+
+height:75px;
+
+}
+
+.radar-node span{
+
+font-size:.7rem;
+
+}
+
+.radar-node small{
+
+font-size:.65rem;
+
+}
+
+/* RADAR NODE SPACING */
+
+.node4{
+
+bottom:20px;
+
+left:24%;
+
+}
+
+.node5{
+
+bottom:20px;
+
+right:24%;
+
+}
+
+/* POPUPS */
+
+.design-popup-content,
+.writing-content-popup{
+
+padding:25px;
+
+}
+
+/* TITLES */
+
+.section-title{
+
+font-size:2.5rem;
+
+}
+
+/* PERFORMANCE */
+
+.glass,
+.design-popup-content,
+.writing-content-popup{
+
+backdrop-filter:blur(12px);
+
+}
+
+/* LOADER */
+
+.loader-title{
+
+font-size:4rem;
+
+}
+
+.loader-content{
+
+width:95%;
+
+}
+
+}
+
+/* EXTRA SMALL DEVICES */
+
+@media(max-width:480px){
+
+nav ul{
+
+gap:10px;
+
+}
+
+nav ul li a{
+
+font-size:.8rem;
+
+letter-spacing:1px;
+
+}
+
+.left h1{
+
+font-size:2.5rem;
+
+}
+
+.section-title{
+
+font-size:2rem;
+
+}
+
+.radar{
+
+transform:scale(.68);
+
+height:320px;
+
+}
+
+.radar-node{
+
+width:65px;
+
+height:65px;
+
+}
+
+.node4{
+
+left:18%;
+
+}
+
+.node5{
+
+right:18%;
+
+}
+
+.design-popup-content,
+.writing-content-popup{
+
+padding:18px;
+
+border-radius:22px;
+
+}
+
+.poster-grid{
+
+grid-template-columns:1fr;
+
+gap:20px;
+
+}
+
+.gallery{
+
+columns:1;
+
+}
+
+}
+
+/* ========================= */
+/* WORKS PREVIEW */
+/* ========================= */
+
+.featured-work-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(260px,1fr));
+
+gap:30px;
+
+margin-top:40px;
+
+}
+
+/* POSTER */
+
+.featured-poster{
+
+overflow:hidden;
+
+border-radius:28px;
+
+cursor:pointer;
+
+transition:.5s ease;
+
+background:
+rgba(255,255,255,0.05);
+
+border:
+1px solid rgba(255,255,255,0.08);
+
+}
+
+.featured-poster img{
+
+width:100%;
+
+height:100%;
+
+display:block;
+
+object-fit:cover;
+
+transition:
+transform .7s ease,
+filter .7s ease;
+
+}
+
+/* HOVER */
+
+.featured-poster:hover{
+
+transform:
+translateY(-10px)
+scale(1.02);
+
+box-shadow:
+0 0 20px rgba(0,208,255,0.18),
+0 0 50px rgba(111,0,255,0.12);
+
+}
+
+.featured-poster:hover img{
+
+transform:scale(1.05);
+
+filter:
+brightness(1.05)
+contrast(1.05);
+
+}
+
+/* NOTE */
+
+.works-note{
+
+margin-top:-50px;
+
+margin-bottom:40px;
+
+font-size:.9rem;
+
+letter-spacing:1px;
+
+font-style:italic;
+
+opacity:.7;
+
+text-align:left;
+
+color:#bcbcbc;
+
+}
+
+/* VIEW MORE PANEL */
+
+.view-more-panel{
+
+margin-top:35px;
+
+width:100%;
+
+height:85px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+border-radius:30px;
+
+cursor:pointer;
+
+position:relative;
+
+overflow:hidden;
+
+transition:.5s ease;
+
+background:
+rgba(255,255,255,0.05);
+
+border:
+1px solid rgba(255,255,255,0.08);
+
+}
+
+/* TEXT */
+
+.view-more-panel span{
+
+font-size:1rem;
+
+letter-spacing:4px;
+
+font-family:'Bebas Neue',sans-serif;
+
+color:white;
+
+z-index:2;
+
+transition:.4s ease;
+
+}
+
+/* GLOW */
+
+.view-more-panel::before{
+
+content:'';
+
+position:absolute;
+
+inset:0;
+
+background:
+linear-gradient(
+90deg,
+rgba(0,208,255,0.12),
+rgba(111,0,255,0.10)
+);
+
+opacity:0;
+
+transition:.5s ease;
+
+}
+
+/* HOVER */
+
+.view-more-panel:hover{
+
+transform:
+translateY(-6px)
+scale(1.01);
+
+border-color:#00d0ff;
+
+box-shadow:
+0 0 20px rgba(0,208,255,0.18),
+0 0 45px rgba(111,0,255,0.10);
+
+}
+
+.view-more-panel:hover::before{
+
+opacity:1;
+
+}
+
+.view-more-panel:hover span{
+
+letter-spacing:6px;
+
+color:#00d0ff;
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ========================= -->
+<!-- CINEMATIC LOADER -->
+<!-- ========================= -->
+
+<div id="loader">
+
+    <div class="loader-noise"></div>
+
+    <div class="loader-content">
+
+        <h1 class="loader-title">
+            SOUNAK.DE
+        </h1>
+
+        <div class="loader-lines">
+
+            <p id="loader-text"></p>
+
+        </div>
+
+        <div class="loader-bar-wrap">
+
+            <div class="loader-bar"></div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="bg"></div>
+<div class="grid"></div>
+<div class="glow" id="glow"></div>
+
+<nav>
+<div class="logo">SOUNAK.DE</div>
+
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#works-preview">Works</a></li>
+<li><a href="#experience">Experience</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#education">Education</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+
+<div class="hud-panel glass">
+
+    <div class="hud-dot"></div>
+
+    <div class="hud-info">
+
+        <h3>KOLKATA // INDIA</h3>
+
+        <div id="live-clock"></div>
+
+    </div>
+
+</div>
+
+<section class="hero" id="home">
+
+<div class="hero-container">
+
+<div class="left">
+
+<h1>
+CREATIVE <span class="gradient">DEVELOPER</span><br>
+& DIGITAL STORYTELLER
+</h1>
+
+<div class="typing" id="typing"></div>
+
+<p>
+Welcome to my creative universe.<br><br>
+
+I’m Sounak De — a designer, programmer, storyteller, photographer, and cinematic creator obsessed with fusion of technology, creativity and atmosphere.</p>
+<div class="buttons">
+<button class="btn primary"
+onclick="document.getElementById('works').scrollIntoView({behavior:'smooth'});">
+
+Explore Work
+
+</button>
+<a href="resume.pdf"
+download="Sounak_De_CV.pdf"
+class="btn secondary">
+
+Download CV
+
+</a>
+</div>
+
+</div>
+
+<div class="right">
+
+    <div class="profile-wrapper">
+
+        <div class="profile glass" id="openPopup">
+
+            <img src="me.png">
+
+        </div>
+
+        <div class="glass-click glass" id="openPopup2">
+
+            <h2>SOUNAK DE</h2>
+
+            <p>
+                Click to Enter Creative Universe
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="about">
+
+<h1 class="section-title reveal">
+ABOUT <span class="gradient">ME</span>
+</h1>
+
+<div class="glass about-card reveal">
+
+<h2 style="
+font-size:2.5rem;
+margin-bottom:25px;
+font-family:'Bebas Neue',sans-serif;
+letter-spacing:2px;
+">
+
+SOUNAK DE
+
+</h2>
+
+<p style="
+line-height:2.15;
+color:#c9c9c9;
+font-size:1.05rem;
+">
+
+Graphic Designer, Programmer, Video Editor, Content Writer, Photographer and Computer Science student focused on creating visually engaging digital experiences through cinematic storytelling, modern design and creative media production.<br><br>
+
+<span class="gradient" style="font-weight:700;">
+CREATIVE APPROACH
+</span><br><br>
+
+My creative approach is centered around combining strong visual aesthetics with purposeful storytelling. I focus on creating designs, videos and visual compositions that are not only visually striking but also emotionally engaging and memorable. Whether working on programming, branding, cinematic edits, photography or digital content, I aim to maintain a balance between creativity, atmosphere and clarity and communicate ideas effectively.<br><br>
+
+<span class="gradient" style="font-weight:700;">
+TOOLS & SOFTWARE
+</span><br><br>
+
+• Adobe Photoshop • Illustrator • CorelDraw • Lightroom • Canva • Clip Studio Paint • Snapseed - <b>Designing and Image Manipulation</b><br>
+• After Effects • Premiere Pro • Animate • CapCut - <b>Video Editing</b> <br>
+• Blender • Maya • 3ds Max - <b>3D projects</b><br>
+• C • C++ • HTML • CSS • Java • Python • Javascript - <b>Technical Applications</b><br>
+
+</p>
+
+</div>
+
+</section>
+
+<section id="achievements">
+
+<h1 class="section-title reveal">
+ACHIEVEMENT <span class="gradient">WALL</span>
+</h1>
+
+<div class="achievement-grid">
+
+    <!-- CARD 1 -->
+
+    <div class="glass achievement-card reveal">
+
+        <h2 class="counter"
+        data-target="150">
+
+        0
+
+        </h2>
+
+        <p>PROJECTS COMPLETED</p>
+
+    </div>
+
+    <!-- CARD 3 -->
+
+    <div class="glass achievement-card reveal">
+
+        <h2 class="counter"
+        data-target="20">
+
+        0
+
+        </h2>
+
+        <p>FREELANCE CLIENTS</p>
+
+    </div>
+
+    <!-- CARD 4 -->
+
+    <div class="glass achievement-card reveal">
+
+        <h2>TOP</h2>
+
+        <p>CONTENT WRITER</p>
+
+    </div>
+
+   <!-- CARD 2 -->
+
+    <div class="glass achievement-card reveal">
+
+        <h2>2ND</h2>
+
+        <p>ICSE SCHOOL RANK</p>
+
+    </div>
+
+</div>
+
+</section>
+
+<section id="works-preview">
+
+<h1 class="section-title reveal">
+SELECTED <span class="gradient">WORKS</span>
+</h1>
+
+<div class="featured-work-grid reveal">
+
+    <div class="featured-poster glass">
+        <img src="cp2.png">
+    </div>
+
+    <div class="featured-poster glass">
+        <img src="cp3.png">
+    </div>
+
+    <div class="featured-poster glass">
+        <img src="cp22.png">
+    </div>
+
+    <div class="featured-poster glass">
+        <img src="cp20.png">
+    </div>
+
+</div>
+
+<div class="view-more-panel glass reveal"
+onclick="document.getElementById('design-showcase').scrollIntoView({behavior:'smooth'})">
+
+    <span>VIEW MORE DESIGN WORKS</span>
+
+</div>
+
+</section>
+
+<section id="design-showcase">
+
+<h1 class="section-title reveal">
+GRAPHIC <span class="gradient">DESIGN SHOWCASE</span>
+</h1>
+<p class="works-note reveal">
+Click on the respective types to view the designs
+
+</p>
+<div class="design-grid">
+
+    <!-- CREATIVE -->
+
+    <div class="glass design-card reveal"
+    onclick="openDesignPopup('creative-popup')">
+
+        <div class="design-overlay"></div>
+
+        <div class="design-hover-text">
+        VIEW POSTERS
+    </div>
+<h2>CREATIVE POSTERS</h2>
+
+        <p>
+            Experimental visuals, horror aesthetics and artistic concepts.
+        </p>
+
+    </div>
+
+<!-- EVENT POSTERS -->
+
+<div class="glass design-card reveal"
+onclick="openDesignPopup('event-popup')">
+
+    <div class="design-overlay"></div>
+
+    <div class="design-hover-text">
+        VIEW POSTERS
+    </div>
+
+    <h2>EVENTS POSTER DESIGNING</h2>
+
+    <p>
+        Esports, college fests, announcements and cinematic event visuals.
+    </p>
+
+</div>
+
+    <!-- LOGOS -->
+
+    <div class="glass design-card reveal"
+    onclick="openDesignPopup('logo-popup')">
+
+        <div class="design-overlay"></div>
+
+        <div class="design-hover-text">
+        VIEW LOGOS
+    </div>
+<h2>LOGO DESIGNS</h2>
+
+        <p>
+            Futuristic logos, esports identities and minimalist branding.
+        </p>
+
+    </div>
+
+  <!-- T-SHIRT DESIGNS -->
+
+<div class="glass design-card"
+onclick="openDesignPopup('tshirt-popup')">
+
+<div class="design-overlay"></div>
+
+<div class="design-hover-text">
+VIEW DESIGNS
+</div>
+
+<h2>T-SHIRT DESIGNS</h2>
+
+<p>
+Streetwear concepts, graphic apparel visuals and experimental fashion artwork.
+</p>
+
+</div>
+
+<!-- 3D DESIGNS -->
+
+<div class="glass design-card"
+onclick="openDesignPopup('3d-popup')">
+
+<div class="design-overlay"></div>
+
+<div class="design-hover-text">
+VIEW DESIGNS
+</div>
+
+<h2>3D DESIGNS</h2>
+
+<p>
+3D compositions, cinematic renders, futuristic environments and abstract visual experiments.
+</p>
+
+</div>
+<!-- BUSINESS CARDS -->
+
+<div class="glass design-card"
+onclick="openDesignPopup('business-popup')">
+
+<div class="design-overlay"></div>
+
+<div class="design-hover-text">
+VIEW DESIGNS
+</div>
+
+<h2>BUSINESS CARDS</h2>
+
+<p>
+Minimal corporate identities, futuristic branding cards and premium professional visual systems.
+</p>
+
+</div>
+
+    <!-- CERTIFICATES -->
+
+    <div class="glass design-card reveal"
+    onclick="openDesignPopup('certificate-popup')">
+
+        <div class="design-overlay"></div>
+
+        <div class="design-hover-text">
+        VIEW CERTIFICATES
+    </div>
+<h2>CERTIFICATES</h2>
+
+        <p>
+            Premium futuristic certificate and achievement design systems.
+        </p>
+
+    </div>
+
+<!-- ANIMATIONS -->
+
+<div class="glass design-card reveal"
+onclick="openDesignPopup('animation-popup')">
+
+    <div class="design-overlay"></div>
+
+    <div class="design-hover-text">
+        VIEW ANIMATIONS
+    </div>
+
+    <h2>ANIMATIONS</h2>
+
+    <p>
+        Cinematic motion graphics, animated edits and experimental visual sequences.
+    </p>
+
+</div>
+
+<!-- BRAND POSTERS -->
+
+    <div class="glass design-card reveal"
+    onclick="openDesignPopup('brand-popup')">
+
+        <div class="design-overlay"></div>
+
+        <div class="design-hover-text">
+        VIEW POSTERS
+    </div>
+<h2>BRAND POSTERS</h2>
+
+        <p>
+            Promotional designs, branding visuals and commercial aesthetics.
+        </p>
+
+    </div>
+
+</div>
+
+
+
+</section>
+
+<section id="writing-showcase">
+
+<h1 class="section-title reveal">
+CREATIVE <span class="gradient">WRITING SHOWCASE</span>
+</h1>
+<p class="works-note reveal">
+Click on the respective types to view the writings
+
+</p>
+<div class="writing-grid">
+
+    <!-- POEMS -->
+
+    <div class="glass design-card reveal"
+    onclick="openWritingPopup('poems-popup')">
+
+        <div class="design-overlay"></div>
+
+        <div class="design-hover-text">
+            VIEW POEMS
+        </div>
+
+        <h2>POEMS</h2>
+
+        <p>
+            Psychological horror, surrealism, emotional poetry and cinematic free verse.
+        </p>
+
+    </div>
+
+    <!-- PROSES -->
+
+    <div class="glass design-card reveal"
+    onclick="openWritingPopup('proses-popup')">
+
+        <div class="design-overlay"></div>
+
+        <div class="design-hover-text">
+            VIEW PROSES
+        </div>
+
+        <h2>PROSES</h2>
+
+        <p>
+            Long-form storytelling, horror proses, cinematic narratives and experimental writing.
+        </p>
+
+    </div>
+
+</div>
+
+</section>
+
+<section>
+
+<h1 class="section-title reveal">
+PHOTOGRAPHY <span class="gradient">SHOWCASE</span>
+</h1>
+
+<div class="gallery reveal">
+
+    <div class="gallery-item glass">
+        <img src="1.png">
+    </div>
+
+    <div class="gallery-item glass">
+        <img src="2.png">
+    </div>
+
+    <div class="gallery-item glass">
+        <img src="3.png">
+    </div>
+
+    <div class="gallery-item glass">
+        <img src="4.png">
+    </div>
+
+    <div class="gallery-item glass">
+        <img src="5.jpg">
+    </div>
+
+    <div class="gallery-item glass">
+        <img src="6.jpg">
+    </div>
+
+    <div class="gallery-item glass">
+        <img src="7.jpg">
+    </div>
+
+    <div class="gallery-item glass">
+        <img src="8.png">
+    </div>
+
+    <div class="gallery-item glass">
+        <img src="9.png">
+    </div>
+
+    <div class="gallery-item glass">
+        <img src="10.png">
+    </div>
+
+    <div class="gallery-item glass">
+        <img src="11.jpg">
+    </div>
+
+    <div class="gallery-item glass">
+        <img src="12.png">
+    </div>
+
+    <div class="gallery-item glass">
+        <img src="13.png">
+    </div>
+
+    <div class="gallery-item glass">
+        <img src="14.png">
+    </div>
+
+    <div class="gallery-item glass">
+        <img src="15.png">
+    </div>
+
+    <div class="gallery-item glass">
+        <img src="16.png">
+    </div>
+
+    <div class="gallery-item glass">
+        <img src="17.jpg">
+    </div>
+
+    <div class="gallery-item glass">
+        <img src="18.png">
+    </div>
+
+    <div class="gallery-item glass">
+        <img src="19.png">
+    </div>
+
+    <div class="gallery-item glass">
+        <img src="20.jpg">
+    </div>
+
+    <div class="gallery-item glass">
+        <img src="21.png">
+    </div>
+
+    <div class="gallery-item glass">
+        <img src="22.jpg">
+    </div>
+
+    <div class="gallery-item glass">
+        <img src="23.png">
+    </div>
+
+    <div class="gallery-item glass">
+        <img src="24.jpg">
+    </div>
+
+    <div class="gallery-item glass">
+        <img src="25.jpg">
+    </div>
+
+    <div class="gallery-item glass">
+        <img src="26.png">
+    </div>
+
+    <div class="gallery-item glass">
+        <img src="27.jpg">
+    </div>
+
+    <div class="gallery-item glass">
+        <img src="28.png">
+    </div>
+
+    <div class="gallery-item glass">
+        <img src="29.png">
+    </div>
+
+    <div class="gallery-item glass">
+        <img src="30.png">
+    </div>
+
+    <div class="gallery-item glass">
+        <img src="31.png">
+    </div>
+
+    <div class="gallery-item glass">
+        <img src="32.png">
+    </div>
+
+    <div class="gallery-item glass">
+        <img src="34.png">
+    </div>
+
+    <div class="gallery-item glass">
+        <img src="35.png">
+    </div>
+
+    <div class="gallery-item glass">
+        <img src="36.png">
+    </div>
+
+    <div class="gallery-item glass">
+        <img src="37.jpg">
+    </div>
+
+    <div class="gallery-item glass">
+        <img src="38.png">
+    </div>
+
+    <div class="gallery-item glass">
+        <img src="39.jpg">
+    </div>
+
+</div>
+
+</section>
+
+<section id="works">
+
+<h1 class="section-title reveal">MY <span class="gradient">DOMAINS</span></h1>
+
+<div class="domains">
+
+<div class="glass domain reveal">
+<h2>Graphic Design</h2>
+<p>Posters, branding, AI designs, magazines, logos and event visuals.</p>
+</div>
+
+<div class="glass domain reveal">
+<h2>Programming</h2>
+<p>DBMS problems, UI/UX and AI</p>
+</div>
+
+<div class="glass domain reveal">
+<h2>Photography</h2>
+<p>Sports, wildlife, landscapes, street and cinematic event photography.</p>
+</div>
+
+<div class="glass domain reveal">
+<h2>Content Writing</h2>
+<p>Brochures, speeches, manga writing, scripts, captions and storytelling.</p>
+</div>
+
+<div class="glass domain reveal">
+<h2>Freelancing</h2>
+<p>International manga projects, editing work and creative collaborations.</p>
+</div>
+
+<div class="glass domain reveal">
+<h2>AI Art</h2>
+<p>Futuristic AI-generated visuals and cyber aesthetic concepts.</p>
+</div>
+
+<div class="glass domain reveal">
+<h2>Video Editing</h2>
+<p>Cinematic edits, motion graphics, transitions and visual storytelling.</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="experience">
+
+<h1 class="section-title reveal">WORK <span class="gradient">EXPERIENCE</span></h1>
+
+<div class="timeline">
+
+<!-- SABAR SOCIAL MEDIA MANAGER -->
+
+<div class="glass timeline-item"
+data-duration="Jun 2025 — Present">
+
+<h2>Sabar Institute</h2>
+
+<p>
+Social Media Manager
+</p>
+
+<div class="exp-skills">
+
+<h3>SKILLS USED</h3>
+
+<div class="skill-tags">
+
+<span>SEO</span>
+<span>Social Media Marketing</span>
+<span>SMO</span>
+<span>Social Media Advertising</span>
+<span>Graphic Design</span>
+<span>Logo Design</span>
+<span>Content Writing</span>
+<span>Creative Writing</span>
+<span>Digital Marketing</span>
+<span>Content Strategy</span>
+<span>Team Management</span>
+<span>Campaign Management</span>
+<span>Adobe Photoshop</span>
+<span>Adobe Illustrator</span>
+<span>Strategic Communication</span>
+<span>Client Relations</span>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- SABAR CONTENT INTERN -->
+
+<div class="glass timeline-item"
+data-duration="May 2025 — Aug 2025">
+
+<h2>Sabar Institute</h2>
+
+<p>
+Content Creation Intern
+</p>
+
+<div class="exp-skills">
+
+<h3>SKILLS USED</h3>
+
+<div class="skill-tags">
+
+<span>Content Development</span>
+<span>Web Content Writing</span>
+<span>Graphic Design</span>
+<span>Information Graphics</span>
+<span>Photography</span>
+<span>Canva</span>
+<span>Adobe Photoshop</span>
+<span>Project Management</span>
+<span>Communication</span>
+<span>Strategic Planning</span>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- TRANSCURATORS -->
+
+<div class="glass timeline-item"
+data-duration="May 2025 — May 2026">
+
+<h2>TransCurators, The Content Factory</h2>
+
+<p>
+Freelance Writer
+</p>
+
+<div class="exp-skills">
+
+<h3>SKILLS USED</h3>
+
+<div class="skill-tags">
+
+<span>SEO</span>
+<span>SEM</span>
+<span>Search Analysis</span>
+<span>Web Content Writing</span>
+<span>Blog Marketing</span>
+<span>Corporate Blogging</span>
+<span>Online Content Creation</span>
+<span>Data Analysis</span>
+<span>Project Management</span>
+<span>Strategic Planning</span>
+<span>Teamwork</span>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- XESS CONTENT -->
+
+<div class="glass timeline-item"
+data-duration="2024 — May 2026">
+
+<h2>Xavier’s E-Sports Society</h2>
+
+<p>
+Member, Content Writing Dept.
+</p>
+
+<div class="exp-skills">
+
+<h3>SKILLS USED</h3>
+
+<div class="skill-tags">
+
+<span>Blogging</span>
+<span>Creative Writing</span>
+<span>SEO</span>
+<span>Writing</span>
+<span>Typing</span>
+<span>Critical Thinking</span>
+<span>Attention to Detail</span>
+<span>Content Writing</span>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- XESS GRAPHIC DESIGN -->
+
+<div class="glass timeline-item"
+data-duration="2024 — May 2026">
+
+<h2>Xavier’s E-Sports Society</h2>
+
+<p>
+Graphic Designer
+</p>
+
+<div class="exp-skills">
+
+<h3>SKILLS USED</h3>
+
+<div class="skill-tags">
+
+<span>Graphic Design</span>
+<span>Design</span>
+<span>Critical Thinking</span>
+<span>Time Management</span>
+<span>Attention to Detail</span>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- SWELL -->
+
+<div class="glass timeline-item"
+data-duration="May 2025 — Sep 2025">
+
+<h2>Swell</h2>
+
+<p>
+Campus Ambassador
+</p>
+
+<div class="exp-skills">
+
+<h3>SKILLS USED</h3>
+
+<div class="skill-tags">
+
+<span>Event Planning</span>
+<span>Public Relations</span>
+<span>Networking</span>
+<span>Community Outreach</span>
+<span>Marketing</span>
+<span>Promotion</span>
+<span>Strategic Planning</span>
+<span>Collaboration</span>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- FAS -->
+
+<div class="glass timeline-item"
+data-duration="2024 — Aug 2025">
+
+<h2>Fine Arts Society, St. Xavier’s College</h2>
+
+<p>
+WCM Content Writing Dept.
+</p>
+
+<div class="exp-skills">
+
+<h3>SKILLS USED</h3>
+
+<div class="skill-tags">
+
+<span>Blogging</span>
+<span>Creative Writing</span>
+<span>SEO</span>
+<span>Writing</span>
+<span>Typing</span>
+<span>Critical Thinking</span>
+<span>Attention to Detail</span>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- PHOTOGRAPHY -->
+
+<div class="glass timeline-item"
+data-duration="2024 — Aug 2025">
+
+<h2>St. Xavier’s College Societies</h2>
+
+<p>
+Photographer
+</p>
+
+<div class="exp-skills">
+
+<h3>SKILLS USED</h3>
+
+<div class="skill-tags">
+
+<span>Digital Photography</span>
+<span>Event Photography</span>
+<span>Photography</span>
+<span>Critical Thinking</span>
+<span>Time Management</span>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- FREELANCE WRITER -->
+
+<div class="glass timeline-item"
+data-duration="Jan 2025 — Apr 2025">
+
+<h2>Freelance</h2>
+
+<p>
+Freelance Writer
+</p>
+
+<div class="exp-skills">
+
+<h3>SKILLS USED</h3>
+
+<div class="skill-tags">
+
+<span>Creative Writing</span>
+<span>Story Writing</span>
+<span>SEO</span>
+<span>Communication</span>
+<span>Critical Thinking</span>
+<span>Typing</span>
+<span>Attention to Detail</span>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- EXABYTE -->
+
+<div class="glass timeline-item"
+data-duration="2025 — Present">
+
+<h2>eXabyte</h2>
+
+<p>
+Graphic Designer
+</p>
+
+<div class="exp-skills">
+
+<h3>SKILLS USED</h3>
+
+<div class="skill-tags">
+
+<span>Graphic Design</span>
+<span>Design</span>
+<span>Critical Thinking</span>
+<span>Time Management</span>
+<span>Attention to Detail</span>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- XCRYPTUS -->
+
+<div class="glass timeline-item"
+data-duration="2025 — Present">
+
+<h2>X-Cryptus Magazine</h2>
+
+<p>
+Graphic Designer
+</p>
+
+<div class="exp-skills">
+
+<h3>SKILLS USED</h3>
+
+<div class="skill-tags">
+
+<span>Graphic Design</span>
+<span>Visual Content Creation</span>
+<span>Design</span>
+<span>Critical Thinking</span>
+<span>Attention to Detail</span>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- ROYAL INSPECTION -->
+
+<div class="glass timeline-item"
+data-duration="2023 — 2024">
+
+<h2>Royal Inspection & Engineering Services</h2>
+
+<p>
+Video Editor
+</p>
+
+<div class="exp-skills">
+
+<h3>SKILLS USED</h3>
+
+<div class="skill-tags">
+
+<span>Video Editing</span>
+<span>Communication</span>
+<span>Storytelling</span>
+<span>Critical Thinking</span>
+<span>Attention to Detail</span>
+<span>Time Management</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="skills">
+
+<h1 class="section-title reveal">SKILL <span class="gradient">SYSTEM</span></h1>
+
+<div class="skills-wrap">
+
+<div class="radar glass reveal-left">
+
+    <div class="radar-circle r1"></div>
+    <div class="radar-circle r2"></div>
+    <div class="radar-circle r3"></div>
+    <div class="radar-circle r4"></div>
+
+    <div class="radar-center">
+        CREATIVE<br>SYSTEM
+    </div>
+
+    <div class="radar-node node1">
+        <span>DESIGN</span>
+        <small>95%</small>
+    </div>
+
+    <div class="radar-node node2">
+        <span>WRITING</span>
+        <small>92%</small>
+    </div>
+
+    <div class="radar-node node3">
+        <span>PHOTOGRAPHY</span>
+        <small>88%</small>
+    </div>
+
+    <div class="radar-node node4">
+        <span>EDITING</span>
+        <small>85%</small>
+    </div>
+
+    <div class="radar-node node5">
+        <span>PROGRAMMING</span>
+        <small>75%</small>
+    </div>
+
+</div>
+
+<div class="skill-bars reveal-right">
+
+<div class="bar">
+<label>Creativity</label>
+<div class="progress"><div class="fill" style="width:95%"></div></div>
+</div>
+
+<div class="bar">
+<label>Critical Thinking</label>
+<div class="progress"><div class="fill" style="width:90%"></div></div>
+</div>
+
+<div class="bar">
+<label>Content Writing</label>
+<div class="progress"><div class="fill" style="width:80%"></div></div>
+</div>
+
+<div class="bar">
+<label>Photography</label>
+<div class="progress"><div class="fill" style="width:75%"></div></div>
+</div>
+
+<div class="bar">
+<label>Video Editing</label>
+<div class="progress"><div class="fill" style="width:85%"></div></div>
+</div>
+
+<div class="bar">
+<label>Time Management</label>
+<div class="progress"><div class="fill" style="width:90%"></div></div>
+</div>
+
+<div class="bar">
+<label>Attention to Details</label>
+<div class="progress"><div class="fill" style="width:90%"></div></div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="education">
+
+<h1 class="section-title reveal">
+ACADEMIC <span class="gradient">ARCHIVE</span>
+</h1>
+
+<div class="education-timeline">
+
+    <!-- CARD 1 -->
+
+    <div class="education-card glass reveal-left">
+
+        <div class="edu-glow"></div>
+
+        <span class="edu-year">
+            2024 — 2028
+        </span>
+
+        <h2>
+            St. Xavier’s College (Autonomous), Kolkata
+        </h2>
+
+        <h3>
+            BSc. Computer Science Honours
+        </h3>
+
+        <p>
+            Pursuing advanced studies in computer science,
+            programming systems, computational logic,
+            software engineering and digital technologies.
+        </p>
+
+    </div>
+
+    <!-- CARD 2 -->
+
+    <div class="education-card glass reveal-right">
+
+        <div class="edu-glow"></div>
+
+        <span class="edu-year">
+            2024 — 2025
+        </span>
+
+        <h2>
+            St. Xavier’s College (Autonomous), Kolkata
+        </h2>
+
+        <h3>
+            Diploma in Multimedia & Animation
+        </h3>
+
+        <p>
+            Focused on visual storytelling, animation,
+            motion design, digital media systems,
+            cinematic editing and creative production.
+        </p>
+
+    </div>
+
+    <!-- CARD 3 -->
+
+    <div class="education-card glass reveal-left">
+
+        <div class="edu-glow"></div>
+
+        <span class="edu-year">
+            ISC 2023
+        </span>
+
+        <h2>
+            M.C. Kejriwal Vidyapeeth, Liluah
+        </h2>
+
+        <h3>
+            Physics • Chemistry • Mathematics • Biology
+        </h3>
+
+        <p>
+            Secured 90% in ISC examinations with
+            specialization in science.
+        </p>
+
+    </div>
+
+    <!-- CARD 4 -->
+
+    <div class="education-card glass reveal-right">
+
+        <div class="edu-glow"></div>
+
+        <span class="edu-year">
+            ICSE 2021
+        </span>
+
+        <h2>
+            M.C. Kejriwal Vidyapeeth, Liluah
+        </h2>
+
+        <h3>
+            Secondary Education
+        </h3>
+
+        <p>
+            Achieved 99% in ICSE examinations with
+            strong academic distinction and consistency.
+        </p>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<section>
+
+<h1 class="section-title reveal">
+LIVE <span class="gradient">TERMINAL</span>
+</h1>
+
+<div class="terminal glass reveal">
+
+<div id="live-terminal"></div>
+
+</div>
+
+</section>
+
+<section id="contact">
+
+<h1 class="section-title contact-title">
+CONTACT <span class="gradient">ME</span>
+</h1>
+
+<section class="contact-strip-section">
+
+<div class="contact-strip glass">
+
+    <div class="contact-item">
+
+        <h3>PHONE</h3>
+
+        <p>+91 83350 98087</p>
+
+    </div>
+
+    <div class="contact-item">
+
+        <h3>INSTAGRAM</h3>
+
+        <p>@the_insomniac_weirdo</p>
+
+    </div>
+
+    <!-- LINKEDIN -->
+
+<div class="contact-item">
+
+<h3>LINKEDIN</h3>
+
+<p>
+<a href="https://www.linkedin.com/in/sounak-de-22-04-2005-?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+target="_blank"
+style="
+color:#d0d0d0;
+text-decoration:none;
+transition:.4s;
+">
+
+linkedin.com/in/sounak-de
+
+</a>
+</p>
+
+</div>
+
+    <div class="contact-item">
+
+        <h3>EMAIL</h3>
+
+        <p>sounakde69@gmail.com</p>
+
+    </div>
+
+</div>
+
+</section>
+
+<footer>
+© 2026 Sounak De | Creative Portfolio
+<br>
+<br>
+<b>Thank you for taking the time to explore my portfolio.</b> <br>As a passionate and dedicated student, I’ve channeled my creativity and drive into the fields of programming, graphic designing, content writing, and photography—each project a step toward mastering my craft. I believe in continuous growth, learning through experience, and adapting to the ever-evolving creative landscape. With a strong work ethic, attention to detail, and a commitment to excellence, I am eager to contribute meaningfully to any team or project I become a part of. This portfolio is not just a reflection of what I’ve done, but a glimpse into what I am capable of—and I’m just getting started.
+
+</footer>
+
+<div class="popup" id="popup">
+
+<div class="glass popup-box">
+
+<div class="close" id="closePopup">×</div>
+
+<img src="me.jpg">
+
+<div>
+
+<h1 style="font-size:4rem;font-family:'Bebas Neue';margin-bottom:20px;">
+HELLO THERE.
+</h1>
+
+<p style="line-height:2;color:#c9c9c9;">
+A passionate and versatile creative, I’m Sounak De—a B.Sc. Computer Science student at St. Xavier’s College (Autonomous), Kolkata, with a strong flair for programming, content writing, graphic designing, and photography. Having collaborated with multiple companies, freelance projects and college societies, I’ve built a solid portfolio of impactful event content, eye-catching visuals, and engaging narratives. Whether it’s designing, capturing the essence of a moment through the lens, or crafting compelling content that connects, I bring creativity, precision, and dedication to the table. Adaptable, deadline-driven, and always eager to learn—I’m ready to add value to any team looking for fresh ideas and reliable execution.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ========================= -->
+<!-- EVENT POSTERS POPUP -->
+<!-- ========================= -->
+
+<div class="design-popup" id="event-popup">
+
+<div class="design-popup-content glass">
+
+<div class="design-close"
+onclick="closeDesignPopup('event-popup')">
+
+<span>×</span>
+
+</div>
+
+<h1 class="section-title reveal">
+EVENT <span class="gradient">POSTERS</span>
+</h1>
+
+<div class="poster-grid">
+
+    <!-- EP1 -->
+
+    <div class="poster-card glass">
+
+        <img src="ep1.png">
+
+    </div>
+
+    <!-- EP2 VIDEO -->
+
+    <div class="poster-card glass">
+
+        <video autoplay muted loop playsinline preload="auto">
+
+            <source src="ep2.mp4" type="video/mp4">
+
+        </video>
+
+    </div>
+
+    <!-- EP3 -->
+
+    <div class="poster-card glass">
+
+        <img src="ep3.png">
+
+    </div>
+
+    <!-- EP4 -->
+
+    <div class="poster-card glass">
+
+        <img src="ep4.png">
+
+    </div>
+
+    <!-- EP5 VIDEO -->
+
+    <div class="poster-card glass">
+
+        <video autoplay muted loop playsinline preload="auto">
+
+            <source src="ep5.mp4" type="video/mp4">
+
+        </video>
+
+    </div>
+
+    <!-- EP6 VIDEO -->
+
+    <div class="poster-card glass">
+
+        <video autoplay muted loop playsinline preload="auto">
+
+            <source src="ep6.mp4" type="video/mp4">
+
+        </video>
+
+    </div>
+
+    <!-- EP7 -->
+
+    <div class="poster-card glass">
+
+        <img src="ep7.png">
+
+    </div>
+
+<div class="poster-card glass">
+
+        <img src="ep8.png">
+
+    </div>
+<div class="poster-card glass">
+
+        <img src="ep9.png">
+
+    </div>
+<div class="poster-card glass">
+
+        <img src="ep10.png">
+
+    </div>
+<div class="poster-card glass">
+
+        <img src="ep11.png">
+
+    </div>
+<div class="poster-card glass">
+
+        <img src="ep12.png">
+
+    </div>
+<div class="poster-card glass">
+
+        <img src="ep13.png">
+
+    </div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ========================= -->
+<!-- BRAND POSTERS POPUP -->
+<!-- ========================= -->
+
+<div class="design-popup" id="brand-popup">
+
+<div class="design-popup-content glass">
+
+<div class="design-close"
+onclick="closeDesignPopup('brand-popup')">
+
+<span>×</span>
+
+</div>
+
+<h1 class="section-title reveal">
+BRAND <span class="gradient">POSTERS</span>
+</h1>
+
+<div class="poster-grid">
+
+    <!-- BP1 -->
+
+    <div class="poster-card glass">
+
+        <img src="bp1.png">
+
+    </div>
+
+    <!-- BP2 -->
+
+    <div class="poster-card glass">
+
+        <img src="bp2.png">
+
+    </div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ========================= -->
+<!-- LOGO DESIGNS POPUP -->
+<!-- ========================= -->
+
+<div class="design-popup" id="logo-popup">
+
+<div class="design-popup-content glass">
+
+<div class="design-close"
+onclick="closeDesignPopup('logo-popup')">
+
+<span>×</span>
+
+</div>
+
+<h1 class="section-title reveal">
+LOGO <span class="gradient">DESIGNS</span>
+</h1>
+
+<div class="poster-grid">
+
+    <div class="poster-card glass">
+        <img src="l1.png">
+    </div>
+
+    <div class="poster-card glass">
+        <img src="l2.png">
+    </div>
+
+    <div class="poster-card glass">
+        <img src="l3.png">
+    </div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ========================= -->
+<!-- CERTIFICATES POPUP -->
+<!-- ========================= -->
+
+<div class="design-popup" id="certificate-popup">
+
+<div class="design-popup-content glass">
+
+<div class="design-close"
+onclick="closeDesignPopup('certificate-popup')">
+
+<span>×</span>
+
+</div>
+
+<h1 class="section-title reveal">
+CERTI<span class="gradient">FICATES</span>
+</h1>
+
+<div class="poster-grid">
+
+    <div class="poster-card glass">
+        <img src="c1.png">
+    </div>
+
+    <div class="poster-card glass">
+        <img src="c2.png">
+    </div>
+
+    <div class="poster-card glass">
+        <img src="c3.png">
+    </div>
+
+    <div class="poster-card glass">
+        <img src="c4.png">
+    </div>
+
+    <div class="poster-card glass">
+        <img src="c5.png">
+    </div>
+    <div class="poster-card glass">
+        <img src="c6.png">
+    </div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ========================= -->
+<!-- T-SHIRT DESIGNS POPUP -->
+<!-- ========================= -->
+
+<div class="design-popup" id="tshirt-popup">
+
+<div class="design-popup-content glass">
+
+<div class="design-close"
+onclick="closeDesignPopup('tshirt-popup')">
+
+<span>×</span>
+
+</div>
+
+<h1 class="section-title reveal">
+T-SHIRT <span class="gradient">DESIGNS</span>
+</h1>
+
+<div class="poster-grid">
+
+    <div class="poster-card glass">
+        <img src="ts1.png">
+    </div>
+
+    <div class="poster-card glass">
+        <img src="ts2.png">
+    </div>
+
+    <div class="poster-card glass">
+        <img src="ts3.png">
+    </div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ========================= -->
+<!-- BUSINESS CARD POPUP -->
+<!-- ========================= -->
+
+<div class="design-popup" id="business-popup">
+
+<div class="design-popup-content glass">
+
+<div class="design-close"
+onclick="closeDesignPopup('business-popup')">
+
+<span>×</span>
+
+</div>
+
+<h1 class="section-title reveal">
+BUSINESS <span class="gradient">CARDS</span>
+</h1>
+
+<div class="poster-grid">
+
+    <div class="poster-card glass">
+        <img src="bc1.png">
+    </div>
+
+    <div class="poster-card glass">
+        <img src="bc2.png">
+    </div>
+
+    
+</div>
+
+</div>
+
+</div>
+
+<!-- ========================= -->
+<!-- CREATIVE POSTERS POPUP -->
+<!-- ========================= -->
+
+<div class="design-popup" id="creative-popup">
+
+<div class="design-popup-content glass">
+
+<div class="design-close"
+onclick="closeDesignPopup('creative-popup')">
+
+<span>×</span>
+
+</div>
+
+<h1 class="section-title reveal">
+CREATIVE <span class="gradient">POSTERS</span>
+</h1>
+
+<div class="poster-grid">
+
+    <div class="poster-card glass">
+        <img src="cp1.png">
+    </div>
+    <div class="poster-card glass">
+        <img src="cp20.png">
+    </div>
+
+    <div class="poster-card glass">
+        <img src="cp2.png">
+    </div>
+
+    <div class="poster-card glass">
+        <img src="cp3.png">
+    </div>
+
+    <div class="poster-card glass">
+        <img src="cp4.png">
+    </div>
+
+    <div class="poster-card glass">
+        <img src="cp5.png">
+    </div>
+
+    <div class="poster-card glass">
+        <img src="cp6.png">
+    </div>
+
+    <div class="poster-card glass">
+        <img src="cp7.png">
+    </div>
+<div class="poster-card glass">
+        <img src="cp22.png">
+    </div> 
+<div class="poster-card glass">
+        <img src="cp23.png">
+    </div> 
+    <div class="poster-card glass">
+        <img src="cp8.png">
+    </div>
+
+    <div class="poster-card glass">
+        <img src="cp9.png">
+    </div>
+
+    <div class="poster-card glass">
+        <img src="cp10.png">
+    </div>
+
+    <div class="poster-card glass">
+        <img src="cp11.png">
+    </div>
+
+    <div class="poster-card glass">
+        <img src="cp13.png">
+    </div>
+
+    <div class="poster-card glass">
+        <img src="cp14.png">
+    </div>
+
+    <div class="poster-card glass">
+        <img src="cp15.png">
+    </div>
+
+    <div class="poster-card glass">
+        <img src="cp16.png">
+    </div>
+
+    <div class="poster-card glass">
+        <img src="cp17.jpg">
+    </div>
+
+    <div class="poster-card glass">
+        <img src="cp18.png">
+    </div>  
+
+    <div class="poster-card glass">
+        <img src="cp12.png">
+    </div>
+    <div class="poster-card glass">
+        <img src="cp19.png">
+    </div>  
+    <div class="poster-card glass">
+        <img src="cp21.png">
+    </div>  
+<div class="poster-card glass">
+        <img src="mp1.png">
+    </div>  
+<div class="poster-card glass">
+        <img src="mp2.jpg">
+    </div>   
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ========================= -->
+<!-- 3D DESIGNS POPUP -->
+<!-- ========================= -->
+
+<div class="design-popup" id="3d-popup">
+
+<div class="design-popup-content glass">
+
+<div class="design-close"
+onclick="closeDesignPopup('3d-popup')">
+
+<span>×</span>
+
+</div>
+
+<h1 class="section-title reveal">
+3D <span class="gradient">DESIGNS</span>
+</h1>
+
+<div class="poster-grid">
+
+    <div class="poster-card glass">
+        <img src="3d1.jpg">
+    </div>
+
+    <div class="poster-card glass">
+        <img src="3d2.jpg">
+    </div>
+
+    <div class="poster-card glass">
+        <img src="3d3.jpg">
+    </div>
+<div class="poster-card glass">
+        <img src="3d4.png">
+    </div>
+
+    <div class="poster-card glass">
+        <img src="3d5.png">
+    </div>
+
+    <div class="poster-card glass">
+        <img src="3d6.png">
+    </div>
+
+
+</div>
+
+</div>
+
+</div>
+<!-- ========================= -->
+<!-- POEMS POPUP -->
+<!-- ========================= -->
+
+<div class="design-popup" id="poems-popup">
+
+<div class="design-popup-content glass">
+
+<div class="design-close"
+onclick="closeWritingPopup('poems-popup')">
+
+<span>×</span>
+
+</div>
+
+<h1 class="section-title reveal">
+POEMS
+</h1>
+
+<div class="writing-topic-list">
+
+    <!-- TOPIC 1 -->
+
+    <div class="glass writing-topic"
+    onclick="openWritingContent('poem1')">
+
+        <span class="writing-number">01</span>
+
+        <h2>The New Normal</h2>
+
+    </div>
+
+    <!-- TOPIC 2 -->
+
+    <div class="glass writing-topic"
+    onclick="openWritingContent('poem2')">
+
+        <span class="writing-number">02</span>
+
+        <h2>If I Were Stone</h2>
+
+    </div>
+
+    <!-- TOPIC 3 -->
+
+    <div class="glass writing-topic"
+    onclick="openWritingContent('poem3')">
+
+        <span class="writing-number">03</span>
+
+        <h2>911</h2>
+
+    </div>
+
+    <!-- TOPIC 4 -->
+
+    <div class="glass writing-topic"
+    onclick="openWritingContent('poem4')">
+
+        <span class="writing-number">04</span>
+
+        <h2>The Discipline of Losing</h2>
+
+    </div>
+
+    <!-- TOPIC 5 -->
+
+    <div class="glass writing-topic"
+    onclick="openWritingContent('poem5')">
+
+        <span class="writing-number">05</span>
+
+        <h2>The Inner Monologue</h2>
+
+    </div>
+
+    <!-- TOPIC 6 -->
+
+    <div class="glass writing-topic"
+    onclick="openWritingContent('poem6')">
+
+        <span class="writing-number">06</span>
+
+        <h2>The Altar</h2>
+
+    </div>
+
+    <!-- TOPIC 7 -->
+
+    <div class="glass writing-topic"
+    onclick="openWritingContent('poem7')">
+
+        <span class="writing-number">07</span>
+
+        <h2>The Paradox</h2>
+
+    </div>
+
+    <!-- TOPIC 8 -->
+
+    <div class="glass writing-topic"
+    onclick="openWritingContent('poem8')">
+
+        <span class="writing-number">08</span>
+
+        <h2>Nostalgia</h2>
+
+    </div>
+
+    <!-- TOPIC 9 -->
+
+    <div class="glass writing-topic"
+    onclick="openWritingContent('poem9')">
+
+        <span class="writing-number">09</span>
+
+        <h2>Sinner's Scrap</h2>
+
+    </div>
+
+    <!-- TOPIC 10 -->
+
+    <div class="glass writing-topic"
+    onclick="openWritingContent('poem10')">
+
+        <span class="writing-number">10</span>
+
+        <h2>The Fool</h2>
+
+    </div>
+
+    <!-- TOPIC 11 -->
+
+    <div class="glass writing-topic"
+    onclick="openWritingContent('poem11')">
+
+        <span class="writing-number">11</span>
+
+        <h2>অরেখা</h2>
+
+    </div>
+
+    <!-- TOPIC 12 -->
+
+    <div class="glass writing-topic"
+    onclick="openWritingContent('poem12')">
+
+        <span class="writing-number">12</span>
+
+        <h2>রক্তজবা</h2>
+
+    </div>
+
+    <!-- TOPIC 13 -->
+
+    <div class="glass writing-topic"
+    onclick="openWritingContent('poem13')">
+
+        <span class="writing-number">13</span>
+
+        <h2>When the Ink Refuses Me</h2>
+
+    </div>
+
+    <!-- TOPIC 14 -->
+
+    <div class="glass writing-topic"
+    onclick="openWritingContent('poem14')">
+
+        <span class="writing-number">14</span>
+
+        <h2>Dissection of a Night</h2>
+
+    </div>
+
+    <!-- TOPIC 15 -->
+
+    <div class="glass writing-topic"
+    onclick="openWritingContent('poem15')">
+
+        <span class="writing-number">15</span>
+
+        <h2>Cancer</h2>
+
+    </div>
+
+    <!-- TOPIC 16 -->
+
+    <div class="glass writing-topic"
+    onclick="openWritingContent('poem16')">
+
+        <span class="writing-number">16</span>
+
+        <h2>Daydreams and Nightmares</h2>
+
+    </div>
+
+    <!-- TOPIC 17 -->
+
+    <div class="glass writing-topic"
+    onclick="openWritingContent('poem17')">
+
+        <span class="writing-number">17</span>
+
+        <h2>Ashes</h2>
+
+    </div>
+
+    <!-- TOPIC 18 -->
+
+    <div class="glass writing-topic"
+    onclick="openWritingContent('poem18')">
+
+        <span class="writing-number">18</span>
+
+        <h2>Some Fires Do Not Burn Out</h2>
+
+    </div>
+
+    <!-- TOPIC 19 -->
+
+    <div class="glass writing-topic"
+    onclick="openWritingContent('poem19')">
+
+        <span class="writing-number">19</span>
+
+        <h2>When she walked in</h2>
+
+    </div>
+
+    <!-- TOPIC 20 -->
+
+    <div class="glass writing-topic"
+    onclick="openWritingContent('poem20')">
+
+        <span class="writing-number">20</span>
+
+        <h2>Every Glance Is a Razor</h2>
+
+    </div>
+
+    <!-- TOPIC 21 -->
+
+    <div class="glass writing-topic"
+    onclick="openWritingContent('poem21')">
+
+        <span class="writing-number">21</span>
+
+        <h2>The Gentle Jolt</h2>
+
+    </div>
+
+    <!-- TOPIC 22 -->
+
+    <div class="glass writing-topic"
+    onclick="openWritingContent('poem22')">
+
+        <span class="writing-number">22</span>
+
+        <h2>Ghost with a Skin</h2>
+
+    </div>
+
+    <!-- TOPIC 23 -->
+
+    <div class="glass writing-topic"
+    onclick="openWritingContent('poem23')">
+
+        <span class="writing-number">23</span>
+
+        <h2>Mondays and Saturdays</h2>
+
+    </div>
+
+    <!-- TOPIC 24 -->
+
+    <div class="glass writing-topic"
+    onclick="openWritingContent('poem24')">
+
+        <span class="writing-number">24</span>
+
+        <h2>Beyond Repair</h2>
+
+    </div>
+
+    <!-- TOPIC 25 -->
+
+    <div class="glass writing-topic"
+    onclick="openWritingContent('poem25')">
+
+        <span class="writing-number">25</span>
+
+        <h2>She Looked Like the Right Answer</h2>
+
+    </div>
+    <!-- TOPIC 26 -->
+
+    <div class="glass writing-topic"
+    onclick="openWritingContent('poem26')">
+
+        <span class="writing-number">26</span>
+
+        <h2>The Nice Guy</h2>
+
+    </div>
+    <!-- TOPIC 27 -->
+
+    <div class="glass writing-topic"
+    onclick="openWritingContent('poem27')">
+
+        <span class="writing-number">27</span>
+
+        <h2>I Heard the Anthem on the Balcony Today</h2>
+
+    </div>
+    <!-- TOPIC 28 -->
+
+    <div class="glass writing-topic"
+    onclick="openWritingContent('poem28')">
+
+        <span class="writing-number">28</span>
+
+        <h2>I Met My Younger Self at the Coffee Table Today</h2>
+
+    </div>
+    <!-- TOPIC 29 -->
+
+    <div class="glass writing-topic"
+    onclick="openWritingContent('poem29')">
+
+        <span class="writing-number">29</span>
+
+        <h2>Carrion Lovers</h2>
+
+    </div>
+    <!-- TOPIC 30 -->
+
+    <div class="glass writing-topic"
+    onclick="openWritingContent('poem30')">
+
+        <span class="writing-number">30</span>
+
+        <h2>Atonement</h2>
+
+    </div>
+    <!-- TOPIC 31 -->
+
+    <div class="glass writing-topic"
+    onclick="openWritingContent('poem31')">
+
+        <span class="writing-number">31</span>
+
+        <h2>Beauty In Imperfections</h2>
+
+    </div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ========================= -->
+<!-- PROSES POPUP -->
+<!-- ========================= -->
+
+<div class="design-popup" id="proses-popup">
+
+<div class="design-popup-content glass">
+
+<div class="design-close"
+onclick="closeWritingPopup('proses-popup')">
+
+<span>×</span>
+
+</div>
+
+<h1 class="section-title reveal">
+PROSES
+</h1>
+
+<div class="writing-topic-list">
+
+    <!-- TOPIC 1 -->
+
+    <div class="glass writing-topic"
+    onclick="openWritingContent('prose1')">
+
+        <span class="writing-number">01</span>
+
+        <h2>Crimson Despair</h2>
+
+    </div>
+
+    <!-- TOPIC 2 -->
+
+    <div class="glass writing-topic"
+    onclick="openWritingContent('prose2')">
+
+        <span class="writing-number">02</span>
+
+        <h2>Home</h2>
+
+    </div>
+
+    <!-- TOPIC 3 -->
+
+    <div class="glass writing-topic"
+    onclick="openWritingContent('prose3')">
+
+        <span class="writing-number">03</span>
+
+        <h2>Sweet Home</h2>
+
+    </div>
+
+    <!-- TOPIC 4 -->
+
+    <div class="glass writing-topic"
+    onclick="openWritingContent('prose4')">
+
+        <span class="writing-number">04</span>
+
+        <h2>The Last Study Session</h2>
+
+    </div>
+
+    <!-- TOPIC 5 -->
+
+    <div class="glass writing-topic"
+    onclick="openWritingContent('prose5')">
+
+        <span class="writing-number">05</span>
+
+        <h2>The Triple Scoop Ice-Cream</h2>
+
+    </div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ========================= -->
+<!-- POEM CONTENT -->
+<!-- ========================= -->
+
+<div class="design-popup" id="poem1">
+
+<div class="writing-content-popup glass">
+
+<div class="design-close"
+onclick="closeWritingContent('poem1')">
+
+<span>×</span>
+
+</div>
+
+<h1 class="section-title reveal">
+THE NEW NORMAL
+</h1>
+
+<div class="writing-scroll">
+
+<p>
+
+The ceiling kept leaking teeth again.<br><br>
+
+Not water —<br>
+teeth.<br><br>
+
+They fell one by one into the sink<br>
+with the sound of dice inside a skull,<br>
+clogging the drain.<br><br>
+
+Mother said the pipes were old.<br><br>
+
+I asked her why the walls<br>
+were breathing so loudly at night.<br><br>
+
+She did not answer.<br>
+
+She kept stitching raw meat into my shirt sleeves<br>
+with fishing wire<br>
+while humming lullabies backwards.<br><br>
+
+Every dawn<br>
+the crows gathered outside my window<br>
+and beat themselves against the glass<br>
+until feathers and blood pasted into a halo.<br><br>
+
+The neighbors complained about the smell.<br><br>
+
+I stopped noticing it after the third week.<br><br>
+
+There are fingers in the flowerpots now.<br>
+Tiny ones.<br>
+Blue at the nails.<br>
+Growing like roots.<br><br>
+
+I think they belong to the child<br>
+that keeps standing at the edge of my hallway<br>
+with his jaw hanging open like a broken cupboard.<br><br>
+
+He never moves.<br><br>
+
+Sometimes I wake up with mud in my lungs<br>
+and cemetery grass beneath my tongue,<br>
+my ribs tied together with wet hair,<br>
+my stomach full of black river water.<br><br>
+
+But everyone says I look healthy.<br><br>
+
+Yesterday, a dog followed me home.<br><br>
+
+It whimpered.<br><br>
+
+Not at me —<br><br>
+
+at the trail behind me.<br><br>
+
+A long dark stain<br>
+threading down the street<br>
+thick as coagulated wine.<br><br>
+
+I checked my shoes.<br><br>
+
+No blood.<br><br>
+
+Only dirt.<br><br>
+
+Only worms.<br><br>
+
+And the occasional fingernail.<br><br>
+
+At dinner, Father carved into the roast<br>
+and maggots spilled out steaming, writhing, blind.<br>
+
+Nobody reacted.<br><br>
+
+Mother kept eating.<br><br>
+
+My sister asked me why I never blink anymore.<br><br>
+
+I laughed so hard<br>
+something cracked inside my throat.<br><br>
+
+A beetle crawled out.<br><br>
+
+They still did not notice.<br><br>
+
+At night<br>
+I hear someone digging.<br><br>
+
+Closer each evening.<br><br>
+
+Closer.<br><br>
+
+Closer.<br><br>
+
+The sound comes from beneath my bed now.<br><br>
+
+No —<br><br>
+
+beneath me.<br><br>
+
+And every morning<br>
+I wake with more soil packed inside my ears.<br><br>
+
+Tonight I finally looked in the bathroom mirror.<br><br>
+
+The mirror looked back late.<br><br>
+
+Very late.<br><br>
+
+Like it needed time<br>
+to remember my shape.<br><br>
+
+And when it did —<br><br>
+
+I saw the skin slipping from my face<br>
+in soft grey ribbons,<br>
+my left eye clouded with fungus,<br>
+my neck opened to the spine<br>
+like a second mouth.<br><br>
+
+I stood there for a long time.<br><br>
+
+Trying to understand<br>
+why the maggots inside my cheek<br>
+spelled my name when they moved.<br><br>
+
+Then I remembered —<br><br>
+
+the road,<br><br>
+
+the rain,<br><br>
+
+the headlights folding inward,<br><br>
+
+and somebody screaming from beneath the tires.<br><br>
+
+The strange part is —<br><br>
+
+I still don't know<br>
+if it was me<br>
+or the thing that crawled out afterward.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ========================= -->
+<!-- POEM 2 -->
+<!-- ========================= -->
+
+<div class="design-popup" id="poem2">
+
+<div class="writing-content-popup glass">
+
+<div class="design-close"
+onclick="closeWritingContent('poem2')">
+
+<span>×</span>
+
+</div>
+
+<h1 class="section-title reveal">
+IF I WERE STONE
+</h1>
+
+<div class="writing-scroll">
+
+<p>
+If I Were Stone<br><br>
+
+would you love me<br>
+if I were stone<br><br>
+
+laid beneath the patient earth<br>
+my name cut into silence<br>
+my breath traded<br>
+for a permanence I could never earn<br><br>
+
+would your hands grow gentle then<br>
+upon my cold and speechless skin<br>
+as though I had at last<br>
+become something worthy of care<br><br>
+
+for now<br>
+I am too much of movement<br>
+too much of fracture<br>
+a restless thing<br>
+forever unshaped<br><br>
+
+I falter in your presence<br>
+I diminish in your absence<br>
+I am neither absence nor form<br>
+but an error<br>
+persisting<br><br>
+
+yet stone—<br>
+stone does not fail<br><br>
+
+it does not speak unwisely<br>
+nor love imperfectly<br><br>
+
+it endures<br>
+and in enduring<br>
+it is forgiven.<br><br>
+
+tell me—<br>
+would my silence then be called peace<br><br>
+
+would my distance be named dignity<br>
+my stillness be named strength<br><br>
+
+would you stand above me<br>
+and soften your voice<br>
+as though I had always been gentle<br><br>
+
+it is a strange mercy<br>
+this kindness granted to the unmoving<br><br>
+
+how the ruined are remembered<br>
+not as they were<br>
+but as they can no longer be<br><br>
+
+and I—<br>
+I grow weary of becoming<br><br>
+
+tell me—<br>
+would you praise me then?<br><br>
+
+call me calm<br>
+call me gentle<br>
+call me anything<br>
+that requires my silence<br><br>
+
+because now<br>
+every word I speak<br>
+arrives misshapen<br>
+like bone pushing through skin<br><br>
+
+I have seen the way<br>
+your gaze withdraws<br>
+not sharply<br>
+never cruelly<br>
+but as one steps back<br>
+from something that might collapse<br><br>
+
+and I do<br>
+continuously<br><br>
+
+a structure unsound<br>
+aware of its own fracture<br><br>
+
+I have tried to remain<br>
+yet remaining has grown cruel<br><br>
+
+I have always been<br>
+half-decayed in spirit<br><br>
+
+there is a longing in me<br>
+not for death<br>
+but for the absence of failing<br><br>
+
+for a state<br>
+where I can no longer betray<br>
+what little is left of me<br><br>
+
+stone does not betray<br><br>
+
+it simply is<br><br>
+
+and perhaps that is enough<br>
+to be loved<br><br>
+
+or at least<br>
+no longer refused<br><br>
+
+so tell me—<br><br>
+
+if I were laid to rest<br>
+and the earth took from me<br>
+all that trembles and errs<br><br>
+
+if I were reduced<br>
+to weight<br>
+to silence<br>
+to something that cannot wound<br><br>
+
+would you love me then<br><br>
+
+or would it only seem so<br>
+because I would no longer be here<br>
+to prove you wrong.
+
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ========================= -->
+<!-- POEM 3 -->
+<!-- ========================= -->
+
+<div class="design-popup" id="poem3">
+
+<div class="writing-content-popup glass">
+
+<div class="design-close"
+onclick="closeWritingContent('poem3')">
+
+<span>×</span>
+
+</div>
+
+<h1 class="section-title reveal">
+911
+</h1>
+
+<div class="writing-scroll">
+
+<p>
+Prologue: 911 it's an emergency.<br><br>
+
+The morning begins with something ordinary.<br><br>
+
+A cup on the table.<br>
+Breads, butter, a knife.<br>
+Steam rising in a thin white thread.<br>
+The window slightly open,<br>
+curtains breathing in and out<br><br>
+
+A bird lands on the railing.<br><br>
+
+Nothing unusual.<br><br>
+
+The spoon circles the cup<br>
+once<br>
+twice<br>
+three times—<br><br>
+
+and the sound does not stop.<br><br>
+
+It keeps circling<br>
+even after the spoon is still.<br><br>
+
+Clink.<br>
+Clink.<br>
+Clink.<br><br>
+
+The walls lean closer to listen.<br><br>
+
+The bird on the railing<br>
+tilts its head<br>
+and its eye becomes<br>
+a black hole<br>
+where the room begins to fall.<br><br>
+
+wtf!?<br><br>
+
+The tea tastes metallic.<br><br>
+
+Like licking a coin<br>
+Something inside the cup<br>
+moves.<br><br>
+
+I look at my hands.<br><br>
+
+Why is there blood on my hands?<br>
+How? When? Why?<br><br>
+
+The room begins to breathe wrong.<br><br>
+
+The clock melts into soft ticking flesh.<br>
+Each second drips onto the floor<br>
+and crawls away.<br><br>
+
+The bird outside the window<br>
+has multiplied.<br><br>
+
+Five of them now.<br><br>
+
+Ten.<br><br>
+
+Twenty.<br><br>
+
+All staring.<br><br>
+
+All with my face.<br><br>
+
+THE FUCK!??<br><br>
+
+A whisper grows inside my skull.<br><br>
+
+Open it.<br><br>
+
+I don’t know what it is.<br><br>
+
+But the whisper keeps scratching<br>
+like fingernails<br>
+inside the brain.<br><br>
+
+OPEN IT.<br><br>
+
+The spoon bends.<br><br>
+
+The cup cracks.<br><br>
+
+The table begins bleeding..<br><br>
+
+My reflection in the window<br>
+is slightly delayed.<br><br>
+
+It smiles<br>
+three seconds late.<br><br>
+
+Then it doesn't stop smiling.<br><br>
+
+The whisper says<br>
+there are wires inside the skin.<br><br>
+
+Pull one.<br><br>
+
+Just one.<br><br>
+
+See what happens.<br><br>
+
+So I listen.<br><br>
+
+Fingernails become tools.<br><br>
+
+The body becomes a locked drawer<br>
+and curiosity<br>
+is a crowbar.<br><br>
+
+Something opens.<br><br>
+
+A long red hallway<br>
+stretching somewhere<br>
+deeper than the ribs.<br><br>
+
+Footsteps echo there.<br><br>
+
+Not mine.<br><br>
+
+CRASH!!<br><br>
+
+The bird crashes through the glass.<br><br>
+
+Except the window never broke.<br><br>
+
+Except the bird is inside my mouth.<br><br>
+
+Except I am watching this<br>
+from the ceiling.<br><br>
+
+The room has teeth now.<br><br>
+
+The floor slowly chewing<br>
+on my shadow.<br><br>
+
+The walls growing taller<br>
+like prison guards.<br><br>
+
+And the whisper has become a choir.<br><br>
+
+Break it.<br><br>
+
+Break everything.<br><br>
+
+I stab the silence.<br><br>
+
+The knife?<br>
+Where did the knife come from?<br><br>
+
+My chest bursts like rotten fruit.<br><br>
+
+Inside are smaller hearts<br>
+still beating<br>
+still whispering.<br><br>
+
+Someone is standing behind me.<br><br>
+
+I know because my spine<br>
+suddenly grows cold fingers.<br><br>
+
+I turn.<br><br>
+
+It is me.<br><br>
+
+But hollow.<br><br>
+
+Eyes like burnt-out tunnels.<br><br>
+
+Holding a knife made of a mirror.<br><br>
+
+I can see myself in the mirror.<br><br>
+
+We stare.<br><br>
+
+One of us laughs.<br><br>
+
+One of us begs.<br><br>
+
+One of us dies.<br><br>
+
+I can't tell<br>
+which one I am.<br><br>
+
+Epilogue:<br><br>
+
+The cup is still on the table.<br><br>
+
+Steam rising<br>
+calm<br>
+quiet<br>
+ordinary.<br><br>
+
+The spoon rests beside it.<br><br>
+
+Outside, the bird returns to the railing.<br><br>
+
+Nothing unusual.<br><br>
+
+Except<br>
+A chair waits at the table.<br>
+Someone is sitting in it.<br>
+Almost.<br><br>
+
+The eyes are gone.<br>
+Two small hollows<br>
+staring at nothing.<br><br>
+
+Head tilted slightly<br>
+like a question,<br><br>
+
+The hands hang loosely<br>
+over the arms of the chair.<br>
+They are quiet now.<br><br>
+
+The knife is still there;<br>
+Just....<br>
+Buried in the chest.
+
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ========================= -->
+<!-- POEM 4 -->
+<!-- ========================= -->
+
+<div class="design-popup" id="poem4">
+
+<div class="writing-content-popup glass">
+
+<div class="design-close"
+onclick="closeWritingContent('poem4')">
+
+<span>×</span>
+
+</div>
+
+<h1 class="section-title reveal">
+THE DISCIPLINE OF LOSING
+</h1>
+
+<div class="writing-scroll">
+
+<p>
+Prologue:<br><br>
+
+There was a time when I did not fear gentleness.<br>
+I remember it faintly—<br><br>
+
+Carrying no caution in my chest,<br>
+What I gave, I gave as though<br>
+the world were incapable of breaking it.<br><br>
+
+—<br><br>
+
+What followed<br>
+did not arrive as ruin;<br>
+but with a patience<br>
+that outlived who I was.<br><br>
+
+It did not leave me shattered.<br>
+It left me aware.<br><br>
+
+And that, perhaps,<br>
+was worse.<br><br>
+
+—<br><br>
+
+Now, whenever warmth comes close,<br>
+I find myself returning<br>
+to what once bled—<br><br>
+
+not to heal it,<br>
+but to feel it again.<br><br>
+
+I turn those scars<br>
+back into gaping wounds,<br>
+as though pain were proof<br>
+of me - still being me.<br><br>
+
+I do not know when this became instinct,<br>
+or why I no longer resist it.<br><br>
+
+Perhaps I have learned<br>
+to mistrust anything<br>
+that does not hurt enough.<br><br>
+
+And so it always ends the same.<br><br>
+
+Not in violence,<br>
+not in betrayal—<br><br>
+
+but in a quiet withdrawal,<br>
+as though something sacred<br>
+realized it had been placed<br>
+in the wrong hands.<br><br>
+
+—<br><br>
+
+I do not blame what leaves.<br><br>
+
+The fault:<br>
+It lives within me—<br>
+in the way I reach,<br>
+in the way I retreat,<br>
+in the way I undo<br>
+what I cannot bear to keep.<br><br>
+
+—<br><br>
+
+To love is to lose—<br><br>
+
+to lose myself<br>
+in the memory<br>
+of who I used to be,<br><br>
+
+to lose her<br>
+to the distance<br>
+I create with my own hands,<br><br>
+
+to lose trust<br>
+in anything that dares<br>
+to feel certain,<br><br>
+
+to lose everything<br>
+long before it is taken<br>
+from me.<br><br>
+
+—<br><br>
+
+And somewhere beneath it all,<br>
+I feel the quiet grief<br>
+of the one I used to be—<br><br>
+
+the boy —<br>
+who did not know<br>
+how to ruin this.<br>
+
+who did not stand<br>
+at the edge of something beautiful<br>
+already preparing<br>
+for its end.<br><br>
+
+—<br><br>
+
+I do not hate<br>
+who I have become.<br>
+That would be easier.<br><br>
+
+—<br><br>
+
+I only grieve him.<br>
+In the silence<br>
+that follows every almost.<br><br>
+
+—<br><br>
+
+Epilogue:<br><br>
+
+I have simply learned<br>
+how to lose<br>
+with such consistency<br>
+that it no longer feels<br>
+like loss at all.<br><br>
+
+—<br><br>
+
+Only inevitability.
+
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ========================= -->
+<!-- POEM 5 -->
+<!-- ========================= -->
+
+<div class="design-popup" id="poem5">
+
+<div class="writing-content-popup glass">
+
+<div class="design-close"
+onclick="closeWritingContent('poem5')">
+
+<span>×</span>
+
+</div>
+
+<h1 class="section-title reveal">
+THE INNER MONOLOGUE
+</h1>
+
+<div class="writing-scroll">
+
+<p>
+Prologue:<br><br>
+
+Before anything is noticed, it has already begun.<br><br>
+
+There is no clear starting point.<br>
+Just awareness<br>
+arriving a second too late.<br><br>
+
+The room exists.<br>
+That is certain.<br>
+A table.<br>
+A chair.<br>
+A body sitting in it.<br>
+All present.<br>
+All correct.<br>
+Yet something feels…<br>
+IDK.<br><br>
+
+The ceiling fan spins<br>
+slow<br>
+uneven—<br><br>
+
+like it is tired<br>
+of holding the room together.<br><br>
+
+Nothing announces collapse.<br><br>
+
+No alarms.<br>
+No sirens.<br><br>
+
+Just a small crack<br>
+somewhere behind the ribs.<br><br>
+
+—<br><br>
+
+I sit there.<br><br>
+
+Breathing correctly.(maybe)<br>
+Looking normal.(maybe)<br>
+Performing existence<br>
+with professional precision.<br><br>
+
+—<br><br>
+
+A thought slips in.<br><br>
+
+Soft.<br><br>
+
+Polite.<br><br>
+
+You were built for this.<br><br>
+
+—<br><br>
+
+The walls don’t close in.<br>
+They simply step back.<br><br>
+
+Giving me space<br>
+to fall properly.<br><br>
+
+—<br><br>
+
+I remember things<br>
+I never chose:<br><br>
+
+The way my voice hesitates<br>
+like it expects to be punished.<br><br>
+
+The way my hands<br>
+forget what they were reaching for.<br><br>
+
+The way mirrors<br>
+never argue back.<br><br>
+
+—<br><br>
+
+There is no villain here.<br><br>
+
+No shadow in the doorway.<br>
+No whisper behind the ear.<br><br>
+
+Just me.<br><br>
+
+Standing<br>
+exactly where the damage begins.<br><br>
+
+—<br><br>
+
+The realization isn’t loud.<br><br>
+
+It settles.<br><br>
+
+Like dust in the lungs.<br><br>
+
+Like truth<br>
+that has been waiting patiently.<br><br>
+
+—<br><br>
+
+If I were to meet utter destruction,<br>
+no one will even take the blame.<br><br>
+
+It was me after all.<br><br>
+
+It has always been me.<br><br>
+
+—<br><br>
+
+Because the evidence<br>
+would be embarrassingly clear.<br><br>
+
+Fingerprints<br>
+everywhere.<br><br>
+
+Mine.<br><br>
+
+—<br><br>
+
+I would stand in the wreckage<br>
+like an architect<br>
+pretending surprise.<br><br>
+
+Pathetic.<br>
+Not as an insult.<br>
+As a specification.<br><br>
+
+Shameful.<br>
+Not as judgment.<br>
+As a feature.<br><br>
+
+Abhorrent.<br>
+Not as accident.<br>
+As intention.<br><br>
+
+—<br><br>
+
+I try to resist the thought.<br><br>
+
+But resistance feels rehearsed.<br><br>
+
+Like even rebellion<br>
+was pre-installed.<br><br>
+
+—<br><br>
+
+A laugh escapes.<br><br>
+
+Dry.<br><br>
+
+Hollow.<br><br>
+
+Too accurate.<br><br>
+
+—<br><br>
+
+Of course.<br><br>
+
+Of course it was me.<br><br>
+
+Who else could sustain this<br>
+so consistently?<br><br>
+
+—<br><br>
+
+The room doesn’t collapse.<br><br>
+
+It simply agrees.<br><br>
+
+—<br><br>
+
+And in that agreement,<br><br>
+
+something settles into place.<br><br>
+
+Perfectly.<br><br>
+
+Terrifyingly.<br><br>
+
+Correct.<br><br>
+
+—<br><br>
+
+Epilogue:<br><br>
+
+No one came to investigate.<br><br>
+
+The chair remains where I left it.<br>
+Me-<br>
+Untouched.<br><br>
+
+The glass still half-filled.<br>
+The fan still turning<br>
+like nothing learned anything.<br><br>
+
+—<br><br>
+
+Only a quiet conclusion<br>
+resting in the air:<br><br>
+
+This was not a tragedy.<br><br>
+
+This was compliance.<br><br>
+
+—<br><br>
+
+And I—<br><br>
+
+I am still here.<br><br>
+
+Unbroken.<br><br>
+
+Because this<br>
+was never damage.<br><br>
+
+—<br><br>
+
+This<br>
+was design.
+
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ========================= -->
+<!-- POEM 6 -->
+<!-- ========================= -->
+
+<div class="design-popup" id="poem6">
+
+<div class="writing-content-popup glass">
+
+<div class="design-close"
+onclick="closeWritingContent('poem6')">
+
+<span>×</span>
+
+</div>
+
+<h1 class="section-title reveal">
+THE ALTAR
+</h1>
+
+<div class="writing-scroll">
+
+<p>
+
+I arrive at the altar empty-handed,<br>
+pockets turned inside out like skinned birds.<br>
+My ribs leaning forward, begging.<br><br>
+
+I want warmth<br>
+with frostbitten palms.<br>
+I want shelter<br>
+while termites chew my spine into sawdust.<br><br>
+
+Love is a language,<br>
+It only speaks in wounds.<br><br>
+
+They said love teaches endurance:<br>
+how much red the body can afford<br>
+before the lights dim,<br>
+before the heart starts whispering its resignation.<br><br>
+
+And yet like a fool,<br>
+Every night I fall for it.<br><br>
+
+Craving a mouth<br>
+while my own is sewn shut with guilt.<br>
+Craving touch<br>
+with hands that tremble like crime scenes.<br><br>
+
+Irony is a quiet god:<br>
+it watches me starve<br>
+while hoarding hunger itself.<br>
+It laughs softly when I ask for mercy<br>
+with teeth already gnawing on my tongue.<br><br>
+
+Love is a cruel god:<br>
+It drags its knuckles through my head,<br>
+hangs my thoughts from hooks<br>
+to see which ones scream the longest.<br>
+Sometimes it is gentle,<br>
+a lullaby hummed by a butcher<br>
+washing his hands too slowly.<br>
+Sometimes it is sudden,<br>
+a mirror shattering mid-sentence,<br>
+finally telling the truth.<br><br>
+
+Now I know:<br>
+wanting is not innocence.<br>
+Need is not purity.<br>
+And bleeding is not proof of devotion;<br>
+just evidence that the lesson worked.<br><br>
+
+Still, here I am,<br>
+asking for light<br>
+with a body built entirely of shadows,<br>
+wondering why the door keeps opening<br>
+into my own chest.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ========================= -->
+<!-- POEM 7 -->
+<!-- ========================= -->
+
+<div class="design-popup" id="poem7">
+
+<div class="writing-content-popup glass">
+
+<div class="design-close"
+onclick="closeWritingContent('poem7')">
+
+<span>×</span>
+
+</div>
+
+<h1 class="section-title reveal">
+THE PARADOX
+</h1>
+
+<div class="writing-scroll">
+
+<p>
+
+the paradox feeds on itself—<br>
+split creature, double-jawed—<br>
+one mouth swallowing light,<br>
+the other vomiting it back as ash.<br><br>
+
+I walk inside its pulse:<br>
+rooms flickering between overfilled<br>
+and<br>
+scraped clean,<br>
+sometimes both,<br>
+same breath.<br><br>
+
+hands reach for me—<br>
+I recoil into wanting,<br>
+lurch forward into erasing—<br>
+a motion that breaks my silhouette<br>
+into two contradicting shadows<br>
+fighting over which one is real.<br><br>
+
+mirrors grind their teeth:<br>
+they show me hollow,<br>
+they show me overflowing,<br>
+the glass bleeding<br>
+because it cannot decide.<br><br>
+
+fruit bursts open on the floor—<br>
+half of it rots instantly,<br>
+half grows teeth—<br>
+each half gnawing the other<br>
+in worship of the contradiction.<br><br>
+
+kindness arrives like a gentle saw:<br>
+one stroke carving me open,<br>
+the next stitching me shut,<br>
+thread looping through bone,<br>
+tightening around the impossible shape<br>
+of wanting what I cannot hold<br>
+and holding what I cannot want.<br><br>
+
+in the center of the labyrinth—<br>
+the paradox sits on a throne of its own ribs,<br>
+beckoning me with a hand<br>
+that points in two directions at once.<br><br>
+
+I kneel.<br>
+the hand splits my chest<br>
+to plant something there—<br>
+a seed that screams<br>
+and purrs<br>
+and screams<br>
+as it grows.<br><br>
+
+and the whisper through the wound<br>
+tastes like metal and milk:<br><br>
+
+you are too full to feel it<br>
+you are too empty not to.<br>
+you are too incomplete to lack it<br>
+you are too overflowing to find it<br>
+you are the famine<br>
+you are the feast<br>
+you are the absence shaped like abundance<br>
+you are the abundance shaped like absence.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ========================= -->
+<!-- POEM 8 -->
+<!-- ========================= -->
+
+<div class="design-popup" id="poem8">
+
+<div class="writing-content-popup glass">
+
+<div class="design-close"
+onclick="closeWritingContent('poem8')">
+
+<span>×</span>
+
+</div>
+
+<h1 class="section-title reveal">
+NOSTALGIA
+</h1>
+
+<div class="writing-scroll">
+
+<p>
+
+It’s funny, isn’t it—<br>
+how at twenty, I already ache<br>
+like a man who’s lived six decades<br>
+too long.<br><br>
+
+I scroll through my gallery<br>
+and it feels like flipping through obituaries—<br>
+not of people,<br>
+but of versions of me<br>
+who smiled wider, slept deeper,<br>
+and believed the world was kinder.<br><br>
+
+There was a time I laughed<br>
+without worrying if it echoed wrong.<br>
+When dark circles weren’t medals of effort<br>
+but just the shadows that came after laughter.<br>
+When insomnia was just a fancy word<br>
+I found in someone’s sad poem—<br>
+and not my 3 A.M. voices.<br><br>
+
+I miss that boy.<br>
+The one who thought the world<br>
+was a story he could rewrite with crayons.<br>
+Who didn’t know that sometimes<br>
+the ink dries out<br>
+long before the story ends.<br><br>
+
+I miss grandpa—<br>
+his voice a campfire of warmth,<br>
+crackling tales of his prime—<br>
+his eyes brighter than the moonlight<br>
+that used to sneak through the window.<br>
+Now it’s just me and the hum of the fan,<br>
+and sometimes,<br>
+even that sounds like him breathing.<br><br>
+
+Grandma still makes that sweet—<br>
+you know, the one sticky enough<br>
+to hold together three generations.<br>
+I ate it last week,<br>
+and it tasted like the childhood days—<br>
+soft, slow,<br>
+and heartbreakingly short.<br><br>
+
+I even miss my old enemy—<br>
+the school nemesis,<br>
+the one who once flushed my specs<br>
+down the toilet<br>
+like some grand rebellion.<br>
+Now I laugh,<br>
+but back then it was war,<br>
+and every bruise had purpose.<br>
+Funny how some enemies<br>
+teach you more about loyalty.<br>
+We are the best bros now.<br><br>
+
+Cycle rides—<br>
+wind screaming, chain creaking,<br>
+heart racing like it believed in forever.<br>
+We never raced to win,<br>
+we raced because time hadn’t learned<br>
+to chase us yet.<br><br>
+
+And that brother—<br>
+always there, shoulder to shoulder,<br>
+even when silence<br>
+was the loudest thing between us.<br><br>
+
+And those KFC days—<br>
+saving every coin<br>
+just to taste a luxury dipped in friendship.<br>
+The crispy skin of youth—<br>
+now stale without him.<br>
+They changed the recipe, I think.<br>
+Or maybe we did.<br><br>
+
+The iPod days—<br>
+earphones plugged in.<br>
+2019—Bieber, Mendes, and teenage heartbreak.<br>
+And those Roald Dahl, Geronimo Stilton nights—<br>
+when stories fixed everything,<br>
+and even villains felt friendly.<br><br>
+
+Old friends—<br>
+we were pure chaos in school shoes,<br>
+laughing so loud even the walls joined in.<br>
+Remember that slang poem we wrote?<br>
+half roast, half nonsense—<br>
+that got us a VIP invite<br>
+to the principal’s office?<br>
+We walked in like rappers,<br>
+came out like clowns with slips<br>
+and zero regrets.<br>
+Now they post quotes about “healing” and “cutting ties,”<br>
+and I just laugh—<br>
+When did rebels turn into this?<br><br>
+
+And that girl—<br>
+God, that girl—<br>
+who said I looked good<br>
+with my sleeves folded.<br>
+Funny how I still do it,<br>
+like a superstition I never unlearned.<br>
+Sometimes I wonder<br>
+if she’d still say it now—<br>
+when my wrists carry time<br>
+more than touch.<br><br>
+
+Even yesterday feels like<br>
+a sepia photograph I’ve already lost.<br>
+I remember something I did—<br>
+and it already feels like history.<br><br>
+
+Now I am just another cog—<br>
+working, studying, working, eating,<br>
+sleeping like it’s a myth<br>
+someone forgot to prove.<br>
+Life has become<br>
+Ctrl + C, Ctrl + V.<br><br>
+
+And yet—<br>
+somewhere between deadlines and caffeine,<br>
+I still pause at a sunset,<br>
+still smile at old songs,<br>
+still crave the taste of simplicity.<br>
+Is it a sin<br>
+to be homesick for moments<br>
+that still live inside me?<br><br>
+
+Because nostalgia—<br>
+she visits like rain on a summer night,<br>
+uninvited,<br>
+but always welcome.<br>
+She sits beside me,<br>
+offers me an old ice cream stick,<br>
+and whispers,<br>
+remember when melting was the worst thing<br>
+that could happen?<br><br>
+
+And I wonder—<br><br>
+
+when did growing up<br>
+start feeling like fading out?<br><br>
+
+When did living<br>
+become just learning<br>
+how to miss?
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ========================= -->
+<!-- POEM 9 -->
+<!-- ========================= -->
+
+<div class="design-popup" id="poem9">
+
+<div class="writing-content-popup glass">
+
+<div class="design-close"
+onclick="closeWritingContent('poem9')">
+
+<span>×</span>
+
+</div>
+
+<h1 class="section-title reveal">
+SINNER'S SCRAP
+</h1>
+
+<div class="writing-scroll">
+
+<p>
+
+blood in the mouth /<br>
+but you call mine dirtier than yours.<br><br>
+
+hands red<br>
+but you hide yours in holy water<br>
+call it worship<br>
+call it “clean.”<br><br>
+
+murderer laughs at thief<br>
+thief spits on liar<br>
+liar stones whore<br>
+whore curses drunk<br>
+drunk strangles addict<br>
+addict buries preacher<br>
+preacher forgives murderer—<br>
+the rope is always recycled,<br>
+just changes necks.<br><br>
+
+we are saints /<br>
+with vomit still dripping off our lips.<br>
+we are judges /<br>
+wearing the masks of the criminals we crucify.<br><br>
+
+Durga.<br>
+your goddess.<br>
+not light—<br>
+but a mob with teeth.<br>
+ten hands tearing,<br>
+ten mouths screaming,<br>
+her blade not for demons—<br>
+but for anyone who sinned<br>
+the wrong way.<br><br>
+
+maybe the asur wasn’t evil at all,<br>
+just a man reeking of yesterday’s sweat,<br>
+pockets stitched with hunger,<br>
+eyes bloodshot from sleepless nights.<br>
+maybe he drank too much,<br>
+lied too often,<br>
+loved in ways the scriptures forbid.<br>
+maybe he touched desire with cracked fingers,<br>
+stole bread when his stomach gnawed like a beast,<br>
+or begged for mercy in a language<br>
+no god cared to understand.<br><br>
+
+maybe he prayed too—<br>
+not for victory,<br>
+not for kingdoms,<br>
+but for silence,<br>
+for rest,<br>
+for the chance to live one day<br>
+without wearing shame like a second skin.<br><br>
+
+but prayers don’t matter<br>
+when the mob needs a corpse,<br>
+and every goddess<br>
+needs her demon.<br><br>
+
+holiness is just rage with a halo.<br>
+truth is just filth polished with incense.<br>
+righteousness = knives blessed before the cut.<br><br>
+
+you swallowed greed,<br>
+I swallowed lust.<br>
+she swallowed envy,<br>
+he swallowed pride.<br>
+same poison,<br>
+different bottles.<br>
+but you spit mine out like acid<br>
+and sip yours like wine.<br><br>
+
+hell isn’t some throne of fire.<br>
+hell is you pointing at me<br>
+while I point at you<br>
+while we both drown<br>
+in the same gutter water.<br><br>
+
+ash is ash.<br>
+bones are bones.<br>
+sins don’t come in flavors.<br><br>
+
+and when silence comes—<br>
+no goddess.<br>
+no demon.<br>
+no judgment.<br>
+just carcasses.<br>
+just whispers.<br>
+just sinners<br>
+rotting at different speeds.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ========================= -->
+<!-- POEM 10 -->
+<!-- ========================= -->
+
+<div class="design-popup" id="poem10">
+
+<div class="writing-content-popup glass">
+
+<div class="design-close"
+onclick="closeWritingContent('poem10')">
+
+<span>×</span>
+
+</div>
+
+<h1 class="section-title reveal">
+THE FOOL
+</h1>
+
+<div class="writing-scroll">
+
+<p>
+
+I stopped sleeping.<br>
+not because I couldn’t,<br>
+but because dreams were places I couldn’t control.<br><br>
+
+I wanted control.<br>
+of breath.<br>
+of thought.<br>
+of the world that refused to kneel.<br><br>
+
+they called it passion.<br>
+they called it love.<br>
+but obsession wears passion’s clothes<br>
+and bleeds through the seams.<br><br>
+
+I plucked out softness like weeds,<br>
+cut away hesitation with my teeth.<br>
+every scar became a prayer,<br>
+every drop of blood a promise<br>
+that I’d become enough.<br><br>
+
+I carved that name<br>
+on every inch of my memory<br>
+until even pain started answering to her.<br>
+believing perfection could be earned<br>
+if only I tore enough of myself away.<br><br>
+
+the mirror stopped showing mercy.<br>
+it sneered.<br>
+it said, “try harder, you’re almost divine.”<br>
+so I did.<br>
+I tore sleep from my bones,<br>
+hope from my veins,<br>
+fed them to the altar for perfection.<br><br>
+
+the heart?<br>
+a wild dog caged too long.<br>
+I beat it quiet,<br>
+called it discipline.<br><br>
+
+madness didn’t arrive screaming.<br>
+it crawled in slow,<br>
+with those voice.<br>
+with my failure.<br>
+with that word “almost”<br>
+lodged in my throat like rusted glass.<br><br>
+
+soon, my reflection began to breathe without me,<br>
+my shadow started whispering instructions—<br>
+“break more, bleed more, love more, lose more.”<br>
+and I obeyed,<br>
+because the fool always obeys the ache.<br><br>
+
+now I speak to walls,<br>
+call them audience.<br>
+call my scars proof.<br>
+call my ruin love.<br><br>
+
+you think I’m crazy—<br>
+but tell me,<br>
+when was the last time you stopped chasing?<br>
+when was the last time you looked in the mirror<br>
+and didn’t see a war for worth?<br><br>
+
+I was just louder about it.<br>
+that’s all.<br><br>
+
+we all are fools,<br>
+just quieter ones,<br>
+learning to bleed politely.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ========================= -->
+<!-- POEM 11 -->
+<!-- ========================= -->
+
+<div class="design-popup" id="poem11">
+
+<div class="writing-content-popup glass">
+
+<div class="design-close"
+onclick="closeWritingContent('poem11')">
+
+<span>×</span>
+
+</div>
+
+<h1 class="section-title reveal">
+অরেখা
+</h1>
+
+<div class="writing-scroll">
+
+<p>
+
+রাতের ভিতর<br>
+একটা অদৃশ্য দরজা কাঁপে—<br>
+মনে হয় বাতাস নয়,<br>
+ভেতরের কোনো নিঃশব্দ ভাঙন<br>
+ওকে স্পর্শ করে গেছে।<br><br>
+
+জীবন একটা বিকল যন্ত্র,<br>
+যার কাঁটাগুলো<br>
+সময়ের বদলে<br>
+একটা অচেনা শূন্যের দিকে ঘোরে।<br>
+দিকনির্দেশ নেই,<br>
+শুধু এক অদ্ভুত টান।<br><br>
+
+আমি তবুও হেঁটে যাই—<br>
+কারণ স্থির থাকার অর্থ<br>
+আরেক রকম বিলোপ।<br>
+পথের নিচে কখনো নরম মাটি,<br>
+কখনো কাঁচের মতো কঠোর;<br>
+বুঝতে পারি না<br>
+আমি পদচিহ্ন রাখছি,<br>
+নাকি নিজের ভারে ফাটল বানাচ্ছি।<br><br>
+
+কোনো এক অচেনা ছায়ার কাছে<br>
+আমি নীরব প্রশ্ন জমা দিই—<br>
+উত্তরহীন কাগজে<br>
+এক রেখা টেনে দেয় ও,<br>
+উত্তর সব ফাঁকা,<br>
+শুধু নীচে লেখা আছে:<br><br>
+
+“যেখানে থামবে,<br>
+সেইখানেই তোমার সংজ্ঞা বদলে যাবে।”<br><br>
+
+দূরে একটা ফ্যাকাসে আলো<br>
+যেন নিজেই নিজের মধ্যে জ্বলে-নেভে—<br>
+আমি বুঝতে পারি না<br>
+ওটা সমাপ্তির ইশারা,<br>
+নাকি সমাপ্তির পর<br>
+আরও গভীর কোনো অন্ধকার নীরবতা।
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ========================= -->
+<!-- POEM 12 -->
+<!-- ========================= -->
+
+<div class="design-popup" id="poem12">
+
+<div class="writing-content-popup glass">
+
+<div class="design-close"
+onclick="closeWritingContent('poem12')">
+
+<span>×</span>
+
+</div>
+
+<h1 class="section-title reveal">
+রক্তজবা
+</h1>
+
+<div class="writing-scroll">
+
+<p>
+
+তুমি নেই, তবু বাতাসে এখনো টিকে আছে<br>
+তোমার কণ্ঠের চাপা আর্তনাদ,<br>
+যেন দেয়ালের ফাঁকে ফাঁকে জমে থাকা<br>
+একটা পুরনো, শুকিয়ে যাওয়া কান্না।<br><br>
+
+আমি এখনো সেই রাস্তার মোড়ে দাঁড়াই,<br>
+যেখানে একদিন তোমার হাত ধরেছিলাম।<br>
+এখন সেখানে শুধু রক্তজবা ফুটে থাকে,<br>
+লাল—তাজা রক্তের মতো,<br>
+যেন মাটির নিচে লুকিয়ে থাকা<br>
+তোমার না বলা শেষ বিদায়।<br><br>
+
+সেই ঘরটাও এখনো প্রতীক্ষায়,<br>
+শূন্য বিছানায় চুপচাপ বসে থাকে রাত,<br>
+চাদরের কোণে ছোপ ছোপ দাগ—<br>
+লাল? নাকি শুধুই ভ্রম?<br>
+তুমি কি ভুল করে রেখে গিয়েছিলে<br>
+তোমার শরীরের শেষ উষ্ণতা?<br><br>
+
+তোমার চোখে ছিল গভীর এক অন্ধকার,<br>
+যেখানে ডুবলে ফেরার পথ থাকে না।<br>
+আমি সেই চোখেই খুঁজেছিলাম স্বপ্ন,<br>
+আর আজও খুঁজি,<br>
+একটা মরচে ধরা ছুরির ধার বেয়ে<br>
+শিরায় গড়িয়ে পড়া নোনতা স্বপ্নের মতো।<br><br>
+
+তুমি বলেছিলে ভালোবাসবে,<br>
+কিন্তু ভালোবাসা কি রক্তমাখা চিঠির মতো হয়?<br>
+পড়ে নিতে হয় সাবধানে,<br>
+আর একসময়, চিঠিটাও মুছে যায়,<br>
+শুধু দাগগুলো থেকে যায়, চিরকাল…
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ========================= -->
+<!-- POEM 13 -->
+<!-- ========================= -->
+
+<div class="design-popup" id="poem13">
+
+<div class="writing-content-popup glass">
+
+<div class="design-close"
+onclick="closeWritingContent('poem13')">
+
+<span>×</span>
+
+</div>
+
+<h1 class="section-title reveal">
+WHEN THE INK REFUSES ME
+</h1>
+
+<div class="writing-scroll">
+
+<p>
+
+What happens when the page<br>
+- my only confessional,<br>
+my courtroom, my church,<br>
+my therapist with white robes and no face -<br>
+sits there,<br>
+mocking me in silence?<br><br>
+
+I have always lived in words.<br>
+When that girl laughed,<br>
+and never looked back the way I looked at her,<br>
+I wrote her name into metaphors,<br>
+made her smile live longer than it did in reality.<br>
+She stopped talking,<br>
+but I kept the conversation alive in stanzas.<br><br>
+
+When exams chewed me raw,<br>
+and I saw disappointment<br>
+sit quietly in my parents’ eyes,<br>
+I turned panic into paragraphs.<br>
+My pen became a bandage,<br>
+wrapping the bleeding heart<br>
+so I could breathe again.<br><br>
+
+When friends drifted<br>
+like balloons cut loose from strings,<br>
+I tied them back in similes,<br>
+Even the fights we had<br>
+were safer on paper;<br>
+because paper doesn’t slam the door back.<br><br>
+
+When grief arrived like an uninvited tenant,<br>
+carrying the scent of loss in every corner of the house,<br>
+writing gave me rent money to survive another day.<br>
+I scribbled elegies in margins of notebooks,<br>
+as if words could stitch holes in a soul.<br><br>
+
+When regret bit hard,<br>
+like a dog that wouldn’t let go,<br>
+I fed it stories until it slept,<br>
+quiet, harmless, for a while.<br><br>
+
+And even in moments of absurdity -<br>
+when I failed at making instant noodles properly,<br>
+or forgot the umbrella on the only day it rained,<br>
+writing gave me the license<br>
+to laugh at my own tragedies,<br>
+turning spilled coffee into punchlines.<br><br>
+
+But what happens when ink runs dry?<br>
+When the alphabet turns its back?<br>
+When metaphors abandon me<br>
+the way people sometimes do?<br><br>
+
+What happens when the storm inside my chest<br>
+refuses to translate,<br>
+when the voices in my head<br>
+out-scream the pen,<br>
+and I sit staring,<br>
+hands frozen,<br>
+suffocating under the weight of unwritten thoughts?<br><br>
+
+Writing was not just escape,<br>
+it was survival.<br>
+A secret lifeboat<br>
+I built plank by plank<br>
+from heartbreak, pressure,<br>
+loneliness, fear.<br><br>
+
+So what will happen to me -<br>
+when the sea rises again,<br>
+and my lifeboat<br>
+is nowhere to be found?
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ========================= -->
+<!-- POEM 14 -->
+<!-- ========================= -->
+
+<div class="design-popup" id="poem14">
+
+<div class="writing-content-popup glass">
+
+<div class="design-close"
+onclick="closeWritingContent('poem14')">
+
+<span>×</span>
+
+</div>
+
+<h1 class="section-title reveal">
+DISSECTION OF A NIGHT
+</h1>
+
+<div class="writing-scroll">
+
+<p>
+
+I. Skull<br><br>
+
+Empty corridors.<br>
+Rats scurry across thought -<br>
+gnawing at wires of memory,<br>
+chewing light into static.<br><br>
+
+II. Eyes<br><br>
+
+Pinned wide.<br>
+They drink from blue screens,<br>
+pixels dripping like stale rainwater,<br>
+a face repeating<br>
+until it loses shape.<br><br>
+
+III. Tongue<br><br>
+
+Swollen with words unsent.<br>
+Sealed letters rot in the throat,<br>
+ink clotting<br>
+like old blood in the gums.<br><br>
+
+IV. Chest<br><br>
+
+An abandoned theater.<br>
+Failure takes the center stage,<br>
+rehearsing knives,<br>
+its shadow cast in chandeliers<br>
+about to fall.<br><br>
+
+V. Hands<br><br>
+
+Always scratching -<br>
+scroll, scroll, scroll;<br>
+nails cracking,<br>
+skin peeling into<br>
+pages that hold nothing.<br><br>
+
+VI. Stomach<br><br>
+
+Hollow.<br>
+Not hunger, but the ache of waste:<br>
+cheap films swallowed whole,<br>
+doom in long threads,<br>
+acid rising with<br>
+other people’s laughter.<br><br>
+
+VII. Spine<br><br>
+
+Bent under expectation.<br>
+One vertebra away from snapping,<br>
+yet it sings,<br>
+a low hymn<br>
+to unfinished things.<br><br>
+
+VIII. Heart<br><br>
+
+Refuses to burst.<br>
+Refuses to heal.<br>
+Beats only enough<br>
+to keep the corpse walking.<br><br>
+
+IX. Autopsy Note<br><br>
+
+The body shows no cause of death.<br>
+Only the quiet violence<br>
+of repetition,<br>
+the wounds of a night<br>
+that ends without ending.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ========================= -->
+<!-- POEM 15 -->
+<!-- ========================= -->
+
+<div class="design-popup" id="poem15">
+
+<div class="writing-content-popup glass">
+
+<div class="design-close"
+onclick="closeWritingContent('poem15')">
+
+<span>×</span>
+
+</div>
+
+<h1 class="section-title reveal">
+CANCER
+</h1>
+
+<div class="writing-scroll">
+
+<p>
+
+the flame touches the tip—<br>
+and something inside me<br>
+peels back.<br><br>
+
+not skin,<br>
+not memory,<br>
+something more fragile—<br>
+like the thin membrane<br>
+between thought<br>
+and the animals that live beneath it.<br><br>
+
+the cigarette crackles,<br>
+collapsing into dust,<br>
+and I wonder<br>
+why the sound feels familiar,<br>
+like a body folding<br>
+in a room with no witness.<br><br>
+
+smoke leaks upward—<br>
+not rising,<br>
+more like escaping—<br>
+a prisoner slipping through the cracks<br>
+left by a careless god.<br><br>
+
+my hands jitter,<br>
+doing that strange dance again,<br>
+the one that looks like<br>
+they’re trying to shake off<br>
+an invisible residue,<br>
+a guilt<br>
+that never belonged to them<br>
+but clung anyway<br>
+like dried blood<br>
+under fingernails.<br><br>
+
+the ember glows brighter—<br>
+a tiny, cruel sun—<br>
+and for a moment<br>
+I think it’s laughing.<br><br>
+
+the taste hits—<br>
+sharp, metallic,<br>
+like licking the inside<br>
+of a wound<br>
+you didn’t know you had.<br><br>
+
+the world flickers.<br>
+not visually—<br>
+no,<br>
+deeper—<br>
+like a room inside my mind<br>
+turning its lights<br>
+on and off<br>
+to get my attention.<br><br>
+
+the cigarette’s body<br>
+grows shorter,<br>
+a dying spine,<br>
+ash flaking off<br>
+like the scabs<br>
+of forgotten moments.<br>
+each fall of grey<br>
+feels like a confession<br>
+I didn’t agree to make.<br><br>
+
+and somewhere<br>
+in the mess of smoke and shaking<br>
+I sense a truth—<br>
+not clear,<br>
+not kind—<br>
+but waiting,<br>
+teething,<br>
+hungry.<br><br>
+
+and I inhale again—<br>
+not for calm,<br>
+not for escape—<br>
+but to see<br>
+which part of me<br>
+the flame will reveal next<br>
+when it crawls forward<br>
+to take its next bite.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ========================= -->
+<!-- POEM 16 -->
+<!-- ========================= -->
+
+<div class="design-popup" id="poem16">
+
+<div class="writing-content-popup glass">
+
+<div class="design-close"
+onclick="closeWritingContent('poem16')">
+
+<span>×</span>
+
+</div>
+
+<h1 class="section-title reveal">
+DAYDREAMS AND NIGHTMARES
+</h1>
+
+<div class="writing-scroll">
+
+<p>
+
+```html id="8u1m4x"
+The face in the corridor,<br>
+a blade pressed between my ribs,<br>
+smiling like a wound that refuses to clot.<br><br>
+
+Once, it was harmless—<br>
+a moth brushing my windowpane,<br>
+fragile, ignorable.<br>
+Now it’s a swarm in my throat,<br>
+drowning every word before it escapes.<br><br>
+
+Every song I hear becomes a butcher’s chant,<br>
+every note a fingernail carving her initials<br>
+into the walls of my skull.<br>
+Music doesn’t heal anymore,<br>
+it peels.<br>
+It strips.<br>
+It drags memory across my nerves like rusted metal.<br><br>
+
+Sleep?<br>
+A theater of knives,<br>
+her shadow seats itself on every row.<br>
+The curtains never close.<br>
+I wake gagging on the taste of ashes<br>
+that were once my hours of silence.<br><br>
+
+Work rots beneath my fingertips.<br>
+Letters crawl off the page like maggots,<br>
+numbers collapse into black pits.<br><br>
+
+And her—<br>
+no, not her,<br>
+the apparition that wears her skin like silk—<br>
+she sits in every corner,<br>
+a phantom gnawing the edges of my sight.<br>
+When she turns her head,<br>
+the world shrieks.<br><br>
+
+This was never a choice.<br>
+It is infection,<br>
+it is hunger,<br>
+it is a room locked from the outside.<br>
+I walk through days as if through a slaughterhouse,<br>
+walls dripping with a name I never speak,<br>
+lungs drowning in whispers I cannot burn.<br><br>
+
+If you listen closely,<br>
+you can hear the crack of my bones<br>
+as the daydream folds into nightmare,<br>
+and the nightmare<br>
+learns her name.
+
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ========================= -->
+<!-- POEM 17 -->
+<!-- ========================= -->
+
+<div class="design-popup" id="poem17">
+
+<div class="writing-content-popup glass">
+
+<div class="design-close"
+onclick="closeWritingContent('poem17')">
+
+<span>×</span>
+
+</div>
+
+<h1 class="section-title reveal">
+ASHES
+</h1>
+
+<div class="writing-scroll">
+
+<p>
+
+The altar is always lit,<br>
+though the incense has turned to ash.<br>
+I keep my prayers in jars,<br>
+their glass fogged from years of breath,<br>
+and set them at your door<br>
+like offerings to a locked temple.<br><br>
+
+Silence is the only priest that answers.<br><br>
+
+If God does not reply,<br>
+do you carve another God from bone?<br>
+Or do you bleed into the chalice,<br>
+hoping the taste of iron<br>
+might wake Him?<br><br>
+
+My veins have become hymns<br>
+sung too often,<br>
+thin threads straining<br>
+between surrender and survival.<br>
+Each pulse a cracked bell,<br>
+ringing in a cathedral of absence.<br><br>
+
+I have seen flowers rot mid-bloom<br>
+on the pews of this waiting.<br>
+Even the crows hesitate,<br>
+as if their beaks fear the meat of longing.<br>
+I hold my heart like a sacrificial lamb -<br>
+its throat nicked,<br>
+its wool red-rivered -<br>
+and still the heavens do not stir.<br><br>
+
+There are nights the walls seem to breathe,<br>
+and I think I hear your name<br>
+in their exhalations -<br>
+a soft rotting lullaby,<br>
+a hymn stitched with moth wings.<br><br>
+
+Still,<br>
+I return with the match,<br>
+with the little fire that won’t learn surrender,<br>
+because some devotions linger<br>
+even after the gods<br>
+have abandoned their altars.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ========================= -->
+<!-- POEM 18 -->
+<!-- ========================= -->
+
+<div class="design-popup" id="poem18">
+
+<div class="writing-content-popup glass">
+
+<div class="design-close"
+onclick="closeWritingContent('poem18')">
+
+<span>×</span>
+
+</div>
+
+<h1 class="section-title reveal">
+SOME FIRES DO NOT BURN OUT
+</h1>
+
+<div class="writing-scroll">
+
+<p>
+
+In the beginning,<br>
+there was the hum of midsummer—<br>
+light spilling from my hands<br>
+as if the world had misplaced its sun<br>
+and trusted me to hold it.<br><br>
+
+The air tasted of ripening oranges,<br>
+and every shadow bent itself<br>
+to let me pass.<br>
+I carried a sky so blue<br>
+it made rivers jealous.<br><br>
+
+Even time paused to drink from that cup.<br><br>
+
+But time is a poor host.<br>
+It cannot stomach certain guests —<br>
+it coughs them up<br>
+into your waiting hands each dawn,<br>
+still warm,<br>
+still whole,<br>
+and you are made to cradle<br>
+that undigested hour<br>
+until your skin memorises<br>
+the scent of its slow ruin.<br><br>
+
+Some days, I think of him—<br>
+the man who convinced everyone to live,<br>
+found one quiet evening,<br>
+swing creaking in the wind,<br>
+him swaying with the ropes,<br>
+still teaching us something about endings.<br><br>
+
+And I think of Icarus,<br>
+how he laughed as he fell,<br>
+for in that fleeting blaze of ruin<br>
+he touched eternity<br>
+and knew the briefest light<br>
+was worth the endless dark.<br><br>
+
+Now the fire lives smaller,<br>
+a hush of amber<br>
+in a jar of seawater.<br>
+The days no longer bloom,<br>
+but they do not starve me either.<br>
+The waves come and go,<br>
+each one gentler than the last,<br>
+and I let them take<br>
+what the fire could not keep.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ========================= -->
+<!-- POEM 19 -->
+<!-- ========================= -->
+
+<div class="design-popup" id="poem19">
+
+<div class="writing-content-popup glass">
+
+<div class="design-close"
+onclick="closeWritingContent('poem19')">
+
+<span>×</span>
+
+</div>
+
+<h1 class="section-title reveal">
+WHEN SHE WALKED IN
+</h1>
+
+<div class="writing-scroll">
+
+<p>
+
+i didn’t look up.<br>
+i couldn’t.<br><br>
+
+the air changed—<br>
+thickened like a storm about to scream<br>
+but all it did was whisper Her name<br>
+in every corner of the room.<br><br>
+
+my hands were shaking.<br>
+sweat slipped down my spine<br>
+like guilt.<br>
+what guilt?<br>
+i don’t even know.<br>
+maybe for feeling this much.<br>
+for letting Her<br>
+become a god in a body<br>
+and me—<br>
+a worshipper in silence.<br><br>
+
+my heart?<br>
+oh it forgot how to beat in rhythm.<br>
+it was pounding<br>
+so loud<br>
+so fast<br>
+i thought maybe this was it—<br>
+a heart attack caused by a smile<br>
+not even directed at me.<br><br>
+
+i didn’t look.<br>
+because what if She looked back?<br>
+what if eyes locked and<br>
+time cracked open and<br>
+i fell in?<br><br>
+
+what if She knew?<br>
+what if She didn’t?<br>
+what if i burst into flames<br>
+from one second of being seen?<br><br>
+
+everything else blurred.<br>
+just Her voice.<br>
+just Her laugh.<br>
+like the world dimmed its lights<br>
+for Her spotlight.<br><br>
+
+and i sat there,<br>
+staring at the floor,<br>
+as if the tile had all the answers—<br>
+why i love Her,<br>
+why i hate myself for it,<br>
+why i’ll never say a word.<br><br>
+
+god,<br>
+what a fucking beautiful hell it is<br>
+to burn this quietly.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ========================= -->
+<!-- POEM 20 -->
+<!-- ========================= -->
+
+<div class="design-popup" id="poem20">
+
+<div class="writing-content-popup glass">
+
+<div class="design-close"
+onclick="closeWritingContent('poem20')">
+
+<span>×</span>
+
+</div>
+
+<h1 class="section-title reveal">
+EVERY GLANCE IS A RAZOR
+</h1>
+
+<div class="writing-scroll">
+
+<p>
+
+I see her,<br>
+and it’s not just my breath that halts—<br>
+it’s time.<br>
+The fucking clock dares not tick<br>
+when her eyes glide past me like I’m nothing<br>
+but furniture<br>
+in a room she never wanted to walk into.<br><br>
+
+I have so much to say,<br>
+so much, it chokes me.<br>
+Words rot in my throat,<br>
+too scared to be born<br>
+because what if they fall flat?<br>
+What if she laughs?<br>
+What if she just... walks away?<br>
+So I swallow them.<br>
+Again.<br>
+And again.<br>
+Until they ferment into acid,<br>
+and I burn from the inside out.<br><br>
+
+I hate that I love her.<br>
+Hate that every smile she gives someone else<br>
+feels like a blade under my ribs.<br>
+Like I'm some fucking audience<br>
+to a show that was never meant for me.<br>
+I want to scream.<br>
+I want to bleed the silence out.<br>
+But all I do is sit,<br>
+watching,<br>
+loving,<br>
+dying in increments.<br><br>
+
+Each night I peel back the skin<br>
+just enough<br>
+to remind myself I still feel something—<br>
+to mirror<br>
+this shattered thing I call a soul.<br>
+Red rivers don’t lie like I do.<br>
+They spill the truth.<br>
+That I’m not enough.<br>
+Never was.<br>
+Never will be.<br><br>
+
+I’m the kind of boy<br>
+who writes poems with broken nails<br>
+and hides the stains in his hoodie sleeve.<br>
+The kind of boy<br>
+who flinches when someone says his name<br>
+like it’s a joke they forgot to laugh at.<br><br>
+
+She,<br>
+she’s galaxies.<br>
+I’m the dust on the sole of her shoes.<br>
+She is light.<br>
+I’m the mold that grows<br>
+when you forget to care.<br><br>
+
+And yet,<br>
+and yet—<br>
+every time she breathes,<br>
+I fall a little more.<br>
+Every time her shadow brushes mine,<br>
+I drown deeper.<br>
+It’s not love.<br>
+It’s war.<br>
+And I’m losing.<br><br>
+
+The thought of her with someone else—<br>
+it splits my skull open.<br>
+I see red.<br>
+Not roses.<br>
+Not romance.<br>
+Rage.<br>
+The kind that turns inward,<br>
+the kind that begs for punishment,<br>
+the kind that whispers,<br>
+"You deserve this, freak."<br>
+Because maybe I do.<br><br>
+
+Maybe the world was right<br>
+to ignore me.<br>
+Maybe the mirror cracks<br>
+not because it’s fragile,<br>
+but because it’s sick<br>
+of reflecting a mistake.<br><br>
+
+I don’t want her to save me.<br>
+I don’t want a pity smile.<br>
+I just want her to see me.<br>
+Once.<br>
+Really see me.<br>
+But I know—<br>
+she never will.<br><br>
+
+And so I write,<br>
+and bleed,<br>
+and rot<br>
+with a heart too full,<br>
+and lips too sealed,<br>
+while she laughs somewhere else<br>
+with someone better.<br><br>
+
+And I<br>
+burn.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ========================= -->
+<!-- POEM 21 -->
+<!-- ========================= -->
+
+<div class="design-popup" id="poem21">
+
+<div class="writing-content-popup glass">
+
+<div class="design-close"
+onclick="closeWritingContent('poem21')">
+
+<span>×</span>
+
+</div>
+
+<h1 class="section-title reveal">
+THE GENTLE JOLT
+</h1>
+
+<div class="writing-scroll">
+
+<p>
+
+Sitting two chairs away.<br>
+close enough<br>
+to hear her hum to herself<br>
+without ever catching the tune.<br><br>
+
+eye contact?<br>
+maybe.<br>
+maybe not.<br>
+it lasted just long enough<br>
+for me to argue with myself<br>
+about whether it happened.<br><br>
+
+you learn<br>
+to sit quieter<br>
+in their presence,<br>
+as if being still enough<br>
+might make you blend<br>
+into the edges of their world.<br><br>
+
+a laugh,<br>
+not yours to claim,<br>
+still lands nearby<br>
+and feels like<br>
+borrowed warmth.<br><br>
+
+shoulders brush—<br>
+just a second—<br>
+but long enough<br>
+to feel your pulse<br>
+remember it.<br><br>
+
+“try once,”<br>
+your mind whispers,<br>
+“just once—<br>
+what if?”<br><br>
+
+you don't move.<br>
+you won’t.<br>
+but you carry<br>
+that jolt,<br>
+like a secret thread<br>
+that ties you to<br>
+a maybe<br>
+you never quite cut loose.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ========================= -->
+<!-- POEM 22 -->
+<!-- ========================= -->
+
+<div class="design-popup" id="poem22">
+
+<div class="writing-content-popup glass">
+
+<div class="design-close"
+onclick="closeWritingContent('poem22')">
+
+<span>×</span>
+
+</div>
+
+<h1 class="section-title reveal">
+GHOST WITH A SKIN
+</h1>
+
+<div class="writing-scroll">
+
+<p>
+
+I found love ridiculous.<br>
+Absurd, even.<br>
+Like a bedtime story told to a child<br>
+too old to believe in happy endings.<br><br>
+
+Love feels like a cruel joke—<br>
+a prank the universe keeps playing on me.<br><br>
+
+You see, I wasn’t haunted by monsters,<br>
+or chased by shadows in the dark.<br>
+The devil didn’t torment me with demons.<br>
+No—<br>
+he gave me something far worse:<br><br>
+
+A mind that craves silence and space,<br>
+and a heart that begs—desperately—for touch,<br>
+for warmth,<br>
+for someone.<br><br>
+
+So I live like a battlefield—<br>
+divided.<br><br>
+
+I push people away the moment they get too close,<br>
+then break under the silence I created.<br>
+I want comfort,<br>
+but I bolt every door before it arrives.<br>
+I ache for connection,<br>
+but respond with distance,<br>
+like it’s all I’ve ever known.<br><br>
+
+It’s like breathing and drowning at once.<br>
+It’s cold.<br>
+It’s loud.<br>
+It’s unbearably lonely.<br><br>
+
+Tell me—<br>
+what’s worse?<br>
+Being alone,<br>
+or sitting in a room full of people<br>
+and still feeling like a ghost<br>
+with skin?<br><br>
+
+They think I’m doing fine.<br>
+I smile.<br>
+I laugh.<br>
+I function.<br>
+But when comfort finally knocks,<br>
+I panic.<br>
+I run.<br>
+I ruin it.<br><br>
+
+I ruin it because love terrifies me.<br>
+Because love means being seen,<br>
+and I don’t know who I am<br>
+beneath all this pretending.<br><br>
+
+I ruin it because I’ve spent too long<br>
+convinced I’m unworthy<br>
+of softness,<br>
+of stillness,<br>
+of someone’s arms wrapped around all my mess.<br><br>
+
+And even when someone reaches out—<br>
+genuinely—<br>
+my mind twists it.<br>
+It whispers, they’ll leave.<br>
+And I believe it.<br>
+Every time.<br><br>
+
+I want someone to stay.<br>
+But I don’t let them.<br><br>
+
+I want someone to fight for me.<br>
+But I make it impossible.<br><br>
+
+I want someone to love me.<br>
+But I don’t know how to be loved<br>
+without unraveling.<br>
+Without bleeding every version of myself<br>
+that I built just to survive.<br><br>
+
+And here I am—<br>
+no monsters under my bed,<br>
+no demons on my back—<br>
+just me,<br>
+with a war inside my chest,<br>
+a quiet grief wrapped in skin,<br>
+and a heart that no longer knows<br>
+if it wants to be held<br>
+or left alone.<br><br>
+
+So if you ask me about love,<br>
+I’ll still say it feels like fiction.<br>
+Because if love was real—<br>
+if it was meant for me—<br>
+then why does it always end<br>
+with me picking up pieces<br>
+of a heart I never learned to protect?<br><br>
+
+Why does it always end<br>
+with me?<br><br>
+
+Alone.<br>
+Again.<br>
+Still pretending it doesn’t ache.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ========================= -->
+<!-- POEM 23 -->
+<!-- ========================= -->
+
+<div class="design-popup" id="poem23">
+
+<div class="writing-content-popup glass">
+
+<div class="design-close"
+onclick="closeWritingContent('poem23')">
+
+<span>×</span>
+
+</div>
+
+<h1 class="section-title reveal">
+MONDAYS AND SATURDAYS
+</h1>
+
+<div class="writing-scroll">
+
+<p>
+
+He used to wear Saturdays<br>
+like a second skin—<br>
+light,<br>
+loose,<br>
+freedom pressed into the creases<br>
+of crumpled class notes<br>
+and half-finished coffee cups.<br>
+Mondays,<br>
+he met like fog—<br>
+reluctantly,<br>
+head heavy,<br>
+shoes dragging through corridors<br>
+that all looked the same.<br><br>
+
+But something shifted—<br>
+quietly,<br>
+A presence,<br>
+and suddenly,<br>
+he began to arrive<br>
+early.<br><br>
+
+Now,<br>
+Mondays wear perfume.<br>
+They carry the soft rustle<br>
+of a bag strap on denim,<br>
+the rhythm of footsteps<br>
+that fall in just before his.<br>
+They are filled<br>
+with stolen glances<br>
+and the kind of silence<br>
+that speaks only to those<br>
+who wish they were seen.<br><br>
+
+He never spoke to her.<br>
+He never had to.<br><br>
+
+She sat<br>
+a few rows ahead,<br>
+sometimes tucking her hair<br>
+behind her ear<br>
+just as he looked up—<br>
+and that was enough<br>
+to carry him<br>
+through three periods,<br>
+a bad sandwich,<br>
+and another day<br>
+of being invisible.<br><br>
+
+Sundays, now—<br>
+they echo.<br>
+Too quiet.<br>
+Too long.<br>
+No chance of passing her<br>
+or pretending to need<br>
+something<br>
+he doesn’t use.<br><br>
+
+He used to dread deadlines.<br>
+Now he dreads<br>
+a full day<br>
+without a glimpse<br>
+of her shadow<br>
+moving across the room.<br><br>
+
+No one knows<br>
+that the boy<br>
+who once cursed the timetable<br>
+now rewrites it<br>
+in her name—<br>
+not loudly,<br>
+not even in ink,<br>
+but in the way<br>
+he leans forward<br>
+just a little<br>
+when she enters,<br>
+in the way<br>
+he hates the sound<br>
+of the last bell on Saturday.<br><br>
+
+And maybe she’ll never know.<br>
+But he wanted her<br>
+in the gentlest way—<br>
+from behind a syllabus,<br>
+between skipped heartbeats,<br>
+in the calendar<br>
+he never believed in<br>
+until she walked in<br>
+on a Monday.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ========================= -->
+<!-- POEM 24 -->
+<!-- ========================= -->
+
+<div class="design-popup" id="poem24">
+
+<div class="writing-content-popup glass">
+
+<div class="design-close"
+onclick="closeWritingContent('poem24')">
+
+<span>×</span>
+
+</div>
+
+<h1 class="section-title reveal">
+BEYOND REPAIR
+</h1>
+
+<div class="writing-scroll">
+
+<p>
+
+I am the aftertaste of iron<br>
+on the tongue of a dying god.<br>
+A twitching vein on the neck of grief,<br>
+never cut, only bruised deeper<br>
+by the passing silence.<br><br>
+
+Each breath I take is a borrowed scream<br>
+from a child who never learned to laugh.<br>
+I do not cry anymore —<br>
+tears are luxuries I sold<br>
+to demons in exchange<br>
+for one more sleepless night.<br><br>
+
+My skin is stitched with apologies<br>
+no one asked for.<br>
+I wear shame like a wedding dress<br>
+in a church that's long been burned.<br>
+Hope visits me like a debt collector—<br>
+smiling, polite, persistent,<br>
+always leaving with more<br>
+than I have left.<br><br>
+
+I wake up in rooms<br>
+that smell like endings.<br>
+My mirror spits blood,<br>
+refusing to reflect someone<br>
+so disgustingly haunted.<br>
+I do not exist —<br>
+I rot forward in time,<br>
+maggots of memory<br>
+feeding on what could’ve been.<br><br>
+
+Love?<br>
+That was a gun misfired into my mouth<br>
+by someone who whispered forever<br>
+before pulling the trigger.<br>
+Now every kiss is a phantom limb—<br>
+I feel it,<br>
+but it isn’t there.<br><br>
+
+I’m the kind of broken<br>
+you don’t talk about at dinner.<br>
+Not heartbreak—no,<br>
+that’s too romantic.<br>
+I’m the kind of ache<br>
+you find in padded cells,<br>
+in the teeth marks on wrists,<br>
+in eyes that flinch at mirrors<br>
+because they remember too much.<br><br>
+
+They say time heals.<br>
+Time watched me burn and took notes.<br>
+It carved tally marks into my bones,<br>
+one for every second I begged for mercy<br>
+and got laughter instead.<br>
+Now, I keep my sanity<br>
+in a rusted birdcage,<br>
+its wings clipped and twitching,<br>
+singing lullabies in a voice<br>
+like a throat filled with glass.<br><br>
+
+There is no poetry in me.<br>
+Only broken typewriters<br>
+typing out obituaries<br>
+for versions of me that died<br>
+before they could even breathe.<br><br>
+
+I am nauseatingly miserable,<br>
+a carcass with a pulse,<br>
+a cathedral echoing screams<br>
+no god wants to hear.<br><br>
+
+Don’t offer me light.<br>
+The darkness is the only thing<br>
+that never left.<br><br>
+
+And some things—<br>
+some things are not meant to heal.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ========================= -->
+<!-- POEM 25 -->
+<!-- ========================= -->
+
+<div class="design-popup" id="poem25">
+
+<div class="writing-content-popup glass">
+
+<div class="design-close"
+onclick="closeWritingContent('poem25')">
+
+<span>×</span>
+
+</div>
+
+<h1 class="section-title reveal">
+SHE LOOKED LIKE THE RIGHT ANSWER
+</h1>
+
+<div class="writing-scroll">
+
+<p>
+
+The boy had never liked crowds.<br>
+He preferred shadows—<br>
+corners where names weren’t needed<br>
+and presence didn’t have to be proven.<br>
+College was chaos,<br>
+a million faces rushing past<br>
+like pixels in a screen<br>
+he didn’t belong to.<br><br>
+
+But then,<br>
+on the very first day,<br>
+there she was.<br><br>
+
+A flash of white kurti,<br>
+hair pinned back with lazy elegance,<br>
+books hugged to her chest<br>
+like she was born to carry stories.<br>
+Not loud,<br>
+not showy—<br>
+just complete in a way<br>
+he didn’t know people could be.<br><br>
+
+She walked like she knew<br>
+where she was headed,<br>
+and the world followed.<br>
+Boys whispered,<br>
+girls stared,<br>
+and he—<br>
+he just sat there,<br>
+clutching his bag<br>
+like it held courage.<br><br>
+
+She turned out to be in his class.<br>
+Of course.<br>
+Toppers always are.<br>
+The kind who answered even when not asked,<br>
+who glowed beneath tube lights,<br>
+who made professors pause mid-sentence<br>
+just to smile.<br><br>
+
+He, on the other hand,<br>
+liked the last bench.<br>
+Where yawns were sacred<br>
+and doodles covered more pages than notes.<br>
+He and his friends<br>
+shared memes,<br>
+mid-class snacks,<br>
+and stuff they’d never say aloud.<br><br>
+
+He was a poet—<br>
+a lazy one, maybe.<br>
+But still a poet.<br>
+And she…<br>
+she was a poem<br>
+he could never write.<br>
+Not even if he bled metaphors.<br><br>
+
+And yet—<br>
+somehow—<br>
+they started talking.<br><br>
+
+It wasn’t magic.<br>
+No violins.<br>
+Just a random question he asked<br>
+about the assignment,<br>
+and suddenly,<br>
+they were gossiping about the boy<br>
+who tried to sound British,<br>
+and the girl who changed colours<br>
+mid-presentation.<br><br>
+
+She wasn’t who he imagined.<br>
+She was sunshine wrapped in sarcasm,<br>
+smiles too big for her face,<br>
+and honesty that didn’t need polishing.<br>
+She was… real.<br><br>
+
+And he—<br>
+he began to change.<br>
+Without planning to.<br><br>
+
+He combed his hair more.<br>
+Started wearing that one shirt<br>
+his mother said brought out his eyes.<br>
+He walked straighter,<br>
+laughed less like a goat<br>
+just in case she turned around.<br><br>
+
+He didn’t know why<br>
+he cared so much.<br>
+But he did.<br><br>
+
+He started reading textbooks—<br>
+doing stuffs,<br>
+for a quiet kind of hope.<br>
+For the chance<br>
+that she might once<br>
+see him<br>
+as someone who wasn’t just… there.<br><br>
+
+Every “Hi,”<br>
+every shared glance,<br>
+every “Us!”<br>
+felt like completing<br>
+an unfinished puzzle.<br><br>
+
+And then one day,<br>
+he had a decision to make.<br>
+A big one.<br>
+One that would change things.<br>
+And he couldn’t think.<br>
+Couldn’t choose.<br><br>
+
+So he asked her.<br>
+Casually.<br>
+Just curious.<br>
+“What would you do?”<br><br>
+
+She answered.<br>
+Without hesitation.<br>
+And he followed,<br>
+like it was the only direction<br>
+that ever made sense.<br><br>
+
+Because she looked<br>
+like the right answer.<br><br>
+
+Maybe that’s all she ever was to him—<br>
+not a crush,<br>
+not a lover,<br>
+not even a fantasy—<br><br>
+
+But a compass.<br>
+A little north star<br>
+that made him walk straighter,<br>
+speak clearer,<br>
+try harder.<br><br>
+
+She doesn’t know any of this.<br>
+He never told her.<br><br>
+
+He just keeps showing up.<br>
+Dressed a little better.<br>
+Eyes a little sharper.<br>
+Heartbeat a little louder<br>
+when she passes by.<br><br>
+
+Because sometimes,<br>
+you don’t just fall in love.<br><br>
+
+You just find someone<br>
+who makes you<br>
+want to be seen.<br>
+Even if only<br>
+from the corner of their eye.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ========================= -->
+<!-- POEM 26 -->
+<!-- ========================= -->
+
+<div class="design-popup" id="poem26">
+
+<div class="writing-content-popup glass">
+
+<div class="design-close"
+onclick="closeWritingContent('poem26')">
+
+<span>×</span>
+
+</div>
+
+<h1 class="section-title reveal">
+THE NICE GUY
+</h1>
+
+<div class="writing-scroll">
+
+<p>
+
+He was a good man, once.<br>
+The kind who watered dead plants<br>
+because he believed everything deserved<br>
+a second chance.<br>
+The kind who said sorry<br>
+even when it wasn’t his fault—<br>
+just to keep the world from crumbling.<br>
+The kind who cried<br>
+the first time he killed a moth by accident.<br><br>
+
+He had soft hands<br>
+and a softer voice,<br>
+both of which the world learned<br>
+how to use like doormats.<br><br>
+
+And so, life taught him differently.<br><br>
+
+His dad stopped calling.<br>
+His boss's threats.<br>
+His lover unzipping her soul<br>
+for someone else<br>
+and leaving behind her silence<br>
+like a corpse in his bed.<br><br>
+
+He began to fold.<br>
+Quietly at first.<br>
+Stopped answering calls.<br>
+Started staring too long<br>
+Started seeing red<br>
+in places it didn’t exist.<br><br>
+
+The first time<br>
+he tasted blood—<br>
+it wasn't his.<br>
+It was a mugger,<br>
+or maybe a man who looked at him wrong.<br>
+He doesn't remember.<br>
+But he remembers the quiet after.<br>
+The way the world finally stopped<br>
+demanding apologies.<br>
+The calm.<br>
+The control.<br><br>
+
+They found the first one in the alley—<br>
+a man who had shoved a girl in a crowd once.<br>
+He had smiled when he did it.<br>
+Now he didn’t have a mouth to smile with.<br><br>
+
+He scrubbed the floor for hours after that.<br>
+Not from guilt—<br>
+from ritual.<br>
+Like a prayer,<br>
+like a rebirth.<br><br>
+
+He kept lists.<br>
+Of names.<br>
+Of sins.<br>
+Of people who laughed<br>
+at the broken<br>
+and spit on the quiet ones.<br><br>
+
+Each visit was a poem.<br>
+Symmetry in pain.<br>
+Penance in parts.<br><br>
+
+And the strange thing is—<br>
+You’d still trust him.<br>
+He’s clean.<br>
+Polite.<br>
+Always smells like sandalwood and mint.<br>
+He holds babies the right way,<br>
+and asks elderly women if they need help<br>
+crossing the street.<br><br>
+
+But if you said the wrong thing,<br>
+if you reminded him of a wound<br>
+still pulsing under stitched-up skin—<br>
+you’d wake up<br>
+in a place that smelled like bleach<br>
+and burned sage,<br>
+with walls that echoed<br>
+your own heartbeat<br>
+until it wasn't yours anymore.<br><br>
+
+The rats in the basement<br>
+knew his real name.<br>
+They’ve chewed through pages of his journals,<br>
+the ones with sketches—<br>
+of limbs in unnatural poses,<br>
+eyes taped open,<br>
+mouths sewn shut.<br><br>
+
+He says it’s art.<br><br>
+
+He says it’s therapy.<br><br>
+
+Still,<br>
+on winter nights,<br>
+he turns off the lights,<br>
+lights a candle,<br>
+and sits beside the fireplace<br>
+as if waiting<br>
+for someone<br>
+to knock<br>
+and say,<br>
+“I know. I still see the boy beneath the blood.”<br><br>
+
+He’d let them in.<br>
+He would.<br>
+Even now.<br>
+Even after everything.<br><br>
+
+But no one comes.<br><br>
+
+And so the warmth dies again.<br>
+The fire shrinks.<br>
+The list grows.<br><br>
+
+There was one—<br>
+a girl with rain in her voice.<br>
+She stayed long enough<br>
+to see the cracks.<br>
+To ask about the notebooks.<br>
+To notice how he flinched<br>
+when she said I trust you.<br><br>
+
+She hasn’t been seen since.<br><br>
+
+But her humming…<br>
+still echoes<br>
+in the walls of his castle.<br><br>
+
+He sits by the fire some nights,<br>
+a shadow of the man<br>
+he used to pretend to be.<br>
+He grips a photo in one hand,<br>
+And he weeps.<br>
+Or laughs.<br>
+It’s hard to tell.<br><br>
+
+He whispers to the dark:<br>
+“Even villains…<br>
+deserve warmth.”<br>
+" Don't they ? Hun ?"<br><br>
+
+The flames flicker violently.<br>
+The air grows heavy.<br>
+Something skitters across the floor.<br><br>
+
+And then—<br>
+a knock.<br><br>
+
+Once.<br><br>
+
+Twice.<br><br>
+
+Then silence.<br><br>
+
+He smiles.<br><br>
+
+The door creaks open slowly—<br>
+but you never see what’s on the other side.<br>
+You only hear<br>
+a soft gasp.<br>
+A crunch.<br>
+And then—<br><br>
+
+Humming.<br><br>
+
+Hers?<br>
+Maybe....or<br>
+Not anymore.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ========================= -->
+<!-- POEM 27 -->
+<!-- ========================= -->
+
+<div class="design-popup" id="poem27">
+
+<div class="writing-content-popup glass">
+
+<div class="design-close"
+onclick="closeWritingContent('poem27')">
+
+<span>×</span>
+
+</div>
+
+<h1 class="section-title reveal">
+I HEARD THE ANTHEM ON THE BALCONY TODAY
+</h1>
+
+<div class="writing-scroll">
+
+<p>
+
+I heard the anthem on the balcony today.<br>
+Not from a loudspeaker,<br>
+not from a stage draped in tricolour—<br>
+but from the hum<br>
+of an old man<br>
+tuning his radio<br>
+with fingers that shook<br>
+like tired flags.<br><br>
+
+Below,<br>
+the street was quieter than usual.<br>
+Posters half-torn,<br>
+blood still clinging to the cracks<br>
+in the pavement like a child too scared to let go.<br><br>
+
+He looked up at me,<br>
+this man with a voice like rusted bells,<br>
+and asked,<br>
+“Do you remember when silence wasn’t so loud?”<br>
+I nodded.<br>
+Because we’ve all learned<br>
+how to speak<br>
+without moving our mouths.<br><br>
+
+He said he used to sing the anthem<br>
+with his hand on his chest—<br>
+not to obey,<br>
+but to belong.<br><br>
+
+Now,<br>
+he sings it like a lullaby<br>
+for a country that forgot<br>
+how to sleep<br>
+without nightmares.<br><br>
+
+I sat down beside him,<br>
+lit a candle instead of a cigarette.<br>
+Some smoke<br>
+you don’t breathe in—<br>
+it clings to your skin<br>
+and makes you smell like grief<br>
+for days.<br><br>
+
+He told me about a boy,<br>
+barely seventeen,<br>
+who carried bricks all day<br>
+and hope all night.<br>
+Said the boy wanted to study<br>
+under streetlights<br>
+until the firecrackers stopped sounding like gunshots.<br><br>
+
+But the streetlight blew out.<br>
+And so did the boy.<br><br>
+
+He didn’t cry when he said it.<br>
+He just blinked,<br>
+slowly,<br>
+like even his tears<br>
+had grown tired of returning<br>
+to the same ashes.<br><br>
+
+And I thought—<br>
+how many stories now<br>
+lie buried beneath headlines<br>
+that never made it past a scroll?<br><br>
+
+How many mothers<br>
+burn incense<br>
+to hide the scent<br>
+of missing sons?<br><br>
+
+How many gods<br>
+are being carved<br>
+with the same hands<br>
+that once folded in prayer<br>
+for peace?<br><br>
+
+The old man stood up.<br>
+Hummed the last line<br>
+with a reverence<br>
+I couldn’t match.<br><br>
+
+He looked at me and smiled—<br>
+not with joy,<br>
+but with the dignity<br>
+of someone who’s watched<br>
+his home be dismantled<br>
+brick by brick,<br>
+and still lays out a mat<br>
+for strangers.<br><br>
+
+“I don’t sing it because it’s perfect,” he said.<br>
+“I sing it because it was promised.<br>
+And someone needs to remind this land<br>
+what it was promised.”<br><br>
+
+Then he walked away—<br>
+leaving the radio still humming,<br>
+the anthem caught<br>
+between static and memory.<br><br>
+
+And I stood there,<br>
+wondering how many more<br>
+we’ll lose<br>
+before we realize<br>
+a nation isn’t stitched from flags<br>
+or cemented with pride—<br>
+but held together<br>
+by people<br>
+who still hum<br>
+when the music’s gone.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ========================= -->
+<!-- POEM 28 -->
+<!-- ========================= -->
+
+<div class="design-popup" id="poem28">
+
+<div class="writing-content-popup glass">
+
+<div class="design-close"
+onclick="closeWritingContent('poem28')">
+
+<span>×</span>
+
+</div>
+
+<h1 class="section-title reveal">
+I MET MY YOUNGER SELF AT THE COFFEE TABLE TODAY
+</h1>
+
+<div class="writing-scroll">
+
+<p>
+
+I met my younger self at the coffee table today.<br>
+He swung his legs like a child does—<br>
+back and forth,<br>
+carefree.<br><br>
+
+He looked at me<br>
+with those wide, stupid eyes<br>
+full of plans,<br>
+full of fire,<br>
+full of lines like,<br>
+“I’ll never be like them.”<br>
+And,<br>
+“I’ll always choose what's right.”<br><br>
+
+I lit a cigarette.<br>
+He flinched.<br>
+He left.<br><br>
+
+Didn’t even say goodbye.<br><br>
+
+Just the sound of his sneakers<br>
+scraping the floor,<br>
+like innocence retreating<br>
+into the shadows.<br><br>
+
+And I sat there,<br>
+smoke curling around the ruin<br>
+of who I promised to be.<br><br>
+
+It’s funny—<br>
+how we begin with blueprints<br>
+etched in crayon,<br>
+dreams stapled to our ribs,<br>
+moral codes that gleam like fresh glass.<br>
+But then life—<br>
+life doesn’t knock.<br>
+It barges in,<br>
+muddy boots and all,<br>
+and tears down the walls<br>
+before we even learn<br>
+how to hold a hammer.<br><br>
+
+There were choices<br>
+I swore I’d never make.<br>
+But I did.<br>
+Compromises I said I'd never offer.<br>
+But I did.<br>
+Apologies I never planned to owe.<br>
+But here they are,<br>
+stacked in my chest.<br><br>
+
+You see,<br>
+they never tell you<br>
+how heavy it is<br>
+to survive.<br>
+How the world makes you pick<br>
+between food and pride,<br>
+between truth and convenience,<br>
+between love<br>
+and the version of yourself<br>
+that still believes in love.<br><br>
+
+I broke promises.<br>
+To my mother.<br>
+To a lover who once traced galaxies<br>
+into my skin.<br>
+To the boy who sat across from me<br>
+this morning—<br>
+the one who used to believe<br>
+that justice always wins.<br><br>
+
+I want to tell him:<br>
+It’s not that I stopped caring.<br>
+It’s just that the rules changed<br>
+and no one warned me.<br>
+That right and wrong<br>
+aren’t signs on a road—<br>
+they’re shadows,<br>
+and they shift<br>
+depending on where you stand.<br><br>
+
+Sometimes,<br>
+you lie just to make it to next week.<br>
+Sometimes,<br>
+you hurt the ones you love<br>
+because silence is the only language<br>
+your pain speaks fluently.<br><br>
+
+I pour another cup of coffee.<br>
+It’s bitter.<br>
+Like all the truths I’ve swallowed<br>
+to keep myself standing.<br><br>
+
+The chair across from me is empty now,<br>
+but his presence lingers—<br>
+like a ghost,<br>
+like a mirror turned backward.<br><br>
+
+And maybe that’s the price<br>
+of growing up:<br>
+You don’t lose your younger self—<br>
+you leave them behind<br>
+in places like this,<br>
+every time you choose survival<br>
+over innocence.<br><br>
+
+So I sip.<br>
+I breathe.<br>
+And I wait<br>
+for tomorrow’s version of me<br>
+to arrive.<br><br>
+
+Maybe he’ll light a cigarette too.<br>
+Maybe he won’t.<br>
+But either way—<br>
+we’ll talk.<br><br>
+
+Even if one of us<br>
+always ends up leaving.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ========================= -->
+<!-- POEM 29 -->
+<!-- ========================= -->
+
+<div class="design-popup" id="poem29">
+
+<div class="writing-content-popup glass">
+
+<div class="design-close"
+onclick="closeWritingContent('poem29')">
+
+<span>×</span>
+
+</div>
+
+<h1 class="section-title reveal">
+CARRION LOVERS
+</h1>
+
+<div class="writing-scroll">
+
+<p>
+
+They wade through the graveyard of lovers,<br>
+digging up corpses with polished nails,<br>
+pressing bruised lips to hollow skulls,<br>
+whispering, “Be mine.”<br><br>
+
+They do not love.<br>
+They dissect.<br>
+Peeling flesh from devotion,<br>
+ripping out spines to mount on their walls—<br>
+trophies of conquest, not connection.<br><br>
+
+They drink the marrow of vulnerability,<br>
+tongues slithering through open wounds,<br>
+licking at the last remnants of sincerity<br>
+before spitting it out,<br>
+too bitter, too real.<br><br>
+
+Their veins are grave-dirt and venom,<br>
+choking out anything human left inside,<br>
+preserving their borrowed personalities<br>
+so they can stay desirable,<br>
+so they can stay wanted,<br>
+so they can stay anything<br>
+but themselves.<br><br>
+
+Yet they scream for soulmates,<br>
+as if a soul is something they haven’t already<br>
+slaughtered,<br>
+stitched together,<br>
+sold for a spotlight.<br><br>
+
+Their love is a crime scene.<br>
+A pile of severed promises,<br>
+a morgue of past lovers,<br>
+a banquet of shattered hearts served<br>
+on silver platters.<br><br>
+
+But tell me,<br>
+when you kiss someone,<br>
+do you taste warmth—<br>
+or the rot creeping under their tongue?<br>
+When you hold their hand,<br>
+does it grip back—<br>
+or only mimic the motion?<br><br>
+
+Are you truly searching for a soulmate,<br>
+or just another body<br>
+to bury?
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ========================= -->
+<!-- POEM 30 -->
+<!-- ========================= -->
+
+<div class="design-popup" id="poem30">
+
+<div class="writing-content-popup glass">
+
+<div class="design-close"
+onclick="closeWritingContent('poem30')">
+
+<span>×</span>
+
+</div>
+
+<h1 class="section-title reveal">
+ATONEMENT
+</h1>
+
+<div class="writing-scroll">
+
+<p>
+
+Blood pools on the bathroom floor,<br>
+Mixing with tears and discarded razor blades.<br>
+A self-portrait in crimson,<br>
+A dance of pain and penance.<br>
+The mirror reflects a stranger's face,<br>
+Eyes hollow and lost, skin marred and scarred.<br>
+A patchwork of scars and wounds,<br>
+A testament to suffering.<br>
+But still, I smile<br>
+Proud of the masterpiece<br>
+A shrine to my freedom.<br><br>
+
+In the dimly lit sanctuary of solitude,<br>
+I stand before the altar of my own creation,<br>
+Cradling the remnants of my own broken soul,<br>
+Embracing the warmth of the crimson hue.<br>
+Each slice, each wicked, precise cut,<br>
+A whisper in the dark, a secret shared with only me.<br>
+I am both artist and muse,<br>
+The beauty of the beast, the disquieting symmetry.<br>
+My body, a canvas of suffering rendered in shades of red,<br>
+A self-portrait of a man in anguish and despair.<br>
+Yet, there is a strange serenity in the act,<br>
+A sense of control in the chaos of pain.<br>
+For in each cut, each line etched in my skin,<br>
+I find solace, a fleeting moment of peace.<br>
+But can I ever truly be free?<br>
+Can I ever escape the gauntlet of my own demons?<br>
+Do these wounds serve as a testament to my suffering?<br>
+Or are they merely another layer of the masquerade?<br>
+I raise my razor-etched hand,<br>
+Each line a story,<br>
+My veins are inkwells, my skin parchment,<br>
+I stand before the mirror, the broken glass reflecting a ghost,<br>
+And wonder if this grim spectacle will ever end.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ========================= -->
+<!-- POEM 31 -->
+<!-- ========================= -->
+
+<div class="design-popup" id="poem31">
+
+<div class="writing-content-popup glass">
+
+<div class="design-close"
+onclick="closeWritingContent('poem31')">
+
+<span>×</span>
+
+</div>
+
+<h1 class="section-title reveal">
+BEAUTY IN IMPERFECTIONS
+</h1>
+
+<div class="writing-scroll">
+
+<p>
+
+"Speak to me," she breathed in hushed tones,<br>
+"Why did you seek me out only now,<br>
+When I am merely fragments of a once whole vessel,<br>
+Unable to offer the richness of my affection?<br>
+Why does existence brandish such a merciless blade?"<br><br>
+
+His voice, as gentle as twilight's sigh, he offered,<br>
+"Would the moon still bewitch you if it were nothing more than an unmarred orb?<br>
+Doesn’t its blemishes and shadows bestow upon it a distinctive allure?<br>
+Love is not about idolizing flawlessness, or adoring what the masses find enticing.<br>
+It's about uncovering faults and doubts and cradling them close.<br>
+Is there not greater joy in revitalizing an imperfect masterpiece<br>
+Than simply gazing at it from afar?<br>
+You are that artwork to me.<br>
+I ache to comprehend your flaws and uncertainties,<br>
+To heal your splintered heart, and then surrender to your love."<br><br>
+
+She searched his gaze for any hint of falsehood.<br>
+But all that met her was raw exposure—<br>
+A sincere yearning to truly perceive her, with every imperfection.<br><br>
+
+Something stirred with the breeze<br>
+Tentative yet filled with anticipation,<br>
+She reached out towards him. As their fingers meshed together,<br>
+A wave of emotions washed over her—hope entwined with fear and desire.<br>
+Could she dare trust that someone could adore her so wholly—so unreservedly?<br><br>
+
+As their fingers laced together, she felt a spark kindle deep within her chest.<br>
+It was a glimmer of something new, something she had long abandoned -<br>
+The potentiality of love in its most unadulterated form.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ========================= -->
+<!-- PROSE 1 -->
+<!-- ========================= -->
+
+<div class="design-popup" id="prose1">
+
+<div class="writing-content-popup glass">
+
+<div class="design-close"
+onclick="closeWritingContent('prose1')">
+
+<span>×</span>
+
+</div>
+
+<h1 class="section-title reveal">
+CRIMSON DESPAIR
+</h1>
+
+<div class="writing-scroll">
+
+<p>
+
+In the veins of madness,<br>
+A symphony of blood,<br>
+The rhythm of red rivers weaving through the sinewy labyrinth of flesh.<br>
+Oh, to be the maestro,<br>
+To conduct this macabre orchestra of pain,<br>
+A melody of self-mutilation, a masterpiece of anguish.<br><br>
+
+With every cut, I sip the sweet nectar of agony, feeling the cold steel slice through this rotten fleshy shell. The wound, a scarlet ballet, a delicate dance of flesh and bone. Each tear echoes with anguish, a crescendo of cries that bounce off the hollow walls of my existence.<br><br>
+
+I plunge my hand, a willing marionette, into the well of my belly, a chasm waiting to devour me. I search for the entrails, my innermost truths, the guts that bind me to this mortal coil. My fingers trace the hollows, the shadows, the grooves—a topography of pain that only I can excavate. I pull, I tear, I rend—the sinews that hold me together. I am a god, a vengeful deity, unleashing a torrent of wrath upon myself. I find them, writhing and pulsing, an extension of my soul, tangled and knotted like the roots of a tree. I grasp them, feel their slippery texture beneath my fingers, and slowly begin to unravel their twisted form.<br><br>
+
+With a desperate tug, I wrench them free from their prison, the stench of decay and rot assaulting my senses. I hold them aloft, heavy and weighty, a testament to my own cruel nature. This is my truth, this grotesque spectacle - a memento of the agony that I so willingly inflict upon myself.<br><br>
+
+Oh, the blood, the blood that gushes forth like an unquenchable fountain, a crimson waterfall cascading down my torso. It's intoxicating, this lifeblood, this elixir of existence that I so carelessly pour out. I watch it pool, a sanguine lake reflecting my misery back at me.<br><br>
+
+And yet, amidst the carnage, there is a fleeting moment of tranquility—an eye of the storm, if you will. I gaze upon my wound, my creation, my work of art.<br><br>
+
+This is my sanctuary, this sea of scarlet, where I am both victim and creator, a god of my own making. With each cut, each gash, each excruciating pull, I feel the power that I have harnessed, the power to bring forth pain, to transform flesh and bone into a canvas of gore. I am the artist, and this bleeding body is my palette.<br><br>
+
+The echo of agony fills the air, the cacophony of emotions that I have been stifling for so long, finally given voice. They scream and moan, like the notes of a twisted symphony, a melody of sorrow that transcends words.<br><br>
+
+I close my eyes, and in my mind, I see the visage of the one who caused this torment. Her eyes…<br><br>
+
+It is here that I find solace, a reprieve from the chaos that swirls ceaselessly in my mind. The wound, a tangible manifestation of the insanity that courses through my veins, offers a glimpse of peace amidst the orgiastic symphony of violence.<br><br>
+
+As the blood continues to spill, it forms intricate patterns on the carpeted floor beneath me, each droplet a testament to the torment that I have inflicted upon myself. The viscera, once concealed within my body, now lie before me, a grotesque feast of my own making.<br>
+
+I reach out, my hand trembling as it brushes against the cold, wet mess that was once a part of me. I feel the familiar tendrils of guilt and regret begin to creep in but it's too late.<br><br>
+
+I have danced with death, embraced the abyss, and confronted my own mortality. My body is a battlefield, scarred and bloodied, but it is mine. I wield the very instruments of my despair with a feverish intensity, shaping my flesh into a macabre masterpiece. I am the author of my own suffering, and as I watch the blood paint the floor in intricate patterns, I feel a perverse sense of joy.<br><br>
+
+In this moment, I am alive.<br>
+
+Each cut, each slice, a testament to the depth of my pain, the depth of my anguish, the depth of my love. They are a monument to the one whom I will never forget, whose face I will never see again. Each drop of blood, a tear shed for a love lost, for a life that could have been.<br><br>
+
+With a final, desperate tug, I wrench the last remnant of my intestines from my ravaged body,I collapse to the floor, the cold tile against my skin providing a semblance of comfort amidst the chaos.<br><br>
+
+As I lay on the floor, the life seeping from me, I feel a strange sense of calm. The music of pain, the symphony of agony, has finally reached its crescendo. My body, once a vessel of torment, now lies still, a testament to the power of self-destruction.<br><br>
+
+I look up at the ceiling, my eyes heavy with the weight of memories and regrets. The blood, now congealed and drying, paints a macabre portrait of my descent into madness. I wonder if anyone will ever find me here, lost in the labyrinth of this cold, empty apartment.<br><br>
+
+A quiet laughter escapes my lips, a dark and twisted joke played on myself. For what is life, but a masquerade of happiness and sorrow? A dance of pain and joy, a symphony of existence that ends in a cacophony of silence.<br><br>
+
+The pain is overwhelming, yet it is the only thing that grounds me in this maelstrom of chaos. It is the soundtrack of my life, a melody that I can no longer bear to hear. I want to stop, to simply lay down and let the darkness envelop me, to go the way of all flesh.<br><br>
+
+But I am not ready for that, not yet. I rise again from the floor, my legs wobbling as I make my way to the bathroom. The mirror stares back at me, a stranger in my own house. I am a ghost, a shell of the man I once was,<br><br>
+
+I reach for the razor, my hand trembling as it does every time. It's become my constant companion, an extension of my will, a tool to etch my pain upon my skin. I look at my reflection, the mirror now a canvas of loss and despair. The scars are like a roadmap of my life.<br><br>
+
+I take a deep breath, the air heavy with the weight of my insanity, and raise the blade to my wrists. The cold steel feels familiar, comforting even, as it bites into my flesh. The blood begins to flow, a torrent of crimson that pours forth from the wounds I've created. It's a macabre dance, a ballet of pain and betrayal.<br>
+
+I watch as the blood pools on the floor.<br><br>
+
+The room is now awash in my lifeblood, a testament to my unwavering commitment to my own suffering. I can feel my strength slowly ebbing away, the life force draining from my veins. But there is a strange sense of peace in this moment of death.<br>
+
+As the darkness closes in around me, I can't help but think of her one last time. The face that tormented me, the love that consumed me, the emptiness that remained. I wonder if she ever thought of me, of the pain I caused myself in her name. Did she ever wonder what happened to the boy she once loved?<br>
+
+Or was it just another fleeting memory, lost in the cacophony of life?<br><br>
+
+I can't say for sure. All I know is that this pain, it's mine and mine alone. And in this final moment, as the darkness consumes me, I find solace in knowing that it is the only thing that is truly mine. The only thing that exists solely for me.<br><br>
+
+And as the darkness closes in, I let out a final, agonized breath, and let the peace wash over me.<br>
+
+The symphony of pain has reached its final note. My body, once a canvas of my own suffering, now lies still, a testament to the power of the human spirit. The blood, now congealed and drying, paints a macabre portrait of my descent into madness.<br><br>
+
+And in this darkness, I find myself at peace. At last, I have found my sanctuary.<br><br>
+
+As the life force drains from me I can't help but wonder what awaits me on the other side. Is it oblivion? Or is it an eternity of pain, conscious and cruel?<br><br>
+
+I can't say for sure.<br>
+
+But what I do know is that in this place, where nothing but darkness and silence exist, I am truly free. Free from the pain, the guilt, the regret.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ========================= -->
+<!-- PROSE 2 -->
+<!-- ========================= -->
+
+<div class="design-popup" id="prose2">
+
+<div class="writing-content-popup glass">
+
+<div class="design-close"
+onclick="closeWritingContent('prose2')">
+
+<span>×</span>
+
+</div>
+
+<h1 class="section-title reveal">
+HOME
+</h1>
+
+<div class="writing-scroll">
+
+<p>
+
+Four words and a thousand different interpretations. Sometimes, when people say "I'm here for you," they mean "I'm here for a while, for an hour or an evening. You're a generally good person and I enjoy your company and I know you have to vent right now, so I'll listen; I'll even bring the beers if you want. But probably won't stay the night!"<br><br>
+
+Sometimes, when people say "I'm here for you" they mean "I don't know what else to say to your sad story. You floored me and have absolutely no advice, nowhere to go from here. All I can do is sit here with you and absorb. Hope that helps." Other times, "I'm here for you" means "I'm here for you but I'd rather not be, it's just what you're supposed to say in these situations so don't know. I'm offering, but hope you don't actually take me up on it."<br><br>
+
+See? Different. Sometimes it means something, sometimes it doesn't. Sometimes the people who say it might as well be commenting on the weather, the brunch they just came home from. The words come out but they don't resonate, emptied of their meaning, just tiny bare word packages floating across a synapse. And sometimes the people who truly mean it never say the words at all. But when I say I'm here for you, I mean it. mean it differently. Genuinely. Let me explain.<br><br>
+
+There's a part of friendship that's more than camaraderie and good feelings, more than having someone to hang out with all the time and bullshit with on lazy Saturday mornings. There's a part of friendship-real friendship-that's fierce love. The part marked by understanding, protection, sacrifice. The strong part. The selfless, human part. The part that would move your body in front of theirs to take a bullet without a blink or second thought. And that's why I want to tell you I'm here for you- because I am. Not in the therapist sense, not in the let's-talk-about-our-crap-friends-over-martinis sense, but the real sense: I love you enough to make room for your pain in my heart and handle it like my own. Or better than my own, because my own usually ends up stuffed into a back corner of my brain and left there to ferment into a viscous, sour liquor.<br><br>
+
+I'm here for you honestly, sometimes painfully so. I may not have first-hand experience with the exact thing you're going through, but know what it means to hurt. Hurt translates pretty well. I know what it's like to feel silenced, shut down, wounded. To feel like there's no one who really understands, or cares, or will ever make the genuine effort; to feel like even talking about it is nothing but a poison stirring of air. I care about you too much to make you feel that way alone. I may not give the best advice, or even moderately good advice, but I'm here for you.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ========================= -->
+<!-- PROSE 3 -->
+<!-- ========================= -->
+
+<div class="design-popup" id="prose3">
+
+<div class="writing-content-popup glass">
+
+<div class="design-close"
+onclick="closeWritingContent('prose3')">
+
+<span>×</span>
+
+</div>
+
+<h1 class="section-title reveal">
+SWEET HOME
+</h1>
+
+<div class="writing-scroll">
+
+<p>
+
+Home....<br>
+A place where I can go...<br>
+To take this off my shoulders...<br>
+Someone take me home...<br><br>
+
+Home. I don't know what home is but there are moments that feel like home. When I hug her, I feel some sort of comfort in her arms. Maybe her arms are my home. When I'm in distress I make a cup of tea and as soon as I take a sip of it, it gives me that warm feeling. Maybe a cup of tea is my home. When I feel lonely, I cast my eyes across every corner of the room for a companion, and every time my eyes end up looking at the same book on the shelf. Maybe that book is my home. Every time I think of getting out of my comfort zone and going on the hunt for a new place, my footsteps stop at the same place. Maybe that place is my home. When in the chaos of not-so-friendly faces, I try to find my spot in the house, and how every time I find that corner of the house empty like it's made for me only and I lay there for hours. Maybe that corner of the house is my home. At 2 am when I am unable to sleep and my soul needs to feel better, I cook food from my granny's recipe and it always works as a relaxing potion for me. Maybe that food is my home. Maybe during the lonely moments with each strike to my guitar the peace I feel in my soul makes the guitar my home. So, I don't know what home is. But there are moments, places, zones, corners, foods, books, people that feel like home.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ========================= -->
+<!-- PROSE 4 -->
+<!-- ========================= -->
+
+<div class="design-popup" id="prose4">
+
+<div class="writing-content-popup glass">
+
+<div class="design-close"
+onclick="closeWritingContent('prose4')">
+
+<span>×</span>
+
+</div>
+
+<h1 class="section-title reveal">
+THE LAST STUDY SESSION
+</h1>
+
+<div class="writing-scroll">
+
+<p>
+
+COLLEGE LIBRARY<br><br>
+
+The library is dimly lit, rows of bookshelves casting long shadows. PRIYA, 20, studies alone at a table, textbooks spread out before her. She checks her watch - 11:45 PM.<br><br>
+
+PRIYA (muttering):<br>
+Just a few more pages.... must get a full mark tomorrow….<br><br>
+
+A sound echoes from deeper in the stacks. Priya's head snaps up.<br><br>
+
+PRIYA:<br>
+Hello? Is someone there?<br><br>
+
+No response. Priya turns back to her books, but looks uneasy.<br><br>
+
+Another noise, closer this time. Priya stands, peering into the darkness between shelves.<br><br>
+
+PRIYA:<br>
+Library’s closing soon. You should probably head out.<br><br>
+
+Footsteps approach. A figure emerges from the shadows - PROFESSOR VERMA, 50s, Priya's literature teacher.<br><br>
+
+PROFESSOR VERMA (smiling):<br>
+Ah, Priya. Burning the midnight oil, I see.<br><br>
+
+Priya relaxes at the sight of her favourite teacher.<br><br>
+
+PRIYA:<br>
+Oh, Professor VERMA. You startled me.<br><br>
+
+PROFESSOR VERMA (approaching):<br>
+My apologies. I was just doing some late-night research myself.<br><br>
+
+He moves closer, standing uncomfortably near PRIYA.<br><br>
+
+PROFESSOR VERMA:<br>
+You know, you really shouldn't be here alone so late.<br><br>
+
+PRIYA (nervously):<br>
+Just finishing up, Professor. I was about to leave.<br><br>
+
+PROFESSOR VERMA (moving closer):<br>
+No need to rush. I have special access. We could... study together.<br><br>
+
+PRIYA takes a step back, bumping into the table.<br><br>
+
+PRIYA:<br>
+That’s okay. I should really get going.<br><br>
+
+PROFESSOR VERMA (blocking her path):<br>
+Come now, Priya. Don't you want to get ahead in class?<br><br>
+
+She begins gathering her books. Verma places a hand on her arm.<br><br>
+
+PROFESSOR VERMA:<br>
+Hey hey relax…No need to rush. I'll walk you out.<br><br>
+
+Priya's eyes dart around, looking for other students.<br><br>
+
+She is all alone.<br><br>
+
+PRIYA (firmly):<br>
+No thank you, Professor. I can manage on my own.<br><br>
+
+She tries to move past him, but he tightens his grip on her arm.<br><br>
+
+PROFESSOR VERMA (voice lowering):<br>
+I insist.<br><br>
+
+Verma tightens his grip, his friendly demeanor vanishing.<br><br>
+
+PROFESSOR VERMA (menacingly):<br>
+Don't be difficult, Priya. We wouldn't want this to affect your grades, would we?<br><br>
+
+Priya's eyes widen in fear. She tries to pull away, but Verma is too strong.<br><br>
+
+She suddenly shoves Verma hard, causing him to stumble back. She bolts for the exit. Verma snarls and gives chase, knocking over chairs as he pursues her through the stacks. Priya reaches the main desk and frantically presses the security alarm.<br><br>
+
+A loud siren blares through the library.<br><br>
+
+PROFESSOR VERMA (furious):<br>
+You little bitch!<br><br>
+
+He lunges for her, but Priya ducks under his grasp. She grabs a heavy book and slams it into his face.<br><br>
+
+Verma staggers back, blood trickling from his nose.<br><br>
+
+Suddenly, a loud thud echoes through the library. Verma whirls around, loosening his grip on Priya.<br><br>
+
+LIBRARIAN:<br>
+Is everything alright over there?<br><br>
+
+PRIYA (shouting):<br>
+Help! Someone please help me!<br><br>
+
+Verma curses under his breath and gives chase. Priya weaves through the maze towards the voice.<br><br>
+
+Priya sprints down the aisle, her heart pounding. She glances back to see Verma gaining on her, his face contorted with rage.<br><br>
+
+PRIYA (screaming):<br>
+Help! He's trying to attack me!<br><br>
+
+She rounds a corner and collides with the librarian, a middle-aged man with glasses.<br><br>
+
+LIBRARIAN (confused):<br>
+What’s going on?<br><br>
+
+Before Priya can respond, Verma appears, breathing heavily.<br><br>
+
+PROFESSOR VERMA (composing himself):<br>
+Nothing to worry about. Just a misunderstanding with a student.<br><br>
+
+The Librarian looks skeptical.<br><br>
+
+LIBRARIAN:<br>
+Is that true, dear?<br><br>
+
+Priya, trembling, shakes her head vigorously.<br><br>
+
+PRIYA:<br>
+He tried to... He was going to...<br><br>
+
+Verma interrupts, his voice soothing but with an undercurrent of menace.<br><br>
+
+PROFESSOR VERMA:<br>
+Priya’s been under a lot of stress lately. She's not thinking clearly.<br><br>
+
+The Librarian looks uncertain, glancing between Priya and Verma.<br><br>
+
+LIBRARIAN:<br>
+Perhaps we should call campus security, just to be safe.<br><br>
+
+Verma's eyes flash with anger, but he quickly masks it.<br><br>
+
+PROFESSOR VERMA:<br>
+That won't be necessary. I'm a respected faculty member. I'll escort Priya out myself.<br><br>
+
+He reaches for Priya, but she flinches away.<br><br>
+
+PRIYA (desperate):<br>
+Please, don't let him take me!<br><br>
+
+The Librarian hesitates.<br><br>
+
+LIBRARIAN:<br>
+I think it's best if you leave, Professor. I'll make sure Priya gets home safely.<br><br>
+
+Verma clenches his fists, his facade crumbling.<br><br>
+
+PROFESSOR VERMA (growling):<br>
+You have no idea who you're dealing with.<br><br>
+
+HAHAHAHAHA…. the library wall resonates with the Librarian’s laughter.<br><br>
+
+LIBRARIAN:<br>
+Verma, bro you had one job and you still failed at it??<br><br>
+
+She notices a smile creep in her professor’s face. Confused as she turns her face towards the Librarian a sharp blow renders her unconscious.<br><br><br><br>
+
+A FEW MINUTES LATER<br><br>
+
+PRIYA (groggy, slowly coming to her senses):<br>
+Wh..Where am I??<br><br>
+
+Once her senses are back, she notices she is tied to a chair in the library. The professor and the Librarian half naked having a nice drink. The bottles of booze spread around them.<br><br>
+
+VERMA:<br>
+Hey, little birdie …. awake already?<br><br>
+
+LIBRARIAN:<br>
+Say Verma? Shall we move on to the main course?<br><br>
+
+AAAAAAAAAAAAAAAAAAA……<br><br>
+
+THE END<br><br>
+
+Epilogue: That was the last day people saw Priya. The next day classes started as usual. The broken chairs were replaced with new ones. The crimson floor was wiped clean. A search warrant was sent out but lack of evidence made them conclude she had eloped with someone. The helpless parents were sent away by the faculty. Instead of justice all she got was people questioning her character.<br><br>
+
+This is the level the society has stooped down to. You cannot even trust the very person you look up to. The society is now a jungle with predators lurking around with no sense of justice or respect or mercy. The security guard you waved at when entering the college, the professor you idolized, the guy you loved might turn out to be the one praying on you.<br><br>
+
+At the end of the day all one can do is PRAY.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ========================= -->
+<!-- PROSE 5 -->
+<!-- ========================= -->
+
+<div class="design-popup" id="prose5">
+
+<div class="writing-content-popup glass">
+
+<div class="design-close"
+onclick="closeWritingContent('prose5')">
+
+<span>×</span>
+
+</div>
+
+<h1 class="section-title reveal">
+THE TRIPLE SCOOP ICE-CREAM
+</h1>
+
+<div class="writing-scroll">
+
+<p>
+
+Oh, love is a journey with water and stars,<br>
+with drowning air and storms of flour;<br>
+love is a clash of lightnings,<br>
+two bodies subdued by one honey.<br><br>
+
+Love is an ever-fixed mark<br>
+That looks on tempests and is never shaken;<br>
+It is the star to every wandering bark,<br>
+Whose worth's unknown, although his height be taken.<br><br>
+
+Love is a triple scoop ice cream cone. The first licks send shivers through your entire being. You revel in the intensity of the vibrant flavours, elevating your pleasure palate to an unimagined level. The frenzy of fun and feelings escalate until a piercing brain freeze warns of emotions out of control.<br><br>
+
+As the scoops melt together, the taste erodes into a single indistinguishable flavour. Licks become infrequent, your brain detaches, appetite wanes.<br><br>
+
+Before long, the once solid situation softens and a parade of mottled drips run down the side of the cone creating frustration and anxiety. The napkin, only a short time before the strength of the coupling now disintegrates in a flood of sugary sadness.<br><br>
+
+You must make the difficult decision to save yourself from clothes stains and limbs rendered useless by sticky drippings. You slow foot down the sidewalk in anguished contemplation before impulsively leaving the mess on an empty bus bench.<br><br>
+
+As you scurry away, the only remaining evidence of your love is a couple dried streaks of melted ice cream caked on your forearm. You lick them and shudder at the sensation of sweet regret.<br><br>
+
+But then again u crave for another one and another one again and u never want this feeling go.<br><br>
+
+Some stick to a single flavour all there life unwilling to taste the others while some keeps changing their taste .But can you ever forget the first sensation when u gave ur first lick ? Never !!!!......Yet again we slowly tend to forget it when we finally find the one true flavour of ur choice...... Until then lets just put in some faith and try the various flavours....
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ========================= -->
+<!-- ANIMATIONS POPUP -->
+<!-- ========================= -->
+
+<div class="design-popup" id="animation-popup">
+
+<div class="design-popup-content glass">
+
+<div class="design-close"
+onclick="closeDesignPopup('animation-popup')">
+
+<span>×</span>
+
+</div>
+
+<h1 class="section-title reveal">
+ANIMATIONS
+</h1>
+
+<div class="poster-grid">
+
+    <!-- ANIMATION 1 -->
+
+    <div class="poster-card glass">
+
+        <video autoplay muted loop playsinline controls>
+            <source src="animation1.mp4" type="video/mp4">
+        </video>
+
+    </div>
+
+    <!-- ANIMATION 2 -->
+
+    <div class="poster-card glass">
+
+        <video autoplay muted loop playsinline controls>
+            <source src="animation2.mp4" type="video/mp4">
+        </video>
+
+    </div>
+
+    <!-- ANIMATION 3 -->
+
+    <div class="poster-card glass">
+
+        <video autoplay muted loop playsinline controls>
+            <source src="animation3.mp4" type="video/mp4">
+        </video>
+
+    </div>
+
+    <!-- ANIMATION 4 -->
+
+    <div class="poster-card glass">
+
+        <video autoplay muted loop playsinline controls>
+            <source src="animation4.mp4" type="video/mp4">
+        </video>
+
+    </div>
+
+    <!-- ANIMATION 5 -->
+
+    <div class="poster-card glass">
+
+        <video autoplay muted loop playsinline controls>
+            <source src="animation5.mp4" type="video/mp4">
+        </video>
+
+    </div>
+
+    <!-- ANIMATION 3 -->
+
+    <div class="poster-card glass">
+
+        <video autoplay muted loop playsinline controls>
+            <source src="animation6.mp4" type="video/mp4">
+        </video>
+
+    </div>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+/* ========================= */
+/* CINEMATIC LOADER */
+/* ========================= */
+
+const loaderMessages = [
+
+"INITIALIZING CREATIVE SYSTEM...",
+"LOADING MEMORY ARCHIVES...",
+"RENDERING CINEMATIC INTERFACE...",
+"SCANNING ARTISTIC MODULES...",
+"ENTERING SOUNAK.DE"
+
+];
+
+const loaderText =
+document.getElementById("loader-text");
+
+let loaderMsgIndex = 0;
+let loaderCharIndex = 0;
+
+function typeLoader(){
+
+if(loaderMsgIndex < loaderMessages.length){
+
+if(loaderCharIndex <
+loaderMessages[loaderMsgIndex].length){
+
+loaderText.innerHTML +=
+loaderMessages[loaderMsgIndex]
+.charAt(loaderCharIndex);
+
+loaderCharIndex++;
+
+setTimeout(typeLoader,45);
+
+}
+
+else{
+
+loaderText.innerHTML += "<br>";
+
+loaderMsgIndex++;
+loaderCharIndex = 0;
+
+setTimeout(typeLoader,700);
+
+}
+
+}
+
+}
+
+typeLoader();
+
+/* REMOVE LOADER */
+
+window.addEventListener("load",()=>{
+
+setTimeout(()=>{
+
+document.getElementById("loader")
+.style.opacity = "0";
+
+document.getElementById("loader")
+.style.pointerEvents = "none";
+
+document.getElementById("loader")
+.style.transition = "1s ease";
+
+setTimeout(()=>{
+
+document.getElementById("loader")
+.style.display = "none";
+
+},1000);
+
+},5000);
+
+});
+
+
+
+/* Glow Cursor */
+
+const glow = document.getElementById('glow');
+
+document.addEventListener('mousemove',(e)=>{
+glow.style.left = e.clientX + 'px';
+glow.style.top = e.clientY + 'px';
+});
+
+/* Typing Animation */
+
+const words = [
+'STUDENT_',
+'WRITER_',
+'DESIGNER_',
+'PHOTOGRAPHER_',
+'EDITOR_',
+'PROGRAMMER_'
+];
+
+let i = 0;
+let j = 0;
+let current = '';
+let isDeleting = false;
+
+function type(){
+
+current = words[i];
+
+if(!isDeleting){
+document.getElementById('typing').textContent =
+current.substring(0,j++);
+if(j > current.length + 1){
+isDeleting = true;
+}
+}
+else{
+document.getElementById('typing').textContent =
+current.substring(0,j--);
+
+if(j == 0){
+isDeleting = false;
+i = (i + 1) % words.length;
+}
+}
+
+setTimeout(type,120);
+
+}
+
+type();
+
+/* POPUP */
+
+const popup = document.getElementById('popup');
+
+document.getElementById('openPopup').onclick = ()=>{
+popup.classList.add('active');
+}
+
+document.getElementById('openPopup2').onclick = ()=>{
+popup.classList.add('active');
+}
+document.getElementById('closePopup').onclick = ()=>{
+popup.classList.remove('active');
+}
+
+window.onclick = (e)=>{
+if(e.target == popup){
+popup.classList.remove('active');
+}
+}
+
+/* LIVE TERMINAL */
+
+const terminalLines = [
+
+"> Initializing SOUNAK.EXE...",
+"> Loading cinematic modules...",
+"> Connecting neural interface...",
+"> Injecting futuristic aesthetics...",
+"> Graphic Design Engine Loaded",
+"> Writing System Loaded",
+"> Photography Archive Synced",
+"> Motion Graphics Activated",
+"> Portfolio Ready"
+
+];
+
+const terminal =
+document.getElementById("live-terminal");
+
+let lineIndex = 0;
+let charIndex = 0;
+
+function typeTerminal(){
+
+if(lineIndex < terminalLines.length){
+
+if(charIndex < terminalLines[lineIndex].length){
+
+terminal.innerHTML +=
+terminalLines[lineIndex]
+.charAt(charIndex);
+
+charIndex++;
+
+setTimeout(typeTerminal,35);
+
+}
+
+else{
+
+terminal.innerHTML += "<br>";
+
+lineIndex++;
+charIndex = 0;
+
+setTimeout(typeTerminal,500);
+
+}
+
+}
+
+/* RESTART */
+
+else{
+
+setTimeout(()=>{
+
+terminal.innerHTML = "";
+
+lineIndex = 0;
+charIndex = 0;
+
+typeTerminal();
+
+},2500);
+
+}
+
+}
+
+/* START */
+
+typeTerminal();
+
+
+/* DESIGN POPUPS */
+
+function openDesignPopup(id){
+
+document.getElementById(id).style.display = "flex";
+
+const videos =
+document.querySelectorAll(
+"#"+id+" video"
+);
+
+videos.forEach(video=>{
+
+video.play().catch(()=>{});
+
+});
+
+}
+
+function closeDesignPopup(id){
+
+document.getElementById(id).style.display = "none";
+
+const videos =
+document.querySelectorAll(
+"#"+id+" video"
+);
+
+videos.forEach(video=>{
+
+video.pause();
+video.currentTime = 0;
+
+});
+
+}
+
+window.addEventListener('click',(e)=>{
+
+document.querySelectorAll('.design-popup')
+.forEach(popup=>{
+
+if(e.target === popup){
+
+popup.style.display = "none";
+
+}
+
+});
+
+});
+
+/* WRITING POPUPS */
+
+function openWritingPopup(id){
+
+document.getElementById(id).style.display = "flex";
+
+}
+
+function closeWritingPopup(id){
+
+document.getElementById(id).style.display = "none";
+
+}
+
+/* WRITING CONTENT */
+
+function openWritingContent(id){
+
+document.getElementById(id).style.display = "flex";
+
+}
+
+function closeWritingContent(id){
+
+document.getElementById(id).style.display = "none";
+
+}
+
+/* LIVE CLOCK */
+
+function updateClock(){
+
+const now = new Date();
+
+const time =
+now.toLocaleTimeString('en-IN',{
+
+hour:'2-digit',
+minute:'2-digit',
+second:'2-digit'
+
+});
+
+document.getElementById('live-clock')
+.innerHTML = time;
+
+}
+
+setInterval(updateClock,1000);
+
+updateClock();
+
+
+/* SCROLL REVEALS */
+
+const reveals =
+document.querySelectorAll(
+'.reveal,.reveal-left,.reveal-right'
+);
+
+function revealOnScroll(){
+
+reveals.forEach(reveal=>{
+
+const top =
+reveal.getBoundingClientRect().top;
+
+/* TRIGGER EARLIER */
+
+if(top < window.innerHeight - 70){
+
+reveal.classList.add('active');
+
+}
+
+});
+
+}
+
+/* RUN ON SCROLL */
+
+window.addEventListener(
+'scroll',
+revealOnScroll
+);
+
+/* RUN ON LOAD */
+
+revealOnScroll();
+
+/* COUNTER */
+
+const counters =
+document.querySelectorAll('.counter');
+
+counters.forEach(counter=>{
+
+const updateCounter = ()=>{
+
+const target =
++counter.getAttribute('data-target');
+
+const count =
++counter.innerText;
+
+const speed = target / 80;
+
+if(count < target){
+
+counter.innerText =
+Math.ceil(count + speed);
+
+setTimeout(updateCounter,30);
+
+}
+
+else{
+
+counter.innerText = target + "+";
+
+}
+
+};
+
+updateCounter();
+
+});
+
+
+</script>
+
+</body>
+</html>
