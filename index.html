@@ -298,6 +298,30 @@ border-radius:25px;
 z-index:999;
 }
 
+nav{
+
+transition:
+transform .6s ease,
+opacity .6s ease,
+top .6s ease;
+
+}
+
+/* HIDDEN NAVBAR */
+
+nav.hide-nav{
+
+transform:
+translateX(-50%)
+translateY(-180%)
+scale(.9);
+
+opacity:0;
+
+pointer-events:none;
+
+}
+
 .logo{
 font-size:2rem;
 font-family:'Bebas Neue',sans-serif;
@@ -10960,6 +10984,54 @@ document.getElementById(id).style.display="none";
 document.body.style.overflow="auto";
 
 }
+
+const navbar =
+document.querySelector("nav");
+
+let lastScroll = 0;
+
+let navTimeout;
+
+/* SCROLL DETECTION */
+
+window.addEventListener("scroll",()=>{
+
+const currentScroll =
+window.pageYOffset ||
+document.documentElement.scrollTop;
+
+/* SCROLLING DOWN */
+
+if(currentScroll > lastScroll){
+
+navbar.classList.add("hide-nav");
+
+}
+
+/* SCROLLING UP */
+
+else{
+
+navbar.classList.remove("hide-nav");
+
+}
+
+/* RESET TIMER */
+
+clearTimeout(navTimeout);
+
+/* IF USER STOPS SCROLLING */
+
+navTimeout = setTimeout(()=>{
+
+navbar.classList.remove("hide-nav");
+
+},3000);
+
+lastScroll =
+currentScroll <= 0 ? 0 : currentScroll;
+
+});
 
 </script>
 
